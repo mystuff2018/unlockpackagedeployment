@@ -1,0 +1,101 @@
+.THIS .slds-theme_backgroundColor-white {
+    background-color: white;
+}
+.THIS .filterWindow {
+    width: 30%;
+    float:left;
+    margin-top:none;
+    position : relative;
+    
+}
+.THIS .filterWindowCollapse {
+    width: 0%;
+    float:left;
+    opacity: 0;
+    transition: .5s opacity linear;
+   
+}
+.THIS .dataTable{
+   width: 70%;
+   float:right; 
+}
+.THIS .dataTableExpand{
+   width: 100%;
+   float:right; 
+}
+.THIS .contentWrapper{
+    height : 100vh;
+    width : 100%;
+    display: block;
+}
+
+.THIS .fullView{
+     height : 100vh;
+    
+}
+
+/* Solid border */
+.THIS .thin {
+    margin:5px;
+}
+.THIS .contentWrapper>div{
+    height:100%;
+    overflow : auto;
+}
+
+.THIS lightning-primitive-header-actions {
+    display: none;
+}
+.THIS .scroll{
+  overflow:hidden;
+}
+
+@media screen and (max-width: 700px){
+    .THIS .filterWindow{
+        width: 100% ;
+    }
+    .THIS .slds-table_header-fixed_container {
+        padding-top: 0px;
+        
+    }
+    .THIS.datatable-parent{
+        height: calc(100% - 5px);
+    }
+    .THIS .slds-table_header-fixed {
+        padding-top: 2rem;
+        min-height: 101%;
+    	padding-bottom: 20px;
+    }
+    .THIS.scrollerSize {
+    	width: 100%;
+    	border-radius: 1px; 
+    /*    height: 100%;
+    width: 100%;
+    border-radius: 1px;
+        overflow-x:auto;*/
+	}
+    .THIS.buffer-div{
+        min-height:5px;
+    	width:100%;
+    }
+    .THIS .dataTable{
+       width: 0%;
+       display:none;
+       float:left; 
+	}
+    .THIS .dataTableExpand{
+   		width: 100%;
+   		float:right; 
+	}
+    .THIS .filterWindowCollapse {
+    width: 0%;
+    float:left;
+    opacity: 0;
+    transition: .5s opacity linear;
+   
+}
+.THIS .table-container {
+        width: 100%;
+  overflow-x: auto;
+}
+}

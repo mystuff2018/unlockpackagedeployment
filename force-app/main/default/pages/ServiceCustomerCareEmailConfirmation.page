@@ -1,0 +1,30 @@
+<apex:page controller="ServiceFormController" sidebar="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content"> 
+<script>showPageTitle('Email Technical Support Confirmation');</script>
+<main>
+<div class="dds__container" style="position:relative;padding-bottom:50px">
+    <div style="padding-top:40px">
+    <h1>Your question has been submitted!</h1>
+    <br/><br/>
+    Thank you for contacting Customer Care for Dell Federal Accounts.
+    <br></br>
+    Your case number is: #{!caseNumber}.
+    <br/><br/>
+    Your message has been successfully received and will be answered within the next 4 business hours. If you would like to speak with someone immediately about your request, please call us toll free at 1-800-727-1100. 
+    <br/><br/>
+    You may find our online resources helpful in the future:
+     <a href="http://www.dell.com/learn/us/en/rc1009777/fed ">http://www.dell.com/learn/us/en/rc1009777/fed </a> simply click on "Support" at the top of the page and then choose "Order Support" as the sub-title. This will give you options to check the status of your order, check the status of a Customer Support Request we may already have open for you and even obtain invoices and shipping documents such as packing slips. 
+    <br/><br/>
+    Thank you for choosing Dell. 
+    <br/><br/>
+    Sincerely, 
+    <br/><br/>
+    Dell Federal Customer Care 
+    </div>
+</div>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

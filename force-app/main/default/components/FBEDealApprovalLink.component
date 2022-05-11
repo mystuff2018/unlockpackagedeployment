@@ -1,0 +1,5 @@
+<apex:component access="global" controller="FBE_FPRM_DealApprovalLinkController">
+ <apex:attribute name="relatedToId" assignTo="{!targetObjectId}" type="String" description="ID of the record"/>
+ <apex:attribute name="dealName" type="String" description="Deal Name"/>
+    <apex:outputLink value="{!approvalLink}">{!dealName}</apex:outputLink>   
+</apex:component>

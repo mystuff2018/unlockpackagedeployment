@@ -1,0 +1,16 @@
+.slds-dropdown__item {
+	line-height: 0.75!important;
+	font-weight: 500!important;
+	font-size:12px!important;
+	text-align: center!important;
+	padding: -0.4rem!important; 
+}
+
+.slds-dropdown {    
+    min-width: 3rem!important;
+    max-width: 6rem!important;
+}
+
+.slds-table thead th {
+	background: white!important;
+}

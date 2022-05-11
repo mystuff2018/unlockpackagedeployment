@@ -1,0 +1,30 @@
+<template>
+    <header class="slds-modal__header_empty ">                        
+        <h1 id="modal-heading-01" class="slds-modal__title slds-align_absolute-center">Associate Order(s)</h1>
+    </header>
+    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="height: 370px; max-height: 370px;">         
+        <div if:true={isFindStep}>
+            <c-find-orders-to-associate-to-engagement onretrieveorders={handleOrdersRetrieve} onretrieveaccountname={handleAccountNameRetrieve}></c-find-orders-to-associate-to-engagement>
+        </div>
+        <div if:true={isSelectStep}>
+            <c-select-orders-to-associate-to-engagement onretrieveselectedorders={handleRetrieveSelectedOrders} order-list-to-select={orderList}
+            account-name-by-order-id-map={accountNameByOrderIdMap}></c-select-orders-to-associate-to-engagement>
+        </div>
+        <div if:true={isReviewStep}>
+            <c-review-orders-to-associate-to-engagement order-list-to-review={selectedOrdersList} record-id={recordId}></c-review-orders-to-associate-to-engagement>
+        </div>               
+    </div>
+
+    <footer style="background-color:#FFF; text-align: right;">
+        <lightning-button variant="neutral" label="Cancel" class="slds-var-m-right_x-small" onclick={handleCancel}></lightning-button>
+        <span if:true={isFindStep}>
+            <lightning-button slot="actions" variant="brand" label="Search" class="slds-var-m-right_x-small" onclick={handleOrderSearch}></lightning-button>
+        </span>
+        <span if:true={isSelectStep}>
+            <lightning-button slot="actions" variant="brand" label="Next" class="slds-var-m-right_x-small" onclick={handleOrderSelection}></lightning-button>
+        </span>
+        <span if:true={isReviewStep}>
+            <lightning-button slot="actions" variant="brand" label="Associate" class="slds-var-m-right_x-small" onclick={handleAssociateOrders}></lightning-button>   
+        </span>
+    </footer>                
+</template>

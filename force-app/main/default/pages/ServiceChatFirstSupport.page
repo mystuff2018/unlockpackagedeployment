@@ -1,0 +1,60 @@
+<apex:page sidebar="false" controller="ServiceFormController" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content">
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<apex:includeScript value="{!URLFOR($Resource.ServicePortalJavascript)}"/>
+<script type='text/javascript'>
+setPageTitle('FIRST Helpdesk Chat');
+initChat('{!baseUrl}', '{!orgId}', '{!chatDeploymentId}', '{!buttonId}'); 
+function doSubmit(form) {
+   if (form.checkValidity() === false) return false;
+   let firstName = '{!$User.firstName}';
+   let lastName = '{!$User.lastName}';
+   let email = '{!$User.email}';
+   let recTypeId = '{!caseRecordTypeId}';
+   let systemName = getElem('system-name').value;
+   let description = getElem('description').value;
+   return submitFirstChat(firstName, lastName, email, systemName, description, recTypeId);
+}
+</script>
+<main>
+   <div class="dds__container">
+      <div style="padding-top:60px">
+         <div id="form">
+            <h1>FIRST Chat</h1>
+            <div class="dds__row">
+               <div class="dds__col-6">
+               <div style="width:375px;padding-top:20px">
+               <form data-toggle="dds__form-validation" id="form" onsubmit="return doSubmit(this)" novalidate="false">
+                  <div class="dds__form-group">
+                     <label for="system-name">System Name</label> 
+                     <input type="text" class="dds__form-control" maxlength="80" name="system-name" id="system-name" required="true" aria-invalid="false" aria-describedby=""></input>
+                     <div class="dds__invalid-feedback" id="input-error-system-name"> Please enter system name. </div>
+                  </div>
+                  <div class="dds__form-group">
+                     <label for="description">Description (32,000 character limit)</label> 
+                     <textarea class="dds__form-control" id="description" name="description" rows="3" required="true" maxlength="32000"></textarea>
+                     <div class="dds__invalid-feedback" id="input-error-description"> Please enter your company. </div>
+                  </div>
+                  <div id="PrimaryMiniButton" data-content="<button type=&quot;button&quot; class=&quot;dds__btn dds__btn-primary dds__btn-sm dds__text-truncate&quot;>Primary Mini Button</button>" class="rendered-container">
+                     <button id="button" class="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate">Start Chat</button>
+                  </div>
+               </form>
+               </div>
+               </div>
+            </div>
+         </div>
+         <div id="chat" style="display:none">
+            <h1>FIRST Chat</h1>
+            <h3>Hang tight while we connect you with a live agent.</h3>
+            <h4>Chat session will begin in the lower right corner of your screen...</h4>
+            <img src="https://qph.fs.quoracdn.net/main-qimg-fe14c462c2025fcfe5a696fc2a64b2bb" style="padding-top:40px;width:225px"></img>
+         </div>
+      </div>
+   </div>
+<p id="snapinplaceholder"/>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

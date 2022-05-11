@@ -1,0 +1,410 @@
+<!--
+  @description       : STORY 10977231 Nov Rel 2021 - Created for the purpose of Deal Registration Custom Clone functionality along  with Deal Products.
+  @author            : Sitaram Teki
+  @group             : Dell - FPRM - Sireesha Myla
+  @last modified on  : 02-11-2022
+  @last modified by  : Sitaram Teki
+-->
+
+
+<template>
+
+    <lightning-card icon-name="custom:custom83">
+        <h1 slot="title">Clone Deal Registration</h1>
+        <div class="slds-var-p-around_medium">
+            <div class="slds-scrollable_y" style="height:25rem;width:Auto">
+                <div class="slds-text-longform" style="width:100%">
+                    <template if:false={isdealProds}>
+                        <div class="slds-card slds-card_boundary" style="background-color: #ffffc9;">
+                            <div class="slds-notification__body"></div>
+                            <slot class="slds-var-p-around_small slds-media">
+                                <span class="slds-icon_container slds-media__figure" title="Alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="23" height="23"
+                                        viewBox="0 0 32 32">
+                                        <title>dds__alert-info-cir</title>
+                                        <path fill="#0076ce"
+                                            d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM16 29.86c-7.655 0-13.86-6.205-13.86-13.86s6.205-13.86 13.86-13.86c7.655 0 13.86 6.205 13.86 13.86v0c-0.011 7.65-6.21 13.849-13.859 13.86h-0.001zM14.72 6.72h2.56v2.56h-2.56zM14.72 12.48h2.56v12.8h-2.56z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <h2 class="slds-text-color_default" style="font-family: Roboto;">
+                                    No products attached. Save your deal and then continue to add Deal Products.
+                                </h2>
+                            </slot>
+                        </div>
+                    </template>
+                    <div class="slds-card slds-card_boundary">
+                        <lightning-layout multiple-rows>
+                            <lightning-layout-item>
+                                <lightning-record-edit-form columns="2" record-id={oldDealRegId}
+                                    object-api-name="Deal_Registration__c" onsubmit={handleSubmit}
+                                    onsuccess={handleSuccess} onerrors={handleError}>
+                                    <lightning-messages>
+                                    </lightning-messages>
+                                    <br />
+
+                                    <div class="slds-align_absolute-center">
+                                        <div class="slds-page-header__col-actions">
+                                            <lightning-button class="slds-var-p-around_small" variant="brand"
+                                                type="submit" name="Save" label="Save">
+                                            </lightning-button>
+                                            <lightning-button class="slds-var-p-around_small" variant="neutral"
+                                                type="Cancel" name="Cancel" label="Cancel" onclick={onCancel1}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                    <div style="width: auto">
+                                        <lightning-vertical-navigation selected-item="Deal Registration Details">
+                                            <lightning-vertical-navigation-section>
+                                                <lightning-vertical-navigation-item-icon
+                                                    label="Deal Registration Details" name="Deal Registration Details"
+                                                    icon-name='custom:custom83'>
+                                                </lightning-vertical-navigation-item-icon>
+                                            </lightning-vertical-navigation-section>
+                                        </lightning-vertical-navigation>
+                                    </div>
+
+                                    <div class="slds-grid slds-wrap slds-p-around_medium">
+
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" data-name field-name="Name"
+                                                value={dname}>
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Account__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Dell_EMC_Contact__c">
+                                            </lightning-input-field>
+                                        </div>
+
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" data-bookdate
+                                                field-name="FBE_Book_Date__c" value={bookdate}>
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="Engagement_Type__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Contract_Vehicle__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_RFQ_Date__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="Sales_Stage__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Solution_Domain__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Is_this_going_through_an_FSI__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Solution_Type__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_FSI_Account__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Solution_Name__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_FSI_Internal_Use__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_FPRM_Specialty_Incentive__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Reseller_VAR_Account__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Serial_No_Asset_Tag__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Distributor_Account__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Funding_Source__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true" field-name="FBE_Fulfilment_Path__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Deal_Justification_Statement__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Is_it_a_Vmware_related_solution__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Next_Step__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Collaboration_Comments__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <!--<div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Federal_Alliance_Segment__c">
+                                            </lightning-input-field>
+                                        </div>-->
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Competitor_Not_Listed__c">
+                                            </lightning-input-field>
+                                        </div>
+
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Primary_Competitor__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_SFDC_Campaign_Id__c">
+                                            </lightning-input-field>
+                                        </div>
+                                    </div>
+                                    <div style="width: auto">
+                                        <lightning-vertical-navigation selected-item="End User Details">
+                                            <lightning-vertical-navigation-section>
+                                                <lightning-vertical-navigation-item-icon label="End User Details"
+                                                    name="End User Details" icon-name='custom:custom83'>
+                                                </lightning-vertical-navigation-item-icon>
+                                            </lightning-vertical-navigation-section>
+                                        </lightning-vertical-navigation>
+                                    </div>
+                                    <div class="slds-grid slds-wrap slds-var-p-around_medium">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_FRPM_End_User_Account__c">
+                                            </lightning-input-field>
+                                        </div>
+
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_FPRM_End_User_Contact__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_End_User_Account_Department__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_End_User_Website_URL_Address__c">
+                                            </lightning-input-field>
+                                        </div>
+                                    </div>
+                                    <div style="width: auto">
+                                        <lightning-vertical-navigation selected-item="Partner Contact Details">
+                                            <lightning-vertical-navigation-section>
+                                                <lightning-vertical-navigation-item-icon label="Partner Contact Details"
+                                                    name="Partner Contact Details" icon-name='custom:custom83'>
+                                                </lightning-vertical-navigation-item-icon>
+                                            </lightning-vertical-navigation-section>
+                                        </lightning-vertical-navigation>
+                                    </div>
+                                    <div class="slds-grid slds-wrap slds-var-p-around_medium">
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Same_as_submitter__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Partner_Sales_Rep_Name__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field
+                                                field-name="FBE_FPRM_Submitter_Phone_Country_Code__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Partner_Sales_Rep_Email__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Deal_Submitter_Phone__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field required="true"
+                                                field-name="FBE_Partner_Sales_Rep_Phone__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_FPRM_Submitter_Phone_Extension__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Partner_Owner_Email__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Partner_Team_Mailbox__c">
+                                            </lightning-input-field>
+                                        </div>
+                                        <div class="slds-col slds-size_1-of-2">
+                                            <lightning-input-field field-name="FBE_Partner_Owner__c">
+                                            </lightning-input-field>
+                                        </div>
+
+                                    </div>
+
+                                    <!--Related Deal Products starts here, If No Products available-->
+
+
+                                    <!--If Products available-->
+
+                                    <template if:true={isdealProds}>
+
+
+
+
+                                        <div style="width: auto;">
+                                            <lightning-vertical-navigation selected-item="Deal Product List">
+                                                <lightning-vertical-navigation-section>
+                                                    <lightning-vertical-navigation-item-icon label="Deal Product List"
+                                                        name="Deal Product List" icon-name="standard:product_item">
+                                                    </lightning-vertical-navigation-item-icon>
+                                                </lightning-vertical-navigation-section>
+                                            </lightning-vertical-navigation>
+                                        </div>
+
+                                        <!-- <lightning-card icon-name="standard:product_item">
+                                            <h1 slot="title">Deal Product List</h1>-->
+
+                                        <table
+                                            class="slds-table slds-table_cell-buffer slds-table_header-hidden slds-table_bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th class="" scope="col">
+                                                        <div class="slds-truncate"></div>
+                                                    </th>
+                                                    <th class="" scope="col">
+                                                        <div class="slds-truncate" title=" Name">PRODUCT</div>
+                                                    </th>
+                                                    <th class="" scope="col">
+                                                        <div class="slds-truncate" title="QUANTITY">QUANTITY
+                                                        </div>
+                                                    </th>
+                                                    <th class="" scope="col">
+                                                        <div class="slds-truncate" title="SALES PRICE">SALES
+                                                            PRICE
+                                                        </div>
+                                                    </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <template for:each={dealRelatedProds} for:item="product"
+                                                    for:index="indx">
+                                                    <tr key={product.Id}>
+                                                        <td>
+                                                            <div class="slds-truncate" title="Remove">
+
+                                                                <a style="text-decoration:none;color:red;">
+                                                                    <lightning-button-icon icon-name="action:delete"
+                                                                        data-id={indx} alternative-text="Delete"
+                                                                        class="slds-m-left_xx-small" onclick={removeRow}
+                                                                        title="Delete">
+                                                                    </lightning-button-icon>
+                                                                    <!--<lightning-card  class="slds-m-left_xx-small" icon-name="action:delete" onclick={removeRow}></lightning-card>-->
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            {product.FBE_Product__r.Name}
+                                                        </td>
+                                                        <td>
+                                                            <lightning-input type="number" data-id={indx}
+                                                                value={product.FBE_Quantity__c}
+                                                                onchange={handleQuantityChange}>
+                                                            </lightning-input>
+
+                                                        </td>
+                                                        <td>
+                                                            <lightning-input type="number" data-id={indx}
+                                                                formatter="currency" onchange={handlePriceChange}
+                                                                value={product.FBE_Sales_price__c}>
+                                                            </lightning-input>
+                                                        </td>
+
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                        <!-- </lightning-card>-->
+
+                                    </template>
+
+                                    <div class="slds-align_absolute-center">
+                                        <div class="slds-page-header__col-actions">
+                                            <lightning-button class="slds-p-around_small" variant="brand" type="submit"
+                                                name="Save" label="Save">
+                                            </lightning-button>
+                                            <lightning-button class="slds-p-around_small" variant="neutral"
+                                                type="Cancel" name="Cancel" label="Cancel" onclick={onCancel1}>
+                                            </lightning-button>
+                                        </div>
+                                    </div>
+                                    <br />
+
+                                </lightning-record-edit-form>
+                            </lightning-layout-item>
+                        </lightning-layout>
+                    </div>
+
+                    <template if:false={isdealProds}>
+                        <div class="slds-card slds-card_boundary" style="background-color: #ffffc9;">
+                            <div class="slds-notification__body"></div>
+                            <slot class="slds-p-around_small slds-media">
+                                <span class="slds-icon_container slds-media__figure" title="Alert">
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="23" height="23"
+                                        viewBox="0 0 32 32">
+                                        <title>dds__alert-info-cir</title>
+                                        <path fill="#0076ce"
+                                            d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16c8.837 0 16-7.163 16-16v0c0-8.837-7.163-16-16-16v0zM16 29.86c-7.655 0-13.86-6.205-13.86-13.86s6.205-13.86 13.86-13.86c7.655 0 13.86 6.205 13.86 13.86v0c-0.011 7.65-6.21 13.849-13.859 13.86h-0.001zM14.72 6.72h2.56v2.56h-2.56zM14.72 12.48h2.56v12.8h-2.56z">
+                                        </path>
+                                    </svg>
+                                </span>
+                                <h2 class="slds-text-color_default" style="font-family: Roboto;">
+                                    No products attached. Save your deal and then continue to add Deal Products.
+                                </h2>
+                            </slot>
+                        </div>
+
+                    </template>
+
+                </div>
+
+            </div>
+        </div>
+
+    </lightning-card>
+
+</template>

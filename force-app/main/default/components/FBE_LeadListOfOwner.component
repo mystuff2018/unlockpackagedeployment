@@ -1,0 +1,36 @@
+<apex:component controller="FBE_LeadEmailTemplate" access="global">
+    <apex:attribute name="usrId" type="Id" description="Id of the leadOwners" assignTo="{!userID}"/>
+        
+ <apex:outputText value="You have {!countUsers} leads that require your attention. Please see the table below for the leads breakdown by lead status. These are leads that have requested contact from a Dell sales rep. The SLA for follow-up is 48 hours.
+                             If you need any assistance with these Leads, "></apex:outputText>
+    <apex:outputText value="please submit a "> </apex:outputText> <apex:outputLink value="http://dell.force.com/GLMI" id="theLink">Global Lead Management Intake</apex:outputLink>
+    <apex:outputText value = " request for support.<br/><br/><br/>" escape="false"></apex:outputText>
+    <table border = "2" cellspacing = "5">
+       <tr>
+            <td>Lead Owner</td>
+           <!-- <td>Days Since Lead Created Date</td> -->   
+            <td>Days Since Last Owner Reassignment Date</td>    
+            <td>Lead Contact Name</td>
+            <td>Lead Tracking ID</td>
+            <td>Company</td>
+            <td>Country</td>
+            <td>Lead Status</td>
+           
+         <!--  <td>Lead Link</td>  test -->
+        </tr>
+      <apex:repeat value="{!ownerLeadList}" var="led">
+            <tr>
+                <td>{!led.owner.Name}</td>
+               <!--<td>{!led.FBE_Days_Since_Lead_Created_Date__c}</td>-->
+                <td>{!led.Days_Since_Last_Owner_Reassignment_Date__c}</td>
+                <td><apex:outputLink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+led.Id}">{!led.FirstName} {!led.LastName}</apex:outputLink></td>
+                <td>{!led.FBE_Lead_Tracking_ID__c}</td>
+                <td>{!led.Company}</td>
+                <td></td>
+                <td>{!led.status}</td> 
+                
+    		<!--	<apex:outputLink value="/{!led.id}">{!led.LastName}</apex:outputLink> test -->
+            </tr>   
+        </apex:repeat>        
+    </table>
+</apex:component>

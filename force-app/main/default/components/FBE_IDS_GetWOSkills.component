@@ -1,0 +1,14 @@
+<apex:component access="global" controller="FBE_IDS_SAEmailController">
+    <apex:attribute name="record_id" assignTo="{!recordId}" description="Record Id of Object whose skill requirements are to be fetched" type="Id"/>
+    
+    <table class="table">
+        <apex:repeat value="{!SkillRequirements}" var="eachSkill">
+        	<tr>
+            	<td>{!eachSkill.Skill.MasterLabel}</td>
+                <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            	<td>{!ROUND(eachSkill.SkillLevel,0)}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+    
+</apex:component>

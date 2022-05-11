@@ -1,0 +1,176 @@
+<apex:page controller="ServiceFormController" sidebar="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content"> 
+ <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<apex:includeScript value="{!URLFOR($Resource.ServicePortalJavascript)}"/>
+<script>setPageTitle('Federal Email Order Support');</script>
+<main>
+   <div class="dds__container" style="position:relative;padding-bottom:50px">
+      <apex:form >
+      <div style="padding-top:40px">
+         <div class="dds__row">
+            <div class="dds__col-6">
+               <h1>Federal Email Order Support</h1>
+                  How can we help you with your order?
+            </div>
+         </div>
+         <br/>
+         <div class="dds__row">
+            <div class="dds__col-6">
+               <div class="dds__form-group" align="left">
+                  <label for="exampleFormControlSelect3">Please select a topic</label> 
+                  <select class="dds__form-control" id="issue" name="issue" required="true">
+                     <apex:repeat value="{!reasons}" var="s">
+                        <option value="{!s.value}">{!s.label}</option>
+                     </apex:repeat>
+                  </select>
+               </div>
+            </div>
+         </div>
+      <br/>
+      <div class="dds__row">
+         <div class="dds__col">
+            Please provide your order details and contact information. We'll respond to your request by email as soon as we can.
+            <hr class="dds__primary_divider"></hr>
+         </div>
+      </div>
+      <div class="dds__row">
+         <div class="dds__col-6">
+            <h3>Order Information</h3>
+         </div>
+         <div class="dds__col-6"></div>
+      </div>
+      <div class="dds__form-row">
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="input-error-firstnameInput-validation">Order Number</label> 
+               <input type="text" class="dds__form-control" name="order-number" id="order-number" required="true" aria-invalid="false"/> 
+               <div class="dds__invalid-feedback" id="input-error-firstnameInput-validationFeedback"> Please provide a valid order number.</div>
+            </div>
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="input-error-lastnameInput-validation">Account Number (optional)</label> 
+               <input type="text" class="dds__form-control" name="account-number" id="account-number" aria-invalid="false" aria-describedby=""/> 
+            </div>
+      </div>
+      <div class="dds__form-row">
+         <div class="dds__col-md-4 dds__mb-3">
+               <label for="input-error-firstnameInput-validation">Service Tag (optional)</label> 
+               <input type="text" class="dds__form-control" name="service-tag" id="service-tag" aria-invalid="false"/> 
+         </div>
+      </div>
+      <div><hr class="dds__primary_divider"></hr></div>
+      <div class="dds__row">
+         <div class="dds__col-6">
+            <h3>Contact Information</h3>
+         </div>
+         <div class="dds__col-6"></div>
+      </div>
+      <div class="dds__form-row">
+         <div class="dds__col-md-4 dds__mb-3">
+            <label for="company">Company Name (optional)</label> 
+            <input type="text" class="dds__form-control" name="company" id="company" aria-invalid="false"/> 
+         </div>
+      </div>
+      <div class="dds__form-row">
+         <div class="dds__col-md-4 dds__mb-3">
+            <label for="first-name">First Name</label> 
+            <input type="text" class="dds__form-control" name="first-name" id="input-error-firstnameInput-validation" required="true" aria-invalid="false"/> 
+            <div class="dds__invalid-feedback" id="input-error-firstnameInput-validationFeedback"> Please enter your first name.</div>
+         </div>
+         <div class="dds__col-md-4 dds__mb-3">
+            <label for="last-name">Last Name</label> 
+            <input type="text" class="dds__form-control" name="last-name" id="input-error-lastnameInput-validation" required="true" aria-invalid="false" aria-describedby=""/> 
+            <div class="dds__invalid-feedback" id="input-error-lastnameInput-validationFeedback"> Please enter your last name. </div>
+         </div>
+      </div>
+      <div class="dds__form-row">
+         <div class="dds__col-md-4 dds__mb-3">
+            <label for="email">Email Address</label> 
+            <input type="email" class="dds__form-control" maxlength="256" name="email" id="input-error-emailInput-validation" required="true" aria-invalid="false" aria-describedby=""/> 
+            <div class="dds__invalid-feedback" id="input-error-emailInput-validationFeedback"> Please enter a valid email. </div>
+         </div>
+         <div class="dds__col-md-4 dds__mb-3">
+            <label for="phone">Phone Number</label> 
+            <input id="phone" type="text" name="phone" class="dds__form-control dds__input-masked" required="true"/> 
+            <div class="dds__invalid-feedback"> Please provide a valid phone number. </div>
+         </div>     
+         </div>
+         <div class="dds__form-row" id="add-phone-extension">
+            <div class="dds__col-md-4 dds__mb-3">&nbsp;</div>
+            <div class="dds__col-md-4 dds__mb-3" style="display:block">
+               <a href="#" onclick="return showExtension()">Add Extension</a>
+            </div>    
+         </div>
+         <div style="display:none" id="phone-extension">
+            <div class="dds__form-row">
+               <div class="dds__col-md-4 dds__mb-3">&nbsp;</div>
+               <div class="dds__col-md-4 dds__mb-3">
+                     <label for="phone-extension">Phone Extension</label>                     
+                   <input type="text" name="phone-extension" class="dds__form-control dds__input-masked"/>
+                     <div class="dds__invalid-feedback"> Please provide a valid phone extension. </div>
+               </div>
+            </div>
+         </div>
+         <div class="dds__form-row">
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="street">Address</label> 
+               <input id="street" type="text" name="street" class="dds__form-control dds__input-masked" required="true"/> 
+               <div class="dds__invalid-feedback"> Please provide a valid street. </div>
+            </div>   
+         </div>
+         <div class="dds__form-row">
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="city">City</label> 
+               <input id="city" type="text" name="city" class="dds__form-control dds__input-masked" required="true"/> 
+               <div class="dds__invalid-feedback"> Please provide a valid city. </div>
+            </div>   
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="country">Country</label> 
+               <select class="dds__form-control" id="country" name="country" required="true">
+                  <apex:repeat value="{!countries}" var="s">
+                     <option value="{!s.value}">{!s.label}</option>
+                  </apex:repeat>
+               </select>
+               <div class="dds__invalid-feedback" id="input-error-phoneInput-validationFeedback"> Please provide a valid country. </div>
+            </div>  
+         </div>
+         <div class="dds__form-row">
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="state">State</label> 
+               <select class="dds__form-control" id="state" name="state" required="true">
+                  <apex:repeat value="{!states}" var="s">
+                     <option value="{!s.value}">{!s.label}</option>
+                  </apex:repeat>
+               </select>
+               <div class="dds__invalid-feedback"> Please provide a valid state. </div>
+            </div>   
+            <div class="dds__col-md-4 dds__mb-3">
+               <label for="zip-code">Zip Code</label> 
+               <input id="zip-code" type="text" name="zip-code" class="dds__form-control dds__input-masked" required="true"/> 
+               <div class="dds__invalid-feedback" id="input-error-phoneInput-validationFeedback"> Please provide a valid zip code. </div>
+            </div>  
+         </div>
+         <div><hr class="dds__primary_divider"></hr></div>
+         <div class="dds__row">
+            <div class="dds__col-6">
+               <h3>Additional Information</h3>
+            </div>
+         </div>
+         <div class="dds__row">
+            <div class="dds__col-6">
+               <label for="input-error-firstnameInput-validation">Your Message</label> 
+               <textarea class="dds__form-control" name="description" id="description" required="true" aria-invalid="false"></textarea> 
+               <div class="dds__invalid-feedback" id="input-error-firstnameInput-validationFeedback"> Please enter details of message.</div>
+            </div>
+         </div>
+         <br/>
+         <apex:commandButton action="{!saveEmailCase}" value="Submit" styleClass="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate"/>
+   <br/><br/><br/>
+   <input type="hidden" name="form-type" value="order-support"/>
+   </div>
+   </apex:form>
+</div>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

@@ -1,0 +1,110 @@
+<template>
+	<template if:true={isShowOpty}>
+		<div style="margin-bottom:50px;" class="customCss">
+			<template if:true={strTitle}>
+				<article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+					<div class="slds-page-header">
+						<div class="slds-page-header__row">
+							<div class="slds-page-header__col-title">
+								<div class="slds-media">
+									<div class="slds-media__figure">
+										<lightning-icon icon-name="standard:quotes" size="small"></lightning-icon>
+									</div>
+									<div class="slds-media__body">
+										<div class="slds-page-header__name">
+											<div class="slds-page-header__name-title">
+												<h1>
+													<span class="slds-page-header__title slds-truncate slds-text-heading_small" title={strTitle}>{strTitle}</span>
+												</h1>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>				
+					<template if:true={IsHideComponent}>
+						<!--<div class="slds-card__body slds-card__body_inner">-->
+							<table aria-multiselectable="true" 
+								class="slds-table slds-table_bordered slds-table_fixed-layout customCss" role="grid">
+								<thead class="customHeaderClass">
+									<tr class="">
+										<th aria-label="Quote #" class="" scope="col">
+											<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+												<span class="slds-truncate" title="Quote #">Quote #</span>
+											</div>
+										</th>
+										<th aria-label="Solution ID" class="" scope="col">
+											<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+												<span class="slds-truncate" title="Solution ID">Solution ID</span>
+											</div>
+										</th>
+										<th aria-label="Total" class="" scope="col">
+											<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+												<span class="slds-truncate" title="Total">Total</span>
+											</div>
+										</th>
+										<th aria-label="Effective Through" class="" scope="col">
+											<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+												<span class="slds-truncate" title="Effective Through">Effective
+													Through</span>
+											</div>
+										</th>
+										<th aria-label="Attachments" class="" scope="col">
+											<div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+												<span class="slds-truncate" title="Attachments"></span>
+											</div>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<template for:each={quoteDataList} for:item="quote" for:index="index">
+										<tr key={quote.quoteRec.Id} aria-selected="false" class="slds-hint-parent">
+											<td role="gridcell">
+												<div class="slds-truncate" title={quote.quoteRec.Name}>
+													<a data-record-id={quote.quoteRec.Id} onclick={viewQuote}>
+														{quote.quoteRec.Name}
+													</a>
+												</div>
+											</td>
+											<td role="gridcell">
+												<div class="slds-truncate" title={quote.quoteRec.FBE_CPQ_Solution_ID__c}>
+													{quote.quoteRec.FBE_CPQ_Solution_ID__c}</div>
+											</td>
+											<td role="gridcell">
+												<div class="slds-truncate" title={quote.quoteRec.FBE_CPQ_Quote_Total__c}>
+													{quote.quoteRec.FBE_CPQ_Quote_Total__c}</div>
+											</td>
+											<td role="gridcell">
+												<div class="slds-truncate" title={quote.quoteRec.ExpirationDate}>
+													{quote.quoteRec.ExpirationDate}</div>
+											</td>
+											<td role="gridcell">
+												<lightning-button-menu class="sldsDropdownClass"
+													icon-name="utility:download" menu-alignment="center" variant="bare"
+													onselect={handleMenuItem} data-recid={quote.quoteRec.Id}
+													disabled={quote.isbuttonDissable}>
+													<template if:true={quote.files} for:each={quote.files} for:item="file"
+														for:index="idx">
+														<lightning-menu-item key={file.docId} value={file.docId}
+															href={returnId} target="_blank" label={file.fType}>
+														</lightning-menu-item>
+													</template>
+												</lightning-button-menu>
+											</td>
+										</tr>
+									</template>
+								</tbody>
+							</table>
+						<!--</div> -->
+						<footer class="slds-card__footer">
+							<a class="slds-card__footer-action" onclick={handleNavigation}>View All
+								<span class="slds-assistive-text">Quotes</span>
+							</a>
+						</footer>
+					</template>
+				</article>
+			</template>
+		</div>
+	</template>
+</template>

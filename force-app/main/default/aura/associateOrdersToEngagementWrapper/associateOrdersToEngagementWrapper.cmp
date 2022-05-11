@@ -1,0 +1,8 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForAllPageTypes">
+    <aura:html tag="style">
+        .slds-modal__container {
+            min-width: 60vw;
+        }
+    </aura:html>
+    <c:associateOrdersToEngagement recordId="{!v.recordId}" onclose="{!c.closeQA}"></c:associateOrdersToEngagement>
+</aura:component>

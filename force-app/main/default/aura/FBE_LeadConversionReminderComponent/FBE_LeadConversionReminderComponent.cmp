@@ -1,0 +1,16 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<aura:attribute name="accountRecord" type="Object"/>
+    <aura:attribute name="recordLoadError" type="String"/>
+   
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    fields="FBE_Account_Name__r.Name"
+    targetFields="{!v.accountRecord}"
+    targetError="{!v.recordLoadError}"
+    /> 
+    <center>
+    <p style="color:Orange; font-family: Courier, Monaco, monospace; font-size:15px;">
+        <lightning:icon iconName="utility:warning" alternativeText="Warning!" variant="warning"/>
+        <lightning:formattedRichText value="&lt;b&gt;Reminder!! Please use Account Name: &lt;/b&gt;"/><b>{!v.accountRecord.FBE_Account_Name__r.Name}</b>&nbsp;<lightning:formattedRichText value= "&lt;b&gt;during Lead Conversion&lt;/b&gt;"/></p>
+    </center>
+</aura:component>

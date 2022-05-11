@@ -1,0 +1,13 @@
+.THIS .picklist{
+    font-size: initial;
+    font-weight: BOLD;
+}
+.THIS .margin{
+    margin-top: 10px;
+}
+.THIS .backgrd{
+    background-color:lightgray;
+}
+.THIS .requiredText{
+    color: #e32;
+}

@@ -1,0 +1,115 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" 
+                controller="FBE_FPRM_RelatedListController">
+    
+	<aura:attribute name="objectApiName" type="String" required="true"/>
+    <aura:attribute name="defineCustomActions" type="boolean" required="true"/>
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="recordName" type="String"/>
+    <aura:attribute name="currentUserId" type="Id" />
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="customActions" type="List"/>  
+    <aura:attribute name="recordColumnsWithActions" type="List" access="private"/>
+    <aura:attribute name="records" type="Object"/>
+    <aura:attribute name="filteredRecords" type="Object" />
+    <aura:attribute name="initialRecords" type="Object" />
+    <aura:attribute name="fields" type="String" required="true" default="Id, Name"/>
+    <aura:attribute name="conditionFieldApiName" type="String" required="true" default="Id"/>
+    <aura:attribute name="numberOfRecords" type="Integer" default="6"/>
+    <aura:attribute name="noOfRecordsHeader" type="String" access="private"/>
+    <aura:attribute name="icon" type="String" default= "standard:related_list"/>
+    <aura:attribute name="objectName" type="String" access="private"/>    
+    <aura:attribute name="objectNamePlural" type="String" access="private"/>
+    <aura:attribute name="parentRelationshipApiName" type="String" access="private"/>
+    <aura:attribute name="recordSObjectName" type="String" access="private"/>
+    <aura:attribute name="prmUserVisibility" type="boolean" default="false"/>
+    <aura:attribute name="affiliationsList" type="boolean" default="false"/>
+    <aura:attribute name="environmentType" type="String" 
+                    description="This variable is used to indicate which environment this component is displayed on, f.i. community vs standard lightning" />
+    <aura:attribute name="searchPhrase" type="String" />
+    <aura:attribute name="canCreateRecords" type="boolean" default="false"/>
+    <aura:attribute name="navigateToPage" type="String" 
+                    description="This variable is used to indicate the page to navigate to when User clicks View All. Define a value based on standard / community"/>
+    <aura:attribute name="viewAllRecordsFlag" type="boolean" default="true"
+                    description="This flag is used to determine whether View All records hyperlink should be displayed or not.
+                                 If set then SOQL Queries returns only numberofRecords specified in the property above"/>
+    <!-- Parameters for Infinite Loading Logic -->
+    <aura:attribute name="enableInfiniteLoading" type="Boolean" default="false"/>
+    <aura:attribute name="loadOffset" type="Integer" default="1"/>
+    <aura:attribute name="initialRows" type="Integer" default="30"/>
+    <aura:attribute name="totalRows" type="Integer" default="0"/>
+    <aura:attribute name="currentCount" type="Integer" default="30"/>
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <aura:handler name="change" value="{!v.columns}" action="{!c.handleColumnsChange}"/>
+    
+    <lightning:navigation aura:id="navService"/>
+    
+    <div class="slds-is-relative">
+    <!--div class="c-container" -->
+    <lightning:card class="slds-card_boundary" iconName="{!v.icon}">
+        <aura:if isTrue="{!and(not(empty(v.records)), not(v.viewAllRecordsFlag))}">
+            <div style="padding-left: 15px">
+                <lightning:breadcrumbs>
+                    <lightning:breadcrumb label="{!v.recordSObjectName}"/>
+                    <lightning:breadcrumb label="{!v.recordName}" onclick="{!c.navigateToRecordId}"/>
+                </lightning:breadcrumbs>
+                <p style="margin-top: 10px">
+                    <lightning:formattedText value="{!'Records '+v.noOfRecordsHeader+ ' of  '+v.totalRows}"/>
+                </p>
+            </div>
+        </aura:if>
+            
+        <aura:set attribute="actions">
+            <aura:if isTrue="{!v.canCreateRecords}">
+                <lightning:button label="New" onclick="{!c.handleCreateRecord}"/>
+            </aura:if>
+        </aura:set>
+        <aura:set attribute="title">
+        	<b><a class="slds-card__header-link" onclick="{!c.goToViewAll}">Related {!(v.objectNamePlural) + ' (' + (v.noOfRecordsHeader) + ')'}</a></b>
+        </aura:set>
+        <aura:set attribute="footer">
+            <aura:if isTrue="{!and(not(empty(v.records)), v.viewAllRecordsFlag)}">  
+                <a onclick="{!c.goToViewAll}">View All</a>
+            </aura:if>
+        </aura:set>
+        
+        <aura:if isTrue="{!and(not(empty(v.records)), not(v.viewAllRecordsFlag))}">
+            <!--aura:if isTrue="{!not(v.viewAllRecordsFlag)}" -->
+                <div class="inline-container">
+                    <span>
+                        <lightning:input
+                                         variant="label-hidden"
+                                         placeholder="Search"
+                                         type="search"
+                                         value="{!v.searchPhrase}"
+                                         onchange="{!c.handleSearch}" />
+                    </span>
+                </div>
+                <br/>
+            <!--/aura:if -->
+            <div style="height: 500px;">
+                <!--p class="slds-p-horizontal_small"-->
+                    <lightning:datatable class="related-list"
+                                         columns="{!v.recordColumnsWithActions}"
+                                         data="{!v.filteredRecords}"
+                                         keyField="id"
+                                         enableInfiniteLoading="{!v.enableInfiniteLoading}"
+                                         loadMoreOffset="{!v.loadOffset}"
+                                         onloadmore="{!c.handleLoadMore}"
+                                         showRowNumberColumn = "true"
+                                         hideCheckboxColumn="true"/>
+                <!--/p -->
+            </div>
+        </aura:if>
+        <aura:if isTrue="{!and(not(empty(v.records)), v.viewAllRecordsFlag)}">
+                                <lightning:datatable class="related-list"
+                                         columns="{!v.recordColumnsWithActions}"
+                                         data="{!v.filteredRecords}"
+                                         keyField="id"
+                                         hideCheckboxColumn="true"/>
+        </aura:if>
+    </lightning:card>
+    <!--/div -->
+    </div>
+</aura:component>

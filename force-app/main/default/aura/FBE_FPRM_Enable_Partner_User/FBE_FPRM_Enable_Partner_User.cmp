@@ -1,0 +1,8 @@
+<aura:component controller="FBE_PermissionsetAssignmentHandler" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id" /> 
+   <!-- <aura:attribute name="isPartnerUser" type="Boolean" default="false"/>
+    <aura:if isTrue="{!v.isPartnerUser}">
+        <div class="slds-text-heading_small slds-text-color_error">Portal User is already on-boarded.</div>
+    </aura:if>  -->
+</aura:component>

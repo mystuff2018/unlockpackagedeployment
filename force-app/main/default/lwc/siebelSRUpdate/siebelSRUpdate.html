@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-modal__container">
+      <div class="slds-spinner_inline">
+        <template if:false={loaded}>
+            <div>
+                <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+            </div>
+        </template>
+      </div>
+    </div>
+  </template>

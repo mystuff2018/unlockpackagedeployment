@@ -1,0 +1,158 @@
+<template>
+    <lightning-progress-indicator current-step="2">
+        <lightning-progress-step label="Step 1" value="1"></lightning-progress-step>
+        <lightning-progress-step label="Step 2" value="2"></lightning-progress-step>
+        <lightning-progress-step label="Step 3" value="3"></lightning-progress-step>
+    </lightning-progress-indicator>
+    <p class="slds-var-p-vertical_medium">Select the order(s) to associate</p>
+    <div class="slds-var-p-vertical_small" style="height:240px;">
+        <div class="dt-outer-container" style="height: 100%; position: relative;">
+            <div class="slds-scrollable_x" style="height:100%">
+                <div class="slds-scrollable_y" style="width:100%">
+                    <table aria-multiselectable="true" class="slds-table slds-table_header-fixed slds-table_bordered slds-table_edit slds-table_resizable-cols slds-tree slds-table_tree" role="grid" aria-label="Orders to select"
+                    style="table-layout:fixed;width:100%">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="slds-text-align_right" scope="col" style="width:2.00rem">
+                                    <span id="column-group-header" class="slds-assistive-text">Choose a row</span>
+                                    <div class="slds-th__action slds-th__action_form">
+                                        <div class="slds-checkbox">
+                                            <input type="checkbox" onclick={handleCheckAll} name="options" id="checkbox-unique-id-305" value="checkbox-unique-id-305" tabindex="0" aria-labelledby="check-select-all-label column-group-header"/>
+                                            <label class="slds-checkbox__label" for="checkbox-unique-id-305" id="check-select-all-label">
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select All</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th aria-label="Order Number" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:130px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Number">Order Number</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Order Status" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:120px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Status">Order Status</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Buid" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:81px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Buid">BUID</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Account Name" aria-sort="none" class="slds-is-resizable slds-is-sortable" style="width:200px;" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="" title="Account Name">Account Name</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Line Items" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:107px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Line Items">Line Items</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Order Amount" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:163px">
+                                    <a class="slds-th__action slds-text-link_reset"  role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Amount">Order Amount</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={gridData} for:item="order">
+                                <tr key={order.Id} aria-selected="false" class={order.IsDisabled} data-id={order.Id}>
+                                    <td class="slds-text-align_right" role="gridcell">
+                                        <div class="slds-checkbox">
+                                            <input type="checkbox" name="options" id={order.IdCheckbox} value={order.IdCheckbox} tabindex="0" aria-labelledby={order.IdCheckboxButtonLabelledBy} />
+                                            <label class="slds-checkbox__label" for={order.IdCheckbox} id={order.IdCheckboxButton}>
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label slds-assistive-text">Select item 1</span>
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <th scope="row">
+                                        <div class="slds-truncate" title={order.OrderNumber__c}>                                            
+                                            <a onclick={navigateToOrderRecordPage} data-id={order.Id} tabindex="0">{order.OrderNumber__c}</a>
+                                        </div>
+                                    </th>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.Status}>{order.Status}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.Status}>{order.BUID__c}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.AccountName}>{order.AccountName}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.LineItems}>{order.LineItems}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.TotalAmount}>{order.TotalAmount}</div>
+                                    </td>
+                                </tr> 
+                            </template>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="slds-notify slds-notify_alert slds-alert_error" role="alert" if:true={noOrdersSelected}>
+            <span class="slds-assistive-text">error</span>
+            <h2>No orders selected to associate.</h2>
+            <div class="slds-notify__close">
+                <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" onclick={disableError} title="Close">
+                  X
+                  <span class="slds-assistive-text">Close</span>
+                </button>
+            </div>
+        </div>
+    </div>    
+</template>

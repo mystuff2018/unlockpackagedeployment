@@ -1,0 +1,79 @@
+<aura:component controller="FBE_LeadConvertCtrl" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="recordId" type="String" />    
+    <aura:attribute name="accountId" type="String" /> 
+    <aura:attribute name="opportunityId" type="String"  access="global"/>    
+    <aura:attribute name= "data" type="Map"/>
+    <aura:attribute name = "filtereddata" type="SObject"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="searchName" type="String" />    
+    <aura:attribute name="searchDFNNumber" type="String" /> 
+    
+    <aura:attribute name="optysize" type="Integer" /> 
+    
+    
+    <aura:handler name ="init" value="{!this}" action="{!c.doinit}"/>
+    <div style="font-size: 17px; margin-bottom: 10px; margin-top: 10px;">
+        Related Opportunities to Account
+    </div>
+    <lightning:input name="searchName" type="search" value="{!v.searchName}" placeholder="Search Opportunity" onkeyup="{!c.dofilter}"/>
+    <br/>
+    <aura:if isTrue ="{!v.filtereddata.length == 0}">
+        <div style="font-weight: bold;">
+            No Related Opportunities Found
+        </div>
+        <aura:set attribute="else">
+            <!--**********  Create lightning table to display opportunity list ********* -->
+            <ui:scrollerWrapper class="scrollerSize">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered  slds-table_resizable-cols slds-is-selected slds-table_fixed-layout ">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th scope="col" style="width: 50px;"> </th>
+                            <th class="slds-is-sortable" scope="col">Opportunity Name</th>
+                            <th class="slds-is-sortable" scope="col">Account Name</th>
+                            <th class="slds-is-sortable" scope="col" style="width:7em">DFN Number</th>
+                            <th class="slds-is-sortable" scope="col" style="width:7em">Book Date</th>
+                            <th scope="col">Record Type</th>
+                            <th class="slds-is-sortable" scope="col">Unweighted Revenue</th>
+                            <th class="slds-is-sortable" scope="col">Opportunity Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                        <aura:iteration items="{!v.filtereddata}" var="oppty" >
+                            <tr>
+                                <th>
+                                    <input type="radio" name="options" value="{!oppty.Id}" onchange="{!c.selectedRadioOppty}"/>
+                                </th>
+                                    <th scope="row">
+                                        <div class="slds-truncate" title="{!oppty.Name}">{!oppty.Name}</div>
+                                    </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{!oppty.Account.Name}">{!oppty.Account.Name}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{!oppty.FBE_Opportunity_Number__c}">{!oppty.FBE_Opportunity_Number__c}</div>
+                                </th>                     
+                                <th scope="row">
+                                  <div class="slds-truncate" title="{!oppty.FBE_Formatted_Book_Date__c}">{!oppty.FBE_Formatted_Book_Date__c}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{!oppty.RecordType.Name}">{!oppty.RecordType.Name}</div>
+                                </th>
+                                <th scope="row">
+                                  <!--  <div class="slds-truncate" title="{!oppty.Amount}"><ui:outputCurrency value="{!oppty.Amount}"/></div> -->
+                                    <div class="slds-truncate" ><lightning:formattedNumber value="{!oppty.Amount}" style="currency" maximumFractionDigits="2" title ="{!oppty.FBE_Formatted_Amount__c}"/></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate" title="{!oppty.Owner.Name}">{!oppty.Owner.Name}</div>
+                                </th>
+                            </tr>      
+                        </aura:iteration>                    
+                    </tbody>          
+                </table>
+            </ui:scrollerWrapper>
+        </aura:set>
+        
+    </aura:if>
+    <br/>
+    
+    
+</aura:component>

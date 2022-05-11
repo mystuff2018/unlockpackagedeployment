@@ -1,0 +1,29 @@
+<apex:page standardController="Order" lightningStyleSheets="true" tabStyle="Opportunity" recordSetVar="AllOpportunities" extensions="AssociateOrderController">
+    <!--
+    <c:projectCustomSearchForOrderAssociation recordId="8013D000000C3XIQA0"/>
+-->
+    
+    <apex:includeScript value="/lightning/lightning.out.js" />
+ 
+    <script>
+    	var selected = [];
+    
+		<apex:repeat value="{!selectedOrders}" var="row" rendered="true">
+        	selected.push('{!row.Id}');
+    	</apex:repeat>
+        
+        $Lightning.use("c:AssociateOrderApp", function() {
+            $Lightning.createComponent(
+                "c:projectCustomSearchForOrderAssociation",
+                {
+                    "orderIds": selected
+                },
+                "orderAssociation",
+                function(cmp) {
+                    //debugger
+                });
+            });
+    </script>
+    
+    <div id="orderAssociation"></div>
+</apex:page>

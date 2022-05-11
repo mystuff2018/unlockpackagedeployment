@@ -1,0 +1,23 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	
+    <aura:attribute name="inboundflag" type="Boolean" default = "false"/>
+    <aura:attribute name="outboundflag" type="Boolean" default = "false"/>
+	<aura:attribute name="record" type="Lead" />
+
+<force:recordData layoutType="FULL"
+                  recordId="{!v.recordId}"
+                  targetFields="{!v.record}"
+                  recordUpdated="{!c.recordUpdate}" />
+    <aura:if isTrue="{!v.inboundflag == True}">  
+      <div class = "slds-global-header slds-grid slds-grid--align-spread">
+    	<hr class="Inbound"/>
+  	</div>
+    </aura:if>  
+    <aura:if isTrue="{!v.outboundflag == True}">  
+        <div class = "slds-global-header slds-grid slds-grid--align-spread">
+    	<hr class="Outbound"/>
+  	</div>      
+    </aura:if> 
+   
+  <!--  <hr class="solidline"/> -->
+</aura:component>

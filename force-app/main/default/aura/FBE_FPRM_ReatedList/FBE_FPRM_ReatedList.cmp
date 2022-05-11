@@ -1,0 +1,251 @@
+<aura:component implements="force:hasSObjectName,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="FBE_FPRM_DealExtRelatedListController" >
+    <aura:attribute name="relatedListURL" type="String"/>  
+    <aura:attribute name="myBool" type="Boolean" default="false"/>
+    <aura:attribute name="title" type="String"/>  
+    <aura:attribute name="criteria" type="String"/>  
+    <aura:attribute name="parentFieldName" type="String"/>  
+    <aura:attribute name="sobjectName" type="String"/>  
+    <aura:attribute name="ObjectName" type="String"/>  
+    <aura:attribute name="childRelName" type="String"/>  
+    <aura:attribute name="iconName" type="String"/> 
+    <aura:attribute name="field1" type="String"/>  
+    <aura:attribute name="field2" type="String"/>  
+    <aura:attribute name="field3" type="String"/>  
+    <aura:attribute name="field4" type="String"/>
+    <aura:attribute name="Columns" type="List"/>
+    <aura:attribute name="listRecords" type="sObject[]"/>  
+    <aura:attribute name="showpopup" type="Boolean" default="false"/>
+    <aura:attribute name="showButton" type="Boolean" default="false"/>
+    <aura:attribute name="showRelatedList" type="Boolean" default="false"/>
+    <aura:attribute name="acceptterms" type="Boolean" default="false"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fetchRecords}"/>  
+    
+    <aura:attribute name="dealRecord" type="Boolean" default="false"/>
+    <aura:if isTrue="{!v.dealRecord}">
+        
+    <lightning:card variant="Narrow" >
+        <!--<lightning:card iconName="{!v.iconName}"> -->
+        
+
+        <aura:set attribute="title">
+            <lightning:icon iconName="{!v.iconName}" size="small" />
+            <span><lightning:button variant="base"   
+                                    label="{!v.title}"   
+                                    title="View All Action"   
+                                    onclick="{! c.viewRelatedList }"/></span>
+        </aura:set>
+        <aura:set attribute="actions"> 
+            <!--<aura:if isTrue="">  
+                
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <span><lightning:button variant="base"   
+                                                label="{!v.title}"   
+                                                title="View All Action"   
+                                                onclick="{! c.viewRelatedList }"/> </span>
+                    </div>-->
+                <lightning:button variant="Neutral"   
+                                  label="{! 'New ' + v.ObjectName }"   
+                                  title="View All Action"   
+                                  onclick="{!c.showPopup }" 
+                                  disabled = "{!v.showButton}"/>       
+                
+            <!--</aura:if>  -->
+            <aura:if isTrue="{!v.showpopup}">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                                       <div class="slds-card slds-card_boundary slds-notification__target">
+                        <!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close"
+                                                  onclick="{! c.closeModel }"
+                                                  alternativeText="close"
+                                                  variant="bare-inverse"
+                                                  class="slds-modal__close"/>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.ObjectName} Request</h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <aura:if isTrue="{!v.sobjectName == 'Deal_Extension__c' ? 'true' : 'false'}">
+
+                                <lightning:recordEditForm aura:id="editForm" objectApiName="Deal_Extension__c" onsuccess="{!c.handleSuccess}" onerror= "{!c.hanlderError}" onsubmit="{!c.handlerSubmit}" onload="{!c.handlerLoad}">
+                                    <lightning:messages />
+                                    
+                                    <!--<div class="slds-form-element">
+                                        <div class="slds-form-element__control">
+                                            <div class="slds-checkbox">
+                                                <input type="checkbox" name="options" id="checkbox-unique-id-72" value="checkbox-unique-id-72" onchange="{!c.onCheck}" required="true"/>
+                                                <label class="slds-checkbox__label" for="checkbox-unique-id-72">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-form-element__label">By submitting this registration request, I hereby confirm that this registration has progressed or will progress shortly into sales quote.Once submitted, your registration validity period will be extended</span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                     <table >
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th style="width:35px;vertical-align:top"><ui:inputCheckbox aura:id="checkbox" label=" " change="{!c.onCheck}" required = "true"/> 
+                                    </th>
+                                <th>
+                                    By submitting this registration request, I hereby confirm that this registration has progressed or will progress shortly into sales quote.Once submitted, your registration validity period will be extended
+                                </th>
+                            </tr>
+  
+                                         </thead>
+                                    </table>
+                                    <!--<ui:inputCheckbox aura:id="checkbox" label=" " change="{!c.onCheck}" required = "true"/> 
+                                    <br/>  -->  
+                                    <lightning:inputField aura:id="reasonField" fieldName="FBE_Extension_Request_Reason__c" required = "true"/>
+                                    <lightning:inputField fieldName="FBE_Deal_Registration__c" value = "{!v.recordId}" disabled="true" class ="slds-hide"/>
+                                    <lightning:inputField fieldName="FBE_Extension_Request_Status__c" value = "Submitted" disabled="true" class ="slds-hide"/>
+                                    <lightning:inputField aura:id="cbx" fieldName="FBE_FPRM_Deal_Ext_Checkbox__c" value = "{!v.myBool}" disabled="true" class ="slds-hide"/>
+                                    <!--<lightning:button class="slds-m-top_small" type="submit" label="OK" />-->
+                                    
+                                </lightning:recordEditForm> 
+                            </aura:if>
+                        </div>
+                        
+                            <!--###### MODAL BOX FOOTER Part Start ######-->
+                        <footer class="slds-modal__footer slds-align_absolute-center">
+                            <lightning:button variant="brand" 
+                                              label="Ok"
+                                              title="Ok"
+                                              onclick="{! c.acceptTerms }"/>
+                            <lightning:button variant="brand" 
+                                              label="Cancel"
+                                              title="Cancel"
+                                              onclick="{! c.closeModel }"/>
+                        </footer>
+                    </div>
+                        
+                            </div>
+                </section>
+            </aura:if>
+            <aura:if isTrue="{!v.acceptterms}">
+                <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                    <div class="slds-modal__container">
+                        <!-- ###### MODAL BOX HEADER Start ######-->
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close"
+                                                  onclick="{! c.closeModel }"
+                                                  alternativeText="close"
+                                                  variant="bare-inverse"
+                                                  class="slds-modal__close"/>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">{!v.ObjectName}</h2>
+                        </header>
+                        <!--###### MODAL BOX BODY Part Start######-->
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            
+                            <lightning:recordForm objectApiName="{!v.sobjectName}"
+                                                  layoutType="Full"
+                                                  columns="2"/>
+                            
+                        </div>
+                        <!--###### MODAL BOX FOOTER Part Start ######-->
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="neutral" 
+                                              label="Close"
+                                              title="Close"
+                                              onclick="{! c.closeModels }"/>
+                        </footer>
+                    </div>
+                </section>
+            </aura:if>
+        </aura:set>  
+        
+        <p class="slds-p-horizontal_small">  
+            <aura:iteration items="{!v.listRecords}" var="item">  
+                
+                
+                <lightning:recordViewForm recordId="{!item.Id}" objectApiName="{!v.sobjectName}" density = "compact">  
+                    <table >
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <lightning:outputField fieldName="{!v.field1}" />
+                            </tr>
+                            <tr class="slds-line-height_reset">
+                                <lightning:outputField fieldName="{!v.field2}" />
+                            </tr>
+                            <tr class="slds-line-height_reset">
+                                <lightning:outputField fieldName="{!v.field3}" />
+                            </tr>
+                            <tr class="slds-line-height_reset">
+                            <lightning:button variant="base"   
+                                              label="{! 'View ' + v.ObjectName }"   
+                                              title="View"   
+                                              onclick="{! c.viewRecord }"  
+                                              value="{!item.Id}"
+                                              iconPosition = "right"/>
+                            </tr>
+                        </thead>
+                    </table>
+                        <!--<Span><lightning:outputField fieldName="{!v.field1}" /></Span>
+                        <Span><lightning:outputField fieldName="{!v.field2}" /></Span>
+                        <Span><lightning:outputField fieldName="{!v.field3}" /></Span>
+                        <Span><lightning:outputField fieldName="{!v.field4}" /> </Span>
+                        <lightning:layoutItem class="slds-p-around_xxx-small left-align">
+                            <lightning:button variant="base"   
+                                              label="{! 'View ' + v.ObjectName }"   
+                                              title="View"   
+                                              onclick="{! c.viewRecord }"  
+                                              value="{!item.Id}"/> 
+                        </lightning:layoutItem>-->
+                        
+                        
+                        <!--<div class="slds-grid">  
+                        <div class="slds-col slds-size_1-of-2">  
+                              
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            
+                        </div>  
+                   </div>  
+                    <div class="slds-grid">  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning:outputField fieldName="{!v.field3}" />  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning:outputField fieldName="{!v.field4}" />  
+                        </div>  
+                    </div>  -->                    
+                    </lightning:recordViewForm> 
+                    
+                </aura:iteration>  
+            </p>  
+            
+            <aura:set attribute="footer">  
+                
+                <aura:if isTrue="{!not(empty(v.listRecords))}">  
+                    
+                    <lightning:button variant="base"   
+                                      label="View All"   
+                                      title="View All Action"   
+                                      onclick="{! c.viewRelatedList }"/>  
+                    
+                </aura:if>  
+                
+            </aura:set>  
+            
+        </lightning:card>  
+        <aura:if isTrue="{!v.showRelatedList}">
+            <lightning:overlayLibrary aura:id="overlayLibDemos"/>
+            <!--<c:DisplayListofRecordsUsingDataTable idval = "{!v.recordid}"/>
+            <lightning:datatable aura:id="SobjectTable"
+                         keyField="Id"
+                         hideCheckboxColumn="true"
+                         columns="{!v.Columns}"
+                         data="{!v.listRecords}"
+                         />-->
+            <!--<lightning:listView objectApiName="{!v.sobjectName}"
+                            rows="5"
+                            showSearchBar="true"
+                            showActionBar="false"
+                            enableInlineEdit="false"
+                            showRowLevelActions="false"
+                            />-->
+        </aura:if> 
+    </aura:if> 
+    
+    </aura:component>

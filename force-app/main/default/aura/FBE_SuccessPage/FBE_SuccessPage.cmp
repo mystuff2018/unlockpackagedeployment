@@ -1,0 +1,96 @@
+<aura:component controller="FBE_LeadConvertCtrl" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordList" type="Object" />
+    
+    
+    <aura:attribute name="accountRec" type="Account" />
+    <aura:attribute name="contRec" type="Object" />
+    <aura:attribute name="oppRec" type="Object" />
+    
+    <aura:attribute name="acntId" type="String" />
+    <aura:attribute name="optId" type="String" />
+    <aura:attribute name="conId" type="String" />
+    
+    <aura:attribute name="hasOpty" type="Boolean"  default="false" access="global"/>
+	<div style="background: rgb(243, 242, 242);">
+        <aura:html tag="style">
+        .slds-modal__container{
+        min-width: 80%;
+		max-width: 80%;     
+        }
+              .modal-body{ 
+        min-height: 100%;
+		max-height: 100%; 
+            } 
+
+    </aura:html>
+    
+    <div class="slds-align_absolute-center">
+            <img src= "{!$Resource.LeadConversionSuccessImage}" style="height: 150px;"/> 
+    </div>
+     <br/>
+    <div class="slds-align_absolute-center">
+        
+        
+        <div style="justify-content: center;">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-box slds-box_x-small" style="border: groove;">
+                    <lightning:card iconName="standard:account" class="slds-card" variant="Narrow" title="Account">
+                        <p class="slds-p-horizontal_small">
+                            <span class="overflowText">
+                                <lightning:formattedUrl value="{!'/'+v.accountRec.Id}" label="{!v.accountRec.Name}" style=" font-size: large;"/><br/>
+                                Main Phone: {!v.accountRec.Phone}<br/>
+                                Account Type: {!v.accountRec.Type}<br/>
+                                Website: <lightning:formattedUrl value="{!v.accountRec.Website}" label="{!v.accountRec.Website}"/><br/>
+                                Account Class: {!v.accountRec.FBE_Account_Class__c}<br/>
+                                Account Owner: <lightning:formattedUrl value="{!'/'+v.accountRec.OwnerId}" label="{!v.accountRec.Owner.Name}"/><br/>
+                            </span>
+                        </p>
+                    </lightning:card>
+                </div>
+                
+                <div class="slds-box slds-box_x-small" style="border: groove;">
+                    <lightning:card iconName="standard:contact" class="slds-card" variant="Narrow" title="Contact">
+                        <p class="slds-p-horizontal_small">
+                            <span class="overflowText">
+                            <lightning:formattedUrl value="{!'/'+v.contRec.Id}" label="{!v.contRec.Name}" style=" font-size: large;"/><br/>
+                            Job Title: {!v.contRec.Account.Title}<br/>
+                            Account Name: <lightning:formattedUrl value="{!'/'+v.contRec.Account.Id}" label="{!v.contRec.Account.Name}"/><br/>
+                            Work Phone: {!v.contRec.Phone}<br/>
+                            Email: {!v.contRec.Email}<br/>
+                            Mobile Phone: {!v.contRec.MobilePhone}<br/>
+                            </span>
+                        </p>
+                    </lightning:card>
+                </div>
+                
+                
+                <aura:if isTrue="{!v.hasOpty}">
+                <div class="slds-box slds-box_x-small" style="border: groove;">
+                    <lightning:card iconName="standard:opportunity" class="slds-card" variant="Narrow" title="Opportunity">
+                        <p class="slds-p-horizontal_small">
+                            <span class="overflowText">
+                                <lightning:formattedUrl value="{!'/'+v.oppRec.Id}" label="{!v.oppRec.Name}" style=" font-size: large;"/><br/>
+                                Account Name: <lightning:formattedUrl value="{!'/'+v.oppRec.AccountId}" label="{!v.oppRec.Account.Name}"/><br/>
+                                Opportunity Record Type: {!v.oppRec.RecordType.Name}<br/>
+                                Book Date: {!v.oppRec.FBE_Formatted_Book_Date__c}<br/> 
+                                Unweighted Revenue: <lightning:formattedNumber value="{!v.oppRec.Amount}" style="currency" currencyCode="USD"/><br/>
+                                Opportunity Owner: <lightning:formattedUrl value="{!'/'+v.oppRec.OwnerId}" label="{!v.oppRec.Owner.Name}"/><br/>
+                            </span>
+                        </p>
+                    </lightning:card>
+                </div>
+                </aura:if>
+                
+            </div>
+            <br/><br/>
+            
+            <button class="slds-button slds-button_brand" style="height: 45px;font-size: larger;" onclick="{!c.navigateToLead}">Go to Leads</button>
+            
+        </div>
+        
+        
+    </div>
+        </div>
+</aura:component>

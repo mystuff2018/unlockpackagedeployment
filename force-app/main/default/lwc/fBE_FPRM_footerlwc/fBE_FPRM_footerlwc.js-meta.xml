@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <isExposed>true</isExposed>
+    <apiVersion>50.0</apiVersion>
+    <masterLabel>FPRM Footer</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+    <targetConfig targets="lightningCommunity__Default">
+    <property name="DellTechnologiesUrl" type="String" default="https://www.delltechnologies.com/en-us/index.htm" label="Enter DellTechnologiesUrl URL link"/>
+    <property name="DellUrl" type="String" default="https://www.dell.com/en-us/" label="Enter Dell URL link"/>
+    <property name="DellEMCUrl" type="String" default="https://www.dellemc.com/en-us/index.htm" label="Enter DellEMC URL link"/>
+    <property name="TermsUrl" type="String" default="https://www.dellemc.com/partner/en-us/partner/terms-and-conditions.htm" label="Enter Terms URL link"/>
+    <property name="FederalTermsurl" type="String" default="https://ge2dev-dell-fed.cs33.force.com/federalterms" label="Enter Federal Terms URL Link"/>
+    </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

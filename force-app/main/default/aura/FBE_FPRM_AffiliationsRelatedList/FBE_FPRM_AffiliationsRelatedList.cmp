@@ -1,0 +1,29 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="affiliationsCols" type="List" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="currentUserId" type="Id"/>
+    <aura:attribute name="environmentType" type="String" 
+                    description="This variable is used to indicate which environment this component is displayed on, f.i. community vs standard lightning" />
+    <aura:attribute name="navigateToPage" type="String" 
+                    description="This variable is used to indicate the page to navigate to when User clicks View All. Define a value based on standard / community"/>
+    <aura:attribute name="viewAllRecords" type="boolean" default="true"/>
+    <aura:attribute name="enableInfiniteLoading" type="boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <c:FBE_FPRM_RelatedList recordId="{!v.recordId}" 
+                            objectApiName="Account_Affiliation__c"
+                            conditionFieldApiName="FBE_Account__c"
+                            fields="Id, FBE_Affilitated_Account__c, FBE_Affilitated_Account__r.Name, FBE_Relationship__c"
+                            columns="{!v.affiliationsCols}"
+                            defineCustomActions="false"
+                            prmUserVisibility="true"
+                            environmentType="{!v.environmentType}"
+                            navigateToPage="{!v.navigateToPage}"
+                            viewAllRecordsFlag="{!v.viewAllRecords}"
+                            enableInfiniteLoading="{!v.enableInfiniteLoading}"
+                            affiliationsList="true"
+                            canCreateRecords="false"
+                            icon= "standard:account"
+                            />
+</aura:component>

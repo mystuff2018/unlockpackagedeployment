@@ -1,0 +1,103 @@
+<template>
+
+    <template if:true={showErrorMessage}>
+        <div style="height: 20rem;">
+            <div class="slds-text-heading_small slds-text-color_error errorBox">Permission error, please contact your site administrator for assistance.
+            </div>
+        </div>
+    </template>   
+ 
+    <template if:true={isUseFeature}>
+
+        <lightning-card title="Search Filter :">
+            <lightning-button variant="brand"  label="Assign Owner" slot="actions" title="Assign Owner" onclick={getSelectedDeals}></lightning-button>
+            <div class="slds-m-around_medium">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_1-of-4"> 
+                        <lightning-input name="txtCurrOwnerEmail" type="Text"  required class="slds-m-bottom_small" label="Current Owner Email"
+                              value={currentOwnerEmail}></lightning-input>
+                        <lightning-combobox name="comboRegStatus" label="Registration Status"
+                            options={regStatusOptions} ></lightning-combobox>
+                        <lightning-input name="txtRegNumber" type="Text" class="slds-m-bottom_small" label="Registration #"
+                            value={regNumber}></lightning-input>
+                        <lightning-input name="txtSubEmail" type="Text" class="slds-m-bottom_small" label="Submitter Email"
+                            value={submitterEmail}></lightning-input>
+                        <lightning-input name="txtPartnerSalesRepEmail" type="Text" class="slds-m-bottom_small" label="Partner Sales Rep Email"
+                            value={partnerSalesEmail}></lightning-input>
+                        <br/>
+                        <lightning-button variant="brand" label="Search" slot="actions" title="Search Data" 
+                            onclick={searchDeals}></lightning-button>   
+                    </div>   
+                    <div class="slds-col slds-size_3-of-4">
+                        <lightning-datatable 
+                            key-field="id"
+                            columns={columns}
+                            data={data}
+                            default-sort-direction={defaultSortDirection}
+                            sorted-direction={sortDirection} 
+                            sorted-by={sortedBy}
+                            selected-rows={setSelectedRows}
+                            enable-infinite-loading
+                            onsort={onHandleSort}>
+                        </lightning-datatable>                  
+                    </div>
+                    
+                </div> 
+            </div>
+        </lightning-card>
+
+        <template if:true={isModalOpen}>
+            <!-- Modal/Popup Box LWC starts here -->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                
+                    <!--Loading icon-->
+                    <template if:true={isInnerLoading}>
+                        <div>
+                            <lightning-spinner alternative-text="Loading" size="large" variant="brand">
+                            </lightning-spinner>
+                        </div>
+                    </template>
+                    <div class="slds-modal__container">
+                        <!-- Modal/Popup Box LWC header here -->
+                        <header class="slds-modal__header">
+                            <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                                <lightning-icon icon-name="utility:close"
+                                    alternative-text="close"
+                                    variant="inverse"
+                                    size="small" ></lightning-icon>
+                                <span class="slds-assistive-text">Close</span>
+                            </button>
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Change Owner</h2>
+                        </header>
+                        <!-- Modal/Popup Box LWC body starts here -->
+                        <div class="slds-modal__content slds-p-around_medium" style="height: 150px;" id="modal-content-id-1">
+                            <div class="slds-p-around--x-small">You've selected {noOfRecordSelected} Deals.</div>
+                            <div class="slds-p-around--x-small"> Select the Owner to whom you want to assign these Registrations. After the update, these Registrations will be assigned to the Owner you selected and only this Owner will be able to see the Registration(s) under My Opportunity View
+                            </div>
+                             <!--<c-fprm-custom-lookup field-label="Select Account Record" child-object-api-name='Deal_Registration__c'
+                                        target-field-api-name='FBE_FPRM_Partner_Owner__c' required onvalueselected={handleOwnerSelcted}> 
+                            </c-fprm-custom-lookup>
+                            The selected user Id is:- {selectedUserId} -->
+                            <c-fprm-user-lookup-lwc lookup-label="Users" object-api-name="user" icon-name="standard:user"  
+                                onrecordselection={onUserSelection}></c-fprm-user-lookup-lwc>  
+                            <!-- Selected Account Id  : {selectedOwnerId}  -->
+                        </div>
+                        <!-- Modal/Popup Box LWC footer starts here -->
+                        <footer class="slds-modal__footer">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal} title="Cancel">Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={handleChangeOwner} title="Submit">Submit</button>
+                        </footer>
+                    </div>
+            
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div> 
+        </template>
+
+        <div class="spinner">
+            <template if:true={isOuterLoading}>
+                <lightning-spinner alternative-text="Loading" variant="brand" size="large">
+                </lightning-spinner>
+            </template>
+        </div>  
+    </template>
+</template>

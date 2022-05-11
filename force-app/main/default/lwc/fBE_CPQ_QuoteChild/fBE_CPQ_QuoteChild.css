@@ -1,0 +1,35 @@
+.slds-dropdown__item {
+	line-height: 0.75!important;
+	font-weight: 500!important;
+	font-size:12px!important;
+	text-align: center!important;
+	padding: -0.4rem!important; 
+}
+
+.slds-dropdown {    
+    min-width: 3rem!important;
+    max-width: 6rem!important;	
+}
+
+.sldsBoxBackGround{
+	background:white;
+}
+.slds-table{
+	margin-bottom:4.5rem !important;	
+}
+.tableFixHead {
+    overflow: auto;
+    height: 307px;	
+}
+
+.tableFixHead table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tableFixHead th {
+    position: sticky;
+    top: 0;
+    z-index: 4;
+    background: white;
+ }

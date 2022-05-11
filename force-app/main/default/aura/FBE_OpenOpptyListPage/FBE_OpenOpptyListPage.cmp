@@ -1,0 +1,111 @@
+<aura:component controller="FBE_ReturnOpptyList" implements="lightning:isUrlAddressable,force:appHostable,force:hasRecordId,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="accountId" type="String" access="global"/> 
+    <aura:attribute name="LeadName" type="String" access="global"/>
+    <aura:attribute name="LeadId" type="String" access="global"/>
+    <aura:attribute name="filtereddata" type="SObject" access="global"/>
+    <aura:attribute name="columns" type="List" access="global"/>
+    <aura:attribute name="searchName" type="String" access="global"/>    
+    <aura:attribute name="searchDFNNumber" type="String" access="global"/>    
+    <aura:attribute name="optysize" type="Integer" access="global"/>   
+   
+    <aura:handler name ="init" value="{!this}" action="{!c.doinit}"/>
+    
+    <div class="slds-page-header slds-page-header_related-list">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                
+                <nav role="navigation" aria-label="Breadcrumbs">
+                    <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+                        <li class="slds-breadcrumb__item">
+                            <a onclick="{!c.navtoLeadList}">Lead</a>
+                        </li>
+                        <li class="slds-breadcrumb__item">
+                            <a onclick="{!c.navtoRec}"> {!v.LeadName}</a>
+                        </li>
+                    </ol>
+                </nav>
+                
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:opportunity" />
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate " title="Open Opportunities to Account">Open Opportunities to Account</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-meta">
+                                <p class="slds-page-header__meta-text">{!v.optysize} Items </p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <lightning:input name="searchName" type="search" value="{!v.searchName}" placeholder="Search Opportunity" onkeyup="{!c.dofilter}"/>
+    <br/>
+    <aura:if isTrue ="{!v.filtereddata.length == 0}">
+        <div style="font-weight: bold;">
+            No Related Opportunities Found
+        </div>
+        <aura:set attribute="else">
+            <!--**********  Create lightning table to display opportunity list ********* -->
+            <ui:scrollerWrapper class="scrollerSize">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered  slds-table_resizable-cols slds-is-selected slds-table_fixed-layout ">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <!--  <th scope="col" style="width: 50px;"> </th> -->
+                            <th class="slds-is-sortable" scope="col">Opportunity Name</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">EndUser Account</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">DFN Number</th>
+                            <th class="slds-text-align_center" scope="col">Record Type</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">Sales Stage</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">Book Date</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">Unweighted Revenue</th>
+                            <th class="slds-is-sortable slds-text-align_center" scope="col">Opportunity Owner</th>
+                        </tr>
+                    </thead>
+                    <tbody>                
+                        <aura:iteration items="{!v.filtereddata}" var="oppty" >
+                            <tr>
+                                    <th scope="row">
+                                        <div class="slds-truncate" title="{!oppty.Name}">{!oppty.Name}</div>
+                                    </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.Account.Name}">{!oppty.FBE_End_User__r.Name}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.FBE_Opportunity_Number__c}">{!oppty.FBE_Opportunity_Number__c}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.RecordType.Name}">{!oppty.RecordType.Name}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.StageName}">{!oppty.StageName}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.FBE_Formatted_Book_Date__c}">{!oppty.FBE_Formatted_Book_Date__c}</div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.FBE_Formatted_Amount__c}"><ui:outputCurrency value="{!oppty.Amount}"/></div>
+                                </th>
+                                <th scope="row">
+                                    <div class="slds-truncate slds-text-align_center" title="{!oppty.Owner.Name}">{!oppty.Owner.Name}</div>
+                                </th>
+                            </tr>      
+                        </aura:iteration>                    
+                    </tbody>          
+                </table>
+            </ui:scrollerWrapper>
+        </aura:set>
+        
+    </aura:if>
+    <br/>   
+</aura:component>

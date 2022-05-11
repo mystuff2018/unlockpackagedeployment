@@ -1,0 +1,63 @@
+<aura:component controller="FBE_AccntTeamListonLead" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+<aura:attribute name="MemberList" type="AccountTeamMember[]" access="global"/>
+<lightning:overlayLibrary aura:id="overlayLib"/>
+<aura:attribute name="AccTeamNumber" type="string" access="global"/>
+<aura:attribute name="record" type="Object" access="global"/>
+<aura:attribute name="simpleRecord" type="Object" access="global"/>
+<aura:attribute name="recordError" type="String" access="global"/>
+<aura:attribute name="pageReference" type="Object" access="global"/>
+<aura:handler name ="init" value="{!this}" action="{!c.doinit}"/>
+
+            <force:recordData aura:id="record"
+                  recordId="{!v.recordId}"
+                  fields="Id,Name,FBE_Lead_Type__c,FBE_End_User_Account__c,FBE_Account_Name__c"
+                  targetError="{!v.recordError}"
+                  targetFields ="{!v.simpleRecord}"
+                  recordUpdated="{!c.doinit}"
+                              />    
+ <article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning:icon iconName="standard:team_member" size="small" />
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate slds-text-heading_small" title="Team Members">{!v.AccTeamNumber}</span>
+                                    </h1>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!not(empty(v.MemberList))}">
+            <div class="slds-card__body slds-card__body_inner">
+                <p class="slds-p-horizontal_small">
+                    <aura:iteration items="{!v.MemberList}" var="TeamMem">
+                        <p class="changeSize"><lightning:icon iconName="action:user" size="small"/></p> 
+                        <a class="textUnderline slds-text-link slds-p-left_xx-large forceOutputLookup" href="{!'/one/one.app?#/sObject/'+ TeamMem.UserId + '/view'}" >
+                            {!TeamMem.FBE_User_Name__c}
+                        </a>
+                        <p class="slds-p-left_xx-large" > Role:         {!TeamMem.TeamMemberRole}</p>
+                        <br></br>
+                       
+                    </aura:iteration>
+                </p>          
+            </div>
+            <footer class="slds-card__footer">
+                <lightning:navigation aura:id="navService"/>
+                <a class="slds-card__footer-action" onclick="{!c.handleClick}">View All
+                    <span class="slds-assistive-text">All Team Members</span>
+                </a>
+            </footer>
+        </aura:if>
+    </article>
+
+</aura:component>

@@ -1,0 +1,18 @@
+<!--
+*@ Class Name                           : FBE_Opportunity_Clone_With_OLI (Parent Component)
+*@ Description                          : This is written for Clone Opportunity and Line Items and this Component invoked Click on Clone button.
+*@ CreatedBy                            : Dell Team
+*@ CreatedOn                            : 20-Feb-2020 [Sireesha Myla]
+*@ Modification Log                     : 19-March-2020
+     
+*@Story No                              :12079751
+      2.0                               :24-Feb-2022 [Varsha Singh];
+Description                             :Behavior for Contract Name field on Opportunity Clone
+-->
+<aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForRecordHome,force:hasRecordId" access="global" >	<aura:attribute name="recordId" type="String" />
+    <c:FBE_Opportunity_Edit_Form recordId="{!v.recordId}"
+                       sObjectName="Opportunity"
+                       sectionHeader="Opportunity Details"
+                       sectionfieldSetName="FBE_Clone_Opportunity_Field_Set"/>
+    
+</aura:component>

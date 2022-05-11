@@ -1,0 +1,46 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller = "IDS_DataLoaderController" >
+<aura:attribute name="fileName" type="String" default="No File Selected.." />
+<aura:attribute name="filedisable" type="boolean" default="true" />
+<aura:attribute name="parentId" type="Id" default="a3U35000000Lz22EAC" />
+    <div style="padding: 50px;">
+        <div class="slds-box">
+            <!--<p class="slds-box slds-text-heading_small">-->
+        	<!--<lightning:icon iconName="action:follow" alternativeText="follow" title="follow" size="xx-small"/>--> Please follow the below steps.
+        	<div style="padding-left: 100px;padding:10px">
+                1.Select a file category.<br/>
+                2.Upload file.<br/>
+                3.Click on Upload.
+        	</div>
+        <!--</p>-->
+        </div><br/>
+    <div  class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-3">
+                <lightning:select aura:id="select" name="select" label="" onchange="{! c.enableFileInput}">
+                    <option value="choose file category...">choose file category...</option>
+                <!--    <option value="Practice">Practice</option>
+                    <option value="Region">Region</option>-->
+                    <option value="SkuEffort">Sku Effort</option>
+                 <!--   <option value="WorkCal">Work Calendar</option>
+                    <option value="TimePeriods">Time Periods</option>-->
+                </lightning:select>
+        </div>
+        <div class="slds-col slds-size_1-of-3">  
+            <lightning:input aura:id="fuploader" onchange="{!c.handleFilesChange}" type="file" name="file" multiple="false" disabled="true"/>
+			<div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>
+        </div>
+        <div class="slds-col slds-size_1-of-3">  <br/>
+            <!--<button class="slds-button slds-button_brand" onclick="{!c.handleSave}" disabled="true"></button>-->
+            <lightning:button aura:id="actionButton1" class="slds-button slds-button_brand" variant="base" onclick="{!c.handleSave}" disabled="true">Upload</lightning:button>
+            <lightning:button aura:id="actionButton2" class="slds-button slds-button_brand" variant="destructive" onclick="{!c.handleCancel}" disabled="true">Cancel</lightning:button>
+        </div> 
+   		<!--<div class="slds-text-body_small slds-text-color_error">{!v.fileName} </div>-->
+ 			<aura:if isTrue="{!v.showLoadingSpinner}">
+      			<div class="slds-text-body_small slds-text-color_error">Uploading... 
+         			<img src="/auraFW/resources/aura/images/spinner.gif" class="spinner-img" alt="Loading"/>'
+      			</div>
+   			</aura:if>
+ 			
+ 		
+	</div>
+    </div>
+</aura:component>

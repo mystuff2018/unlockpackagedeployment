@@ -1,0 +1,111 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" controller="FBE_FPRM_DealExtRelatedListController" >
+	<!--
+    <aura:attribute name="mycolumn" type="Object[]"/>
+    <aura:attribute type="Deal_Extension__c[]" name="DealExtList"/>
+    <aura:attribute name="idval" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.fetchRecords}"/>
+    <lightning:datatable data="{!v.DealExtList }" 
+                         columns="{!v.mycolumn }" 
+                         keyField="id"
+                         hideCheckboxColumn="true" />
+-->
+    <!--
+    <aura:attribute name="idval" type="String"/>
+    <aura:attribute name="DealExtList" type="Object[]"/>
+    <aura:attribute name="mycolumn" type="List"/>
+    <aura:handler name="init" value="{! this }" action="{! c.fetchRecords2 }"/>
+    <lightning:datatable
+                keyField="id"
+                data="{! v.DealExtList }"
+                columns="{! v.mycolumn }"
+                hideCheckboxColumn="true"/>
+-->
+    
+    <aura:html tag="style">
+        .slds-modal__container{
+        min-width: 90%;
+		max-width: 90%;     
+        }
+        .modal-body{ 
+        min-height: 45%;
+		max-height: 45%; 
+        }
+    </aura:html>
+    
+    
+   
+    
+     <aura:attribute name="relatedList" type="Object[]"/>
+   	<aura:attribute name="idval" type="String"/>
+
+    <!-- handlers-->
+    <aura:handler name="init" value="{! this }" action="{! c.fetchRecords2 }"/>
+    <table class="slds-table slds-table_cell-buffer slds-table_bordered" >
+					
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Request #">Request #</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Deal Extension #">Deal Extension #</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Extension Request Reason">Extension Request Reason</div>
+                                </th>
+                               <!-- <th class="slds-text-title_caps" scope="col" >
+                                    <div class="slds-truncate" title="SIEBEL REV ID">SIEBEL REV ID</div>
+                                </th>-->
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Extension Request Status">Extension Request Status</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Approval/Rejection Reason">Approval/Rejection Reason</div>
+                                </th>
+                                <th class="" scope="col">
+                                    <div class="slds-truncate" title="Approved/Rejected By">Approved/Rejected By</div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <aura:iteration items="{!v.relatedList}" var="dealEtxn" indexVar="count">
+                                <tr class="slds-hint-parent">
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.FBE_Sequence_Number__c}">
+                                            {!dealEtxn.FBE_Sequence_Number__c}
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.Name}">
+                                            {!dealEtxn.Name}
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.FBE_Extension_Request_Reason__c}">
+                                            {!dealEtxn.FBE_Extension_Request_Reason__c}
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.FBE_Extension_Request_Status__c}">
+                                            {!dealEtxn.FBE_Extension_Request_Status__c}
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.FBE_Approval_Rejection_Reason__c}">
+                                            {!dealEtxn.FBE_Approval_Rejection_Reason__c}
+                                        </div>
+                                    </td>
+                                    <td >
+                                        <div class="slds-truncate" title="{!dealEtxn.RejectedBy}">
+                                            {!dealEtxn.RejectedBy}
+                                        </div>
+                                    </td>
+                                    
+                                </tr>
+                            </aura:iteration>
+                        </tbody>
+    </table> <br/><br/>
+				<div class="slds-align_absolute-center">
+                <lightning:button variant="brand"  name="Close" label="Close"  onclick="{! c.closeWindow }"/>
+            </div>
+</aura:component>

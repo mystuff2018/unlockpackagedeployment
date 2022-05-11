@@ -1,0 +1,15 @@
+<apex:component access="global" controller="FBE_IDS_SAEmailController">
+    <apex:attribute name="record_id" assignTo="{!recordId}" description="Record Id of Object whose notes are to be fetched" type="Id"/>
+    
+    <table class="table">
+        <apex:repeat value="{!RelatedNotes}" var="eachNote">
+            <tr>
+                <td style="text-align:left;"><b>{!eachNote.strTitle}</b></td>
+            </tr>
+            <tr>
+                <td style="text-align:left;">{!eachNote.strNotes}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+    
+</apex:component>

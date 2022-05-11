@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Previously Approved Partners" icon-name="standard:customers">
+        <template if:true={data}>
+            <lightning-datatable data={data} columns={columns} key-field="Id" hide-checkbox-column="true">
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            {error}
+        </template>
+    </lightning-card>
+    
+</template>

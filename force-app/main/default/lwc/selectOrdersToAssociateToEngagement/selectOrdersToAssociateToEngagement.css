@@ -1,0 +1,12 @@
+.disabled{
+    background-color: #F8F8F8;
+    pointer-events: none;   
+}
+
+.disabled td {
+    color: #B0B0B0;  
+}
+
+.disabled a {
+    color: #B0B0B0;  
+}

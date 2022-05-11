@@ -1,0 +1,96 @@
+<!--
+ - Created by Lucas_Garcia1 on 23/02/2021.
+ -->
+
+<aura:component implements="lightning:homeTemplate" description="PDMLayoutHomePage">
+
+    <aura:attribute name="column1" type="Aura.Component[]" description="Column1"/>
+    <aura:attribute name="column2" type="Aura.Component[]" description="Column2"/>
+    <aura:attribute name="column3" type="Aura.Component[]" description="Column3"/>
+    <aura:attribute name="column4" type="Aura.Component[]" description="Column4"/>
+    <aura:attribute name="column5" type="Aura.Component[]" description="Column5"/>
+
+    <aura:attribute name="column6" type="Aura.Component[]" description="Column6"/>
+    <aura:attribute name="column7" type="Aura.Component[]" description="Column7"/>
+    <aura:attribute name="column8" type="Aura.Component[]" description="Column8"/>
+    <aura:attribute name="column9" type="Aura.Component[]" description="Column9"/>
+
+    <aura:attribute name="column10" type="Aura.Component[]" description="Column10"/>
+    <aura:attribute name="column11" type="Aura.Component[]" description="Column11"/>
+    
+    <aura:attribute name="column12" type="Aura.Component[]" description="Column12"/>
+    
+    <aura:attribute name="column13" type="Aura.Component[]" description="Column13"/>
+    <aura:attribute name="column14" type="Aura.Component[]" description="Column14"/>
+
+    <div>
+        <lightning:layout pullToBoundary="small">
+            <lightning:layoutItem  flexibility="auto" padding="around-small">
+                {!v.column1}
+            </lightning:layoutItem>
+            <lightning:layoutItem  flexibility="auto" padding="around-small">
+                {!v.column2}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.column3}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.column4}
+            </lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!v.column5}
+            </lightning:layoutItem>
+        </lightning:layout>
+
+
+        <div>
+            <lightning:layout pullToBoundary="small">
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column6}
+                </lightning:layoutItem>
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column7}
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!v.column8}
+                </lightning:layoutItem>
+                <lightning:layoutItem flexibility="auto" padding="around-small">
+                    {!v.column9}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+
+        <div>
+            <lightning:layout pullToBoundary="small">
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column10}
+                </lightning:layoutItem>
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column11}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        
+         <div>
+            <lightning:layout pullToBoundary="large">
+                <lightning:layoutItem  flexibility="auto" padding="around-large">
+                    {!v.column12}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+        
+        <div>
+            <lightning:layout pullToBoundary="small">
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column13}
+                </lightning:layoutItem>
+                <lightning:layoutItem  flexibility="auto" padding="around-small">
+                    {!v.column14}
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>        
+    </div>
+    
+    
+
+</aura:component>

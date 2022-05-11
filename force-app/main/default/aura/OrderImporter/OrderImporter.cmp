@@ -1,0 +1,63 @@
+<aura:component controller="OrderImporterController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="recordId" type="Id" />            
+    <aura:attribute name="orderImportItems" type="Object[]" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="validOrders" type="String[]"/>
+    <aura:attribute name="hasErrors" type="Boolean" />
+    <aura:attribute name="errors" type="String[]" />
+    <aura:attribute name="isLoading" type="Boolean" />
+    
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <aura:if isTrue="{! v.isLoading }">
+    	<lightning:spinner aura:id="spinner" />
+	</aura:if>
+    
+    <aura:if isTrue="{!v.hasErrors}">
+        <div class="pageLevelErrors" tabindex="-1">
+            <div class="desktop forcePageError" aria-live="assertive">
+                <div class="genericNotification">
+                    <span class="genericError uiOutputText">Review the errors on this page.</span>
+                </div>
+                <ul class="errorsList">
+                    <aura:iteration items="{!v.errors}" var="error">
+                        <li>{!error}</li>
+                    </aura:iteration>
+                </ul>
+            </div>
+        </div>
+	</aura:if>
+    
+    <div class="slds-grid slds-grid_vertical">
+         <div class="slds-col">
+            <div class="slds-box slds-clearfix"> 
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-size_2-of-3">
+                        <lightning:input aura:id="orderNumber" name="orderNumber" label="Order Number" required="true" messageWhenBadInput="Invalid order number" />
+                    </div>
+                    <div class="slds-col slds-size_1-of-3">
+                        <lightning:input aura:id="buid" name="buid" label="BUID" disabled="true" value="11" />
+                    </div>
+                </div>
+                <br/>
+                <lightning:button class="slds-m-bottom_small slds-float_right" iconName="utility:jump_to_bottom" label="Import" onclick="{!c.validate}" />
+            </div>
+        </div>
+        <div class="slds-col">
+            <br />
+        </div>
+        <aura:if isTrue="{!not(empty(v.orderImportItems))}">
+            <div class="slds-col">
+                <lightning:datatable
+                    aura:id="orderImportTable"
+                    keyField="Id"
+                    data="{! v.orderImportItems }"
+                    columns="{! v.columns }"
+                    hideCheckboxColumn="true" />
+            </div>
+        </aura:if>
+    </div>
+</aura:component>

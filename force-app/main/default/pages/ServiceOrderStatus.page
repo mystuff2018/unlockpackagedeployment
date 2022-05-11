@@ -1,0 +1,178 @@
+<apex:page controller="ServiceFormController" sidebar="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content">
+<script>setPageTitle('Federal Order Status');</script>
+<main>
+   <div class="dds__container">
+      <apex:form html-data-toggle="dds__form-validation" html-data-validate="true">
+      <div style="padding-top:50px">
+      <h1>Federal Order Status</h1>
+      <div style="padding-top:10px">
+         <h5>Orders placed as a guest or single order lookup.</h5>
+      </div>
+      </div>
+      <div style="padding-top:20px;width:600px">
+      <div class="dds__form-row">
+         <div class="dds__col-6">
+            <div class="dds__form-group">
+            <label for="search-by">Search By</label> 
+            <select id="search-by" class="dds__form-control" name="search-by" onchange="onSearchByChanged(this.value)">
+               <option value="Order Number">Order Number</option>
+               <option value="Account Number">Account Number</option>
+               <option value="PO Number">PO Number</option>
+               <option value="Billing Information">Billing Information</option>
+            </select>
+            </div>
+         </div>   
+         <div class="dds__col-6">
+            <div class="dds__form-group" id="search-by-section">
+            <label for="search-by-value">&nbsp;</label> 
+            <input id="search-by-value" aria-describedby="" required="true" type="text" name="search-by-value" placeholder="Enter Account Number" class="dds__form-control dds__input-masked"></input> 
+            <div class="dds__invalid-feedback" id="input-error-phoneInput-validationFeedback"> Please provide a valid phone. </div>
+            </div>
+         </div>  
+      </div>
+      <div class="dds__form-row">
+         <div class="dds__col-6">
+            <div class="dds__form-group">
+            <div>
+               <a href="#" onclick="" data-toggle="dds__modal" data-target="#exampleModal">Where can I find my order number?</a>
+            </div>   
+         </div>
+         </div>
+         <div class="dds__col-6">
+            <div class="dds__form-group">
+            <div id="add-alt-phone-extension" class="dds__col-md-4 dds__mb-3" style="display:block">&nbsp;</div>
+            </div>
+         </div>
+      </div>
+      <div id="verify-with-section">
+         <div class="dds__form-row">
+               <div class="dds__col-6">
+                  <div class="dds__form-group"> 
+                     <label for="verify-with-select">Verify With</label> 
+                     <select id="verify-with-select" class="dds__form-control" name="verify-with-select">
+                        <option value="Bill To Postal Code">Bill To Postal Code</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="dds__col-6">
+                  <div class="dds__form-group">
+                     <label for="verify-with-value">&nbsp;</label> 
+                     <input id="verify-with-value" type="text" name="verify-with-value" required="true" placeholder="Enter Bill To Postal Code" class="dds__form-control dds__input-masked"/> 
+                     <div class="dds__invalid-feedback" id="input-error-phoneInput-validationFeedback"> Please provide a valid phone. </div>
+                  </div> 
+               </div>
+         </div>
+      </div>
+         <div id="address-section" style="display:none;padding-top:10px">
+            <div class="dds__form-row">
+               <div class="dds__col-6">
+                  <div class="dds__form-group"> 
+                     <label for="first-name">First Name</label> 
+                     <input id="first-name" type="text" name="first-name" class="dds__form-control dds__input-masked"/> 
+                  </div>
+                  <div class="dds__form-group"> 
+                     <label for="last-name">Last Name</label> 
+                     <input id="last-name" type="text" name="last-name" class="dds__form-control dds__input-masked"/> 
+                  </div>
+                  <div class="dds__form-group"> 
+                     <label for="phone-number">Phone Number</label> 
+                     <input id="phone-number" type="text" name="phone-number" class="dds__form-control dds__input-masked"/> 
+                  </div>
+                  <div class="dds__form-group"> 
+                     <label for="zip-code">Zip Code</label> 
+                     <input id="zip-code" type="text" name="zip-code" class="dds__form-control dds__input-masked"/> 
+                  </div>
+               </div>
+         </div>   
+      </div>
+   </div>
+   <br/>
+   <apex:commandButton action="{!searchOrders}" value="Submit" styleClass="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate"/>
+   </apex:form>
+
+   <br/><br/>
+   <h4>Definitions</h4>
+   <div class="dds__accordion dds__mb-3" id="standard-accordion">
+      <div class="dds__accordion-card">
+         <div class="dds__accordion-card-header" id="heading-standard-one">
+            <h5 class="dds__mb-0"> <button class="dds__accordion-btn dds__collapsed dds__d-flex" type="button" data-toggle="dds__collapse" data-parent="#standard-accordion" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"> 
+            <i class="dds__icons dds__chevron-right" aria-hidden="true"></i> <span class="dds__mx-2">Order Number </span> </button> </h5>
+         </div>
+         <div id="collapseOne" class="dds__collapse" aria-labelledby="heading-standard-one" aria-expanded="false" role="region">
+            <div class="dds__accordion-card-body">
+               A Dell Order Number is assigned to a shipment on your order. If you purchased multiple items, they may ship separately and you will receive an Order Number for each shipment.
+            </div>
+         </div>
+      </div>
+      <div class="dds__accordion-card">
+         <div class="dds__accordion-card-header" id="heading-standard-two">
+            <h5 class="dds__mb-0"> <button class="dds__accordion-btn dds__collapsed dds__d-flex" type="button" data-toggle="dds__collapse" data-parent="#standard-accordion" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" role="button"> 
+            <i class="dds__icons dds__chevron-right" aria-hidden="true"></i> <span class="dds__mx-2">Account Number (i.e. Customer Number)</span> </button> </h5>
+         </div>
+         <div id="collapseTwo" class="dds__collapse" aria-labelledby="heading-standard-two">
+            <div class="dds__accordion-card-body">
+               A Dell Customer Number identifies you as a Dell customer and is applied to every purchase. When you place an order through your Dell Account, the same number is used, allowing you to track all your recent orders.
+            </div>
+         </div>
+      </div>
+      <div class="dds__accordion-card">
+         <div class="dds__accordion-card-header" id="heading-standard-three">
+            <h5 class="dds__mb-0"> <button class="dds__accordion-btn dds__collapsed dds__d-flex" type="button" data-toggle="dds__collapse" data-parent="#standard-accordion" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"> 
+            <i class="dds__icons dds__chevron-right" aria-hidden="true"></i> <span class="dds__mx-2">Purchase Order Number</span></button> </h5>
+         </div>
+         <div id="collapseThree" class="dds__collapse" aria-labelledby="heading-standard-three">
+            <div class="dds__accordion-card-body">
+               A Dell Purchase Order Number identifies the confirmation document that requests Dell to place a quoted order.
+            </div>
+         </div>
+      </div>
+      <div class="dds__accordion-card">
+         <div class="dds__accordion-card-header" id="heading-standard-four">
+            <h5 class="dds__mb-0"> <button class="dds__accordion-btn dds__collapsed dds__d-flex" type="button" data-toggle="dds__collapse" data-parent="#standard-accordion" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour"> 
+            <i class="dds__icons dds__chevron-right" aria-hidden="true"></i> <span class="dds__mx-2">Company Name</span></button> </h5>
+         </div>
+         <div id="collapseFour" class="dds__collapse" aria-labelledby="heading-standard-four">
+            <div class="dds__accordion-card-body">
+               Company Name is the name of the company or business that was entered when the order was placed.
+            </div>
+         </div>
+      </div>
+      <div class="dds__accordion-card">
+         <div class="dds__accordion-card-header" id="heading-standard-five">
+            <h5 class="dds__mb-0"> <button class="dds__accordion-btn dds__collapsed dds__d-flex" type="button" data-toggle="dds__collapse" data-parent="#standard-accordion" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive"> 
+            <i class="dds__icons dds__chevron-right" aria-hidden="true"></i> <span class="dds__mx-2">Billing Information</span></button> </h5>
+         </div>
+         <div id="collapseFive" class="dds__collapse" aria-labelledby="heading-standard-five">
+            <div class="dds__accordion-card-body">
+               Billing information is the name, phone number, and ZIP code that was used to purchase an order.
+            </div>
+         </div>
+      </div>
+   </div>
+   <div>
+      <div id="exampleModal" tabindex="-1" class="dds__modal dds__fade" role="dialog" aria-labelledby="dds__modal-title1" aria-hidden="true" style="">
+         <div class="dds__modal-dialog" role="document">
+            <div class="dds__modal-content">
+               <div class="dds__modal-header">
+                  <h3 class="dds__modal-title" id="dds__modal-title1">Dell Order Number</h3>
+               </div>
+               <button class="dds__close" data-dismiss="dds__modal" aria-label="Close"> <span class="dds__icons dds__close-x" aria-hidden="true"></span> </button> 
+               <div class="dds__modal-body">
+                  <p>A Dell Order Number is assigned to a shipment on your order. If you purchased multiple items, they may ship separately and you will receive an Order Number for each shipment.</p>
+                  <p>You can find this number in your Order Confirmation email or by using the number lookup form.</p>
+               </div>
+               <div class="dds__modal-footer">
+                  <button class="dds__btn dds__btn-secondary" data-dismiss="dds__modal">Close</button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

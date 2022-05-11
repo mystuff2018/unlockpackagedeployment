@@ -1,0 +1,8 @@
+.slds-modal__content{
+    max-height: 60rem !important;
+    height:60% !important;
+} 
+.errorBox{
+    background-color:white !important;
+    padding:10px !important;
+}

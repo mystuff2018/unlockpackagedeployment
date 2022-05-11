@@ -1,0 +1,116 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global"
+                controller="FBE_OpportunityAuraHandler">
+    <aura:attribute name="optyId" type="String" />
+    <aura:attribute name="boolean" type="boolean" default="true"/>
+    <aura:attribute name="relatedProducts" type="OpportunityLineItem[]"  />
+    <aura:attribute name="relatedProducts2" type="OpportunityLineItem[]"  />
+    <lightning:overlayLibrary aura:id="overlayLib1"/>
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+   
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner />
+    </aura:if>
+ 
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    
+    <aura:if isTrue="{!v.boolean}">
+        <div class="slds-p-around_small">
+            {!$Label.c.Opportunity_Revenue_Alert_Message}<br/><br/>
+            <lightning:button variant="brand" label="Yes" title="Brand action" onclick="{! c.handleYes }" />
+            <lightning:button variant="brand" label="No" title="Brand action" onclick="{! c.handleNo }" />
+        </div>
+        <aura:set attribute="else">
+            <div style="background: white;" class="slds-scrollable">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered" >
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" ></div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="PRODUCT">PRODUCT</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="QUANTITY">QUANTITY</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="SALES PRICE">SALES PRICE</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="QUOTE #">QUOTE #</div>
+                            </th>
+                            <th class="slds-text-title_caps" scope="col">
+                                <div class="slds-truncate" title="LINE DESCRIPTION">LINE DESCRIPTION</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <aura:iteration items="{!v.relatedProducts}" var="product" indexVar="count">
+                            <tr class="slds-hint-parent">
+                                <td >
+                                    <div class="slds-truncate" title="Remove">
+                                        <a style="text-decoration:none;color:red;" data-row="{!count}" onclick="{!c.removeOLI}">
+                                            <lightning:icon size="x-small" iconName="action:delete" alternativeText="Delete" title="Delete" />
+                                        </a>
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="slds-truncate" title="{!product.Product2.Name}">
+                                        {!product.Product2.Name}
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="slds-truncate" title="{!product.Quantity}">
+                                        <lightning:input type="number" name="input1" value="{!product.Quantity}" />
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="slds-truncate" title="{!product.UnitPrice}">
+                                        <lightning:input type="number" name="input2" value="{!product.UnitPrice}" />
+                                    </div>
+                                </td>
+                                <td >
+                                    <div class="slds-truncate" title="{!product.FBE_Quote_Number_Line__c}">
+                                        <lightning:input type="text" name="input5" value="{!product.FBE_Quote_Number_Line__c}" />
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate" title="{!product.Description}">
+                                        <lightning:input type="text" name="input6" value="{!product.Description}" />
+                                    </div>
+                                </td>
+                            </tr>
+                        </aura:iteration>
+                    </tbody>
+                </table>
+                <center>
+                    <lightning:button variant="brand" type="submit" label="Save" title="Save"  onclick="{!c.onSubmitAction}"/>
+                    <!-- <lightning:button variant="neutral" type="button" label="Cancel" title="Cancel"  onclick="{!c.cancelAction}"/> -->
+                </center>
+            </div>
+        </aura:set>
+    </aura:if>
+    <aura:attribute name="record" type="Opportunity" />
+    <aura:attribute name="simpleRecord" type="Opportunity" />
+    <aura:attribute name="recordError" type="String" />
+    <force:recordData aura:id="recordViewer"
+                      layoutType="FULL"
+                      recordId="{!v.optyId}"
+                      targetError="{!v.recordError}"
+                      targetRecord="{!v.record}"
+                      targetFields ="{!v.simpleRecord}"
+                      mode="EDIT"
+                      />
+    <!--
+    {!v.simpleRecord.Amount}
+    {!v.simpleRecord.Old_Unweighted_Revenue__c}
+    -->
+    <aura:attribute name="recordError2" type="String" access="private"/>
+    <aura:attribute name="delOplId" type="String" />
+    <force:recordData aura:id="recordHandler"
+                      recordId="{!v.delOplId}"
+                      fields="Id"
+                      targetError="{!v.recordError2}"
+                      recordUpdated="{!c.recordUpdated}"
+                      />
+</aura:component>

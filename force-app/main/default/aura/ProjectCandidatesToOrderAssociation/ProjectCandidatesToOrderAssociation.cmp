@@ -1,0 +1,90 @@
+<aura:component controller="CandidateProjectsToAssociationController" implements="flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+    
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="Order" type="Order" />
+    <aura:attribute name="Projects" type="Object[]" />
+    <aura:attribute name="association" type="Boolean"/>
+    <aura:attribute name="diassociationProcess" type="Boolean"/>
+    <aura:attribute name="createProjectProcess" type="Boolean"/>
+
+
+    <aura:handler name="init" value="{!this}" action="{!c.loadSuggestions}" />
+    <lightning:flow aura:id="unassociateOrder" onstatuschange="{!c.gotoList}"/>
+    <!--<lightning:flow aura:id="createProject" onstatuschange="{!c.goToProject}"/>-->
+    
+    <aura:if isTrue="{!or(v.diassociationProcess,v.createProjectProcess)}">
+    <div>
+        <lightning:spinner alternativeText="Loading"/>
+    </div>
+    </aura:if> 
+    
+    <force:recordData aura:id="orderRecord" recordId="{!v.recordId}" targetFields="{!v.Order}" layoutType="FULL"/>
+    <div class="slds-card-wrapper">
+    	<lightning:card title="Incorrect Project Association? You may:">
+        	<div class="slds-border_top slds-border_bottom">
+               <lightning:layout horizontalAlign="center">
+                    <lightning:layoutItem padding="around-small">
+                        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+    					<lightning:button label="Associate Manually" title="Associate Manually" onclick="{! c.openModal }" />
+                    </lightning:layoutItem>
+                   <aura:if isTrue="{!not(empty(v.Order.Project__c)) }">
+                       <lightning:layoutItem padding="around-small">
+                            <!-- Brand variant: Identifies the primary action in a group of buttons -->
+                            <lightning:button label="Send to Unassociated List" title="Send to Unassociated List" onclick="{! c.unassociateOrder }" />
+                       </lightning:layoutItem>
+                   </aura:if>  
+               </lightning:layout>
+            </div>
+         </lightning:card>
+         <!--If statement to hide button when order already has a project associated due to a defect in project creation in this scenario--> 
+         <aura:if isTrue="{!empty(v.Order.Project__c)}">
+            <aura:if isTrue="{!not(empty(v.Projects))}">
+                <lightning:card title="Or Associate to Recommended Project:">
+                    <ul class="slds-list_vertical  slds-has-dividers_top-space slds-has-dividers_bottom-space">
+                        <aura:iteration items="{!v.Projects}" var="item" indexVar="i">
+                            <li class="slds-list__item">
+                                <c:ProjectCandidateToOrderAssociationCard proj="{!item.project}" matchReason="{!item.matchReason}" orderNumber="{!v.Order.Id}" stage="{!item.stage}" association="{!v.association}"/>
+                            </li>
+                        </aura:iteration>
+                    </ul>
+                </lightning:card>  
+            </aura:if>
+            <aura:if isTrue="{!not(v.Order.Status == 'CL')}">
+                <lightning:card title="Or Create a New Project:">
+                    <div class="slds-border_top">
+                    <lightning:layout horizontalAlign="center">
+                            <lightning:layoutItem padding="around-small">
+                                <!-- Brand variant: Identifies the primary action in a group of buttons -->
+                                <lightning:button label="Create New Project" title="Create New Project" onclick="{! c.createProjectClick }" />
+                            </lightning:layoutItem>
+                    </lightning:layout>
+                    </div>
+                </lightning:card>   
+            </aura:if>
+        </aura:if>
+    </div>
+   
+    <div role="dialog" tabindex="-1" aria-labelledby="header43" aura:id="Modalbox" class="slds-modal slds-modal_large">
+        <div class="slds-modal__container">
+            <div class="slds-modal__header">
+                <button class="slds-button slds-modal__close" title="Close" 
+                                onclick="{!c.closeModal}">
+                            <lightning:icon class="white slds-icon_small" iconName="utility:close"/> 
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Manual Order Association</h2>
+            </div>
+            <div class="slds-modal__content slds-p-around--medium">
+                <div>
+                    <c:projectCustomSearchForOrderAssociation recordId="{!v.recordId}"/>
+                </div>
+            </div>
+            <div class="slds-modal__footer">
+                <lightning:button label="Cancel" title="Associate Manually" onclick="{! c.closeModal }" />
+            </div>
+        </div>
+    </div>
+    <div class="slds-backdrop " aura:id="Modalbackdrop"></div>
+      
+</aura:component>

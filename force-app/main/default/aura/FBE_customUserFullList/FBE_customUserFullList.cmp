@@ -1,0 +1,124 @@
+<aura:component implements="force:appHostable"
+                 controller="FBE_RoleUtility">
+    <aura:attribute name="columns" type="List" default="[]"/>
+    <aura:attribute name="callType" type="String" default="init"/>
+    <aura:attribute name="userList" type="List"/>
+    <aura:attribute name="listOfSearchRecords" type="List"/>
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="currentData" type="List"/>
+    <aura:attribute name="enableInfiniteLoading" type="Boolean" default="true"/>
+    <aura:attribute name="limit" type="Integer" default="50"/>
+    <aura:attribute name="listSize" type="Integer"/>
+    <aura:attribute name="test" type="Boolean" default = "False"/>
+    <aura:attribute name="PaginationList" type="list"/> 
+    <aura:attribute name="startPage" type="Integer" />
+    <aura:attribute name="endPage" type="Integer"/>
+    <aura:attribute name="totalRecordsCount" type="Integer"/>
+    <aura:attribute name="pageSize" type="Integer" default="15"/>
+    <aura:attribute name="sortOrder" type="String" default = "asc"/>
+    <aura:attribute name="sortIcon" type="String" default = "utility:chevronup"/>
+<aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+    <lightning:card title="Last Login Report">
+         <div class="slds-input-has-icon slds-input-has-iconright" style="margin:1rem;">
+        <div aura:id="lookupField" class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"  
+                      style="width: 100%;">
+                        <ui:inputText 
+                                      updateOn="keyup"
+                                      keyup="{!c.keyPressController}"
+                                      class="slds-lookup__search-input slds-input inputSize"
+                                      value="{!v.SearchKeyWord}"
+                                      placeholder="Search by Name, Role, Email"/>
+                        
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            <lightning:icon iconName="utility:search" size="x-small" alternativeText="icon"/>
+                        </span>
+                    </div>
+       
+        </div>
+           <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">					
+                        
+                     <!--   <th scope="col">
+                            <div class="slds-truncate" title="User Id">UserId</div>
+                        </th> -->
+                        <th scope="col">
+                            <div class="slds-truncate" title="Name">Name
+                            <a href=""  data-index="Name" data-value="{!v.sortOrder}"  target="_self" onclick="{!c.sortData}" >
+                                 <lightning:icon iconName="{!v.sortIcon}" alternativeText="Sort" size="xx-small" class="slds-p-left_x-small"/>
+                             </a> 
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Email">Email
+                            <a href=""  data-index="Email" data-value="{!v.sortOrder}"  target="_self" onclick="{!c.sortData}" >
+                                 <lightning:icon iconName="{!v.sortIcon}" alternativeText="Sort" size="xx-small" class="slds-p-left_x-small"/>
+                             </a> 
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Role">Role</div>
+                        </th>                        
+                        <th scope="col">
+                            <div class="slds-truncate" title="Role">Last Login</div>
+                        </th>
+                      </tr>
+                </thead>
+                <tbody>
+                       <aura:iteration items="{!v.PaginationList}" var="user" indexVar="idx">
+                      <tr>                            
+                        <!--    <td scope="row">
+                                <div class="slds-truncate" title="{!user.Id}">
+                                    {!user.Id}
+                                </div>
+                            </td> -->
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!user.Name}">
+                                    {!user.Name}
+                                </div>
+                            </td>                           
+                             <td scope="row">
+                                <div class="slds-truncate" title="{!user.Email}">
+                                    {!user.Email}
+                                </div>
+                            </td> 
+                               <td scope="row">
+                                <div class="slds-truncate" title="{!user.UserRole.Name}">
+									{!user.UserRole.Name}
+                                </div>
+                            </td>                            
+                             <td scope="row">
+                                <div class="slds-truncate" title="{!user.LastLoginDate}">
+									<lightning:formattedDateTime value="{!user.LastLoginDate}" 
+                                                                 year="numeric" month="numeric" day="numeric" hour="2-digit" 
+                                                                 minute="2-digit"/> 
+                                </div>
+                            </td>
+                         </tr>
+                           
+                    </aura:iteration>
+                </tbody>
+            </table>   
+           <br/>         
+            <div class = "slds-align_absolute-center">        
+              <lightning:button label="Home" class="slds-button_brand" onclick="{!c.handlecancel}"/>     
+                <lightning:button label="Previous"
+                                  disabled="{!v.startPage == 0}"  
+                                  onclick="{!c.navigation}"
+                                  variant="brand"
+                                  iconName="utility:back"
+                                  name="previous"/>             
+                
+                <lightning:button label="Next"
+                                  disabled="{!(v.endPage + 1) >= v.totalRecordsCount}" 
+                                  onclick="{!c.navigation}"
+                                  variant="brand"
+                                  iconName="utility:forward"
+                                  iconPosition="right"
+                                  name="next"/>
+               <!-- <span>{!v.currentPage}/{!v.totalPagesCount}</span><lightning:button variant="brand" label="Add Details" onclick="{!c.EditDealProductData}" />-->
+                <button class="slds-button slds-button--brand"  onclick="{!c.downloadCsv}">Export</button>
+         </div>   
+    </lightning:card>
+
+</aura:component>

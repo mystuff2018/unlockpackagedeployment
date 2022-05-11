@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Deal and Case Quick Links</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default">
+           <property name="PremierStorelink" type="String" default="https://ecomm.federal.dell.com/esales/" label="Enter Premier Store link"/>
+            <property name="PartnerProgramlink" type="String" default="https://www.delltechnologies.com/partner/en-us/partner/partner.htm" label="Enter Partner Program link"/>
+            </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

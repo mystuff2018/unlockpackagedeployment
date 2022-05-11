@@ -1,0 +1,60 @@
+<aura:component controller="FBE_AccntTeamListonLead" implements="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	
+    <aura:attribute name="accountId" type="String" access="global"/> 
+    <aura:attribute name="LeadName" type="String" access="global"/>
+    <aura:attribute name="LeadId" type="String" access="global"/>
+    <aura:attribute name="Teamsize" type="Integer" access="global"/> 
+    <aura:attribute name="mycolumns" type="List"/>
+    <aura:attribute name="returnedTeam" type="SObject" access="global"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="Boolean" default="true"/>
+    
+    <aura:handler name ="init" value="{!this}" action="{!c.doinit}"/>
+    
+        <div class="slds-page-header slds-page-header_related-list">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                
+                <nav role="navigation" aria-label="Breadcrumbs">
+                    <ol class="slds-breadcrumb slds-list_horizontal slds-wrap">
+                        <li class="slds-breadcrumb__item">
+                            <a onclick="{!c.navtoLeadList}">Lead</a>
+                        </li>
+                        <li class="slds-breadcrumb__item">
+                            <a onclick="{!c.navtoRec}"> {!v.LeadName}</a>
+                        </li>
+                    </ol>
+                </nav>
+                
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning:icon iconName="standard:team_member" />
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate " title="Account Team">Account Team</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="slds-page-header__row">
+                            <div class="slds-page-header__col-meta">
+                                <p class="slds-page-header__meta-text">{!v.Teamsize} Items </p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    
+    <lightning:datatable data="{! v.returnedTeam }"
+                         columns="{! v.mycolumns }"
+                         keyField="id"
+                         hideCheckboxColumn="true"
+                         onsort="{!c.updateColumnSorting}"
+                         sortedBy="{!v.sortedBy}"
+                         sortedDirection="{!v.sortedDirection}"/>
+    
+</aura:component>

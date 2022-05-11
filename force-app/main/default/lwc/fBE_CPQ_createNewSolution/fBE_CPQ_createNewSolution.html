@@ -1,0 +1,53 @@
+<template>	
+	
+	<!--<template if:true={isShowContract}>
+		<c-f-b-e_-c-p-q_apply-contract record-id={recordId}>
+		</c-f-b-e_-c-p-q_apply-contract>
+	</template> --> <!-- added by Sireesha MYLA - STORY 12079756-->
+
+	<template if:true={isShowOpty}>
+		<template if:true={isHide}>
+			<table>
+				<tr>
+					<td style="width:33%">
+						<div style="padding-left:0rem;padding-top:4rem;position:relative">
+						<template if:true={isShowContract}>
+							<c-f-b-e_-c-p-q_apply-contract record-id={recordId}>
+							</c-f-b-e_-c-p-q_apply-contract>
+						</template> 
+						</div>
+					</td>
+					<td style="width:67%">
+						<div data-toggle="tooltip" data-placement="top" class="" style='position:relative overflow:hidden'
+						onmouseover={showtooltip} onmouseout={hidetooltip}>
+						<div style="padding-left:0rem;padding-top:4rem;position:relative">
+							<lightning-button variant="brand" label="Create New Solution" onclick={handleClick} 
+							disabled={isHide} class="slds-p-right_small">
+							</lightning-button>
+							
+							<div class="slds-popover toggle" data-id='tooltip'>
+								<div class="slds-popover slds-popover_tooltip slds-nubbin_bottom-left" role="tooltip"
+									data-id='tooltip' style="position:absolute;top:-4px;left:35px">
+									<div class="slds-popover__body">{titleOfTheButton}</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					</td>
+
+				</tr>
+			</table>
+			
+		</template>
+		<template if:false={isHide}>
+			<template if:true={isShowContract}>
+		<c-f-b-e_-c-p-q_apply-contract record-id={recordId}>
+		</c-f-b-e_-c-p-q_apply-contract>
+	</template> 
+			<lightning-button variant="brand" label="Create New Solution" onclick={handleClick} disabled={isHide}
+				icon-name="utility:new_window" icon-position="right" class="slds-p-left_small">
+			</lightning-button>
+		</template>
+	</template>
+	
+</template>

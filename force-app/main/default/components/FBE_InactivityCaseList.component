@@ -1,0 +1,26 @@
+<apex:component controller="FBE_CaseInactivityTemplate" access="global">
+    <apex:attribute name="usrId" type="Id" description="Id of the CaseOwners" assignTo="{!userID}"/>
+    <apex:outputText value="The cases below are assigned to you and have not had any activity in the past 3 business days."></apex:outputText> <br/><br/>
+    <table border = "2" cellspacing = "5">
+        <tr>
+           <td>Case number</td>
+           <td>Age (in days)</td>
+           <td>Status</td>
+           <td>Latest Comments</td>
+           <td>Last modified Date</td>
+        </tr>
+        
+        <apex:repeat value="{!caseList}" var="cse">
+           <tr>
+           <td><apex:outputLink value="{!LEFT($Api.Partner_Server_URL_140,FIND('.com',$Api.Partner_Server_URL_140)+4)+cse.Id}">{!cse.CaseNumber}</apex:outputLink></td>
+           <td>{!cse.FBE_Age_In_Days__c}</td>
+           <td>{!cse.Status}</td>
+           <td>{!cse.FBE_Case_Manager_Comments__c}</td>
+           <td><apex:outputField value="{!cse.LastModifiedDate}"/></td>
+        </tr>
+        </apex:repeat>
+    </table> <br/>
+    <apex:outputText value="Please login to SFDC and provide an appropriate update for these cases."></apex:outputText> <br/><br/>
+    <apex:outputText value="Thank you,"></apex:outputText> <br/>
+    <apex:outputText value="FBE Production Support team."></apex:outputText> <br/>
+</apex:component>

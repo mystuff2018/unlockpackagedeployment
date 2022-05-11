@@ -1,0 +1,21 @@
+<apex:page controller="ServiceFormController" sidebar="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content"> 
+<script>showPageTitle('Email Technical Support Confirmation');</script>
+<main>
+<div class="dds__container" style="position:relative;padding-bottom:50px">
+    <div style="padding-top:40px">
+    <h1>Your question has been submitted!</h1>
+    <br/><br/>
+    Thanks for submitting your question. Your case number is: #{!caseNumber}.
+    <br/><br/>
+    We’ve received your request for technical support and look forward to helping you solve your problem. You should receive an email from one of our support agents within the next business day (Monday through Friday). In the meantime, feel free to check out our self-help support options, like online diagnostics or popular tutorials, on <a href="https://www.dell.com/support/home/en-us?c=us&l=en&s=bsd">Dell Support.</a> 
+    <br/><br/>
+    Dell Technical Support
+    </div>
+</div>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

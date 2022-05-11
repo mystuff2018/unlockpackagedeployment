@@ -1,0 +1,77 @@
+<apex:page sidebar="false" controller="ServiceFormController" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content">
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<apex:includeScript value="{!URLFOR($Resource.ServicePortalJavascript)}"/>
+<script>
+setPageTitle('Internal Tech Support');
+initChat('{!baseUrl}', '{!orgId}', '{!chatDeploymentId}', '{!buttonId}'); 
+function doSubmit() {
+   if (form.checkValidity() === false) return false;
+   let firstName = '{!$User.firstName}';
+   let lastName = '{!$User.lastName}';
+   let email = '{!$User.email}';
+   let srNumber = getElem('sr-number').value;
+   let serviceTag = getElem('service-tag').value;
+   let supportRole = getElem('support-role').value
+   let description = getElem('description').value;
+   let recTypeId = '{!caseRecordTypeId}';
+   return submitTechSupportChat(firstName, lastName, email, srNumber, serviceTag, supportRole, description, recTypeId);
+}
+</script>
+<main>
+   <div class="dds__container">
+   <form data-toggle="dds__form-validation" onsubmit="return doSubmit()" novalidate="false">
+   <div style="padding-top:50px">
+      <div id="form">
+      <h1>Internal Tech Support Chat</h1>
+      <div class="dds__container">
+      <div class="dds__row">
+         <div class="dds__col-6">
+         <div style="width:350px;padding-top:20px">
+            <div class="dds__form-group">
+               <label for="sr-number">DFN SR# (Optional)</label> 
+               <input type="text" class="dds__form-control" maxlength="80" name="sr-number" id="sr-number" aria-invalid="false" aria-describedby=""></input>
+            </div>
+            <div class="dds__form-group">
+               <label for="service-tag">Service Tag</label> 
+               <input type="text" class="dds__form-control" maxlength="80" name="service-tag" id="service-tag" required="true" aria-invalid="false" aria-describedby=""></input>
+               <div class="dds__invalid-feedback" id="input-error-service-tag"> Please enter a service tag. </div>
+            </div>
+            <div class="dds__form-group">
+               <label for="support-role">Support Role</label> 
+               <select class="dds__form-control" id="support-role" required="true"> 
+                  <apex:repeat value="{!supportRoles}" var="s">
+                  <option value="{!s.value}">{!s.label}</option>
+                  </apex:repeat>
+               </select>
+               <div class="dds__invalid-feedback" id="input-error-support-role"> Please enter your suppport role.</div>
+            </div>
+            <div class="dds__form-group">
+               <label for="description">Description (32,000 character limit)</label>
+               <textarea class="dds__form-control" id="description" name="description" rows="3" required="true" maxlength="32000"></textarea>
+               <div class="dds__invalid-feedback" id="input-error-descriotion"> Please enter your description. </div>
+            </div>
+            <div id="PrimaryMiniButton" data-content="<button type=&quot;button&quot; class=&quot;dds__btn dds__btn-primary dds__btn-sm dds__text-truncate&quot;>Primary Mini Button</button>" class="rendered-container">
+               <button type="submit" class="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate">Start Chat</button>
+            </div>
+         </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <div id="chat" style="display:none">
+      <h1>FIRST Chat</h1>
+      <h3>Hang tight while we connect you with a live agent.</h3>
+      <h4>Chat session will begin in the lower right corner of your screen...</h4>
+      <img src="https://qph.fs.quoracdn.net/main-qimg-fe14c462c2025fcfe5a696fc2a64b2bb" style="padding-top:40px;width:225px"></img>
+   </div>
+   </div>
+   </form>
+   </div>
+<p id="snapinplaceholder"/>
+</main>
+</apex:define>
+</apex:composition>
+</apex:page>

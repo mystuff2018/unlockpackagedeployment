@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>Default</label>
+    <protected>false</protected>
+    <values>
+        <field>Action_Category__c</field>
+        <value xsi:type="xsd:string">ITP</value>
+    </values>
+    <values>
+        <field>Action_Operation__c</field>
+        <value xsi:type="xsd:string">insert</value>
+    </values>
+    <values>
+        <field>Action_Status__c</field>
+        <value xsi:type="xsd:string">Open</value>
+    </values>
+    <values>
+        <field>Action_Type__c</field>
+        <value xsi:type="xsd:string">Inbound</value>
+    </values>
+    <values>
+        <field>Endpoint_URL__c</field>
+        <value xsi:type="xsd:string">https://OSCtest.federal.dell.com:41443/fbesfdc/FBEOSCServiceRequestService/Activity</value>
+    </values>
+    <values>
+        <field>Log_transations__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Request_Operation__c</field>
+        <value xsi:type="xsd:string">skipnode</value>
+    </values>
+</CustomMetadata>

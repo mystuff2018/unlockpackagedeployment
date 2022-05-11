@@ -1,0 +1,1861 @@
+<aura:component
+                implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:appHostable,force:lightningQuickAction,flexipage:availableForRecordHome,forceCommunity:availableForAllPageTypes,lightning:isUrlAddressable"
+                access="global" controller="SearchResourcesController">
+    <aura:html tag="style">
+        .slds-modal__container { min-width: 60vw; }
+    </aura:html>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="roleBasedOnResReq" type="String" />
+    <aura:attribute name="spinner" type="boolean" default="false" />
+    <aura:attribute name="isLocationAvailble" type="boolean" default="false" />
+    <aura:attribute name="defultDate" type="String" />
+    <aura:attribute name="detailsOfSelectedResReq" type="pse__Resource_Request__c" />
+    <aura:attribute name="searchDetailObject" type="Object" />
+    <aura:attribute name="roleList" type="String" />
+    <aura:attribute name="showfilterLogicSkills" type="Boolean" default="false" />
+    <aura:attribute name="showfilterLogicCertifications" type="Boolean" default="false" />
+    <aura:attribute name="resourceRequestName" type="String" />
+    <aura:attribute name="selectedResourceRequest" type="String" />
+    <aura:attribute name="isSearchSkillsModalOpen" type="Boolean" default="False" />
+    <aura:attribute name="isSearchCertificationssModalOpen" type="Boolean" default="False" />
+    <aura:attribute name="isSearchResourceRequests" type="Boolean" default="False" />
+    <aura:attribute name="isResReqTable" type="Boolean" default="False" />
+    <aura:attribute name="displayDisabledNextButton" type="Boolean" default="false" />
+    <aura:attribute name="assignHold" type="Boolean" default="false" />
+    <aura:attribute name="assignValue" type="Boolean" default="false" />
+    <aura:attribute name="holdValue" type="Boolean" default="false" />
+    <aura:attribute name="conName" type="String" />
+    <aura:attribute name="assignmentCheckMap" type="Map" />
+    <aura:attribute name="data" type="Object" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="data2" type="Object" />
+    <aura:attribute name="columns2" type="List" />
+    <aura:attribute name="data3" type="Object" />
+    <aura:attribute name="columns3" type="List" />
+    <!--Changes Start For Attribute For Displaying Contacts-->
+    <aura:attribute name="data4" type="Object" />
+    <aura:attribute name="columns4" type="List" />
+    <aura:attribute name="isDisplayingContacts" type="Boolean" default="False" />
+    <aura:attribute name="page" type="Integer" description="using for store page Number" default="0"/>
+    <aura:attribute name="pages" type="Integer" description="using for store All Pages page Number" default="0"/>
+    <aura:attribute name="total" type="Integer" description="total records count store " default="0"/>
+    <!--Changes End For Attribute For Displaying Contacts-->
+    <aura:attribute name="lstSkill" type="Object[]" />
+    <aura:attribute name="lstCertification" type="Object[]" />
+    <aura:attribute name="skillSelectedRowsId" type="List" />
+    <aura:attribute name="certificationSelectedRowsId" type="List" />
+    <!--Start For Scheduling Strategies-->
+    <!--<aura:attribute name="resourceRequestBasedOnSearch" type="pse__Resource_Request__c" />-->
+    <aura:attribute name="mapStrategyBasedOnSchdulePattern" type="Map" />
+    <aura:attribute name="scheduleRecord" type="pse__Schedule__c" />
+    <aura:attribute name="startendDateBasisOfSchedulingPattern" type="Boolean" default="false" />
+    <aura:attribute name="displayForWeeklyHours" type="Boolean" default="false" />
+    <aura:attribute name="customHoursSchedule" type="Boolean" default="false" />
+    <aura:attribute name="resId" type="Id" />
+    <aura:attribute name="keyPattern" type="String" />
+    <aura:attribute name="valueAssignHold" type="String" />
+    <aura:attribute name="totalHours" type="Decimal" />
+    <!--End For Scheduling Strategies-->
+    <!-- Start For Map -->
+    <aura:attribute name="mapMarkers" type="Object" />
+    <aura:attribute name="zoomLevel" type="Integer" />
+    <aura:attribute name="mapOpenClose" type="Boolean" default="false" />
+    <!--End For Map-->
+    <!--Start For Region, Practice and Group-->
+    <aura:attribute name="isSearchPracticeModal" type="Boolean" default="false" />
+    <aura:attribute name="isPracticeTable" type="Boolean" default="false" />
+    <aura:attribute name="practiceName" type="String" />
+    <aura:attribute name="isSearchRegionModal" type="Boolean" default="false" />
+    <aura:attribute name="isRegionTable" type="Boolean" default="false" />
+    <aura:attribute name="regionName" type="String" />
+    <aura:attribute name="dataReg" type="Object" />
+    <aura:attribute name="columnsReg" type="List" />
+    <aura:attribute name="dataPrac" type="Object" />
+    <aura:attribute name="columnsPrac" type="List" />
+    <aura:attribute name="groupName" type="String" />
+    <aura:attribute name="dataGroup" type="Object" />
+    <aura:attribute name="columnsGroup" type="List" />
+    <aura:attribute name="isSearchGroupModal" type="Boolean" default="false" />
+    <aura:attribute name="isGroupTable" type="Boolean" default="false" />
+    <!--End For Region and Practice-->
+    <aura:attribute name="resReqAvailability" type="Boolean" default="false" />
+    <aura:attribute name="toggleDropdown" type="String" default="" />
+    <aura:attribute name="sortDirection" type="String" default="asc" />
+    <aura:attribute name="defaultSortDirection" type="String" default="asc" />
+    <aura:attribute name="sortedBy" type="String" />
+    <aura:attribute name="regionDisabled" type="Boolean" default="false" />
+    <aura:attribute name="practiceDisabled" type="Boolean" default="false" />
+    <aura:attribute name="groupDisabled" type="Boolean" default="false" />
+    <aura:attribute name="costDisabled" type="Boolean" default="false" />
+    <aura:attribute name="utilizationDisabled" type="Boolean" default="false" />
+    <aura:attribute name="searchOutResourcesPagePagesValue" type="Boolean" default="false" />
+    <aura:attribute name="data4BooleanCheck" type="Boolean" default="false" />
+    <aura:attribute name="saveFilterImpl" type="Boolean" default="false"/>
+    <aura:attribute name="fieldNameWithRelationship" type="Map"/>
+    <aura:attribute name="options" type="List" default="[
+                                                        {'label': 'All', 'value': 'And'},
+                                                        {'label': 'Any', 'value': 'Or'}
+                                                        ]"/>
+    <aura:attribute name="resorceId" type="Id" />
+    <aura:attribute name="ispercentAllocation" type="Boolean" default="false"/>
+    <aura:attribute name="percentAllocationWrapperList" type="Object"/>
+    <aura:attribute name="percentageAlloationRow" type = "List" /> 
+    <aura:attribute name="ignoreHoliday" type = "Boolean" default = "false"/>
+    <aura:attribute name="isUpdated" type="Boolean" default="false"/>
+    <aura:attribute name="indexDeletion" type="Integer" default="0"/>
+    <aura:attribute name="message" description="Message content, can be HTML"
+                    type="String" default="Message from MessageComponent.cmp"/>
+    <aura:attribute name="type"
+                    description="Message type, can be error/warning/info/success"
+                    type="String" default="info"/>
+    <aura:attribute name="showError" type="Boolean" default="false" /> 
+    <aura:attribute name="disableAssignHoldButton" type="Boolean" default="true" />
+    <aura:attribute name="startDateForValidation" type="date" />
+    <aura:attribute name="endDateForValidation" type="date" />
+    <aura:attribute name="isSendEmail" type="Boolean" default="false" /> 
+    <aura:attribute name="resEmail" type="String"/>
+    <aura:attribute name="emailSubject" type="String"/>
+    <aura:attribute name="emailBody" type="String"/>
+    <aura:attribute name="isPastJobs" type="Boolean" default="false" />
+    <aura:attribute name="assignmentData" type="Object" />
+    <aura:attribute name="assignmentDataColoumns" type="List" />
+    <aura:attribute name="isCQ" type="Boolean" default="false" />
+    <aura:attribute name="competenceDataList" type="Object" />
+    <aura:attribute name="competenceDataColoumns" type="List" />
+    <aura:attribute name="qualificationDataList" type="Object" />
+    <aura:attribute name="qualificationDataColoumns" type="List" />
+    <aura:attribute name="dataLowerLevelDetails" type="Object" />
+    <aura:attribute name="columnsLowerLevelDetails" type="List" />
+    <aura:attribute name="isLowerLevelDetails" type="Boolean" default="false" />
+    <aura:attribute name="conNameLowerLevel" type="String"/>
+    <aura:attribute name="accordionAttributeValue" type="String"/>
+    <aura:attribute name="accordionSkillValue" type="String"/>
+    <aura:attribute name="accordionCertificationValue" type="String"/>
+    <aura:attribute name="accordionAdditionalFiltersValue" type="String"/>
+    <aura:attribute name="accordionSearchResourceValue" type="String"/>
+    <aura:attribute name="accordionRoleValue" type="String"/>
+    <aura:attribute name="accordionResourceRequestDetailsValue" type="String"/>
+    <aura:attribute name="accordionAddressDetailsValue" type="String"/>
+    <aura:attribute name="isRenderRDC" type="Boolean" default="false"/>
+    <aura:attribute name="searchedSkillName" type="String"/>
+    <aura:attribute name="searchedCertificationName" type="String"/>
+    <!--Resource Search Header:Start-->
+    <article class="slds-card slds-m-bottom_medium">
+        <div class="slds-card__header slds-grid">
+            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                <div class="slds-media__figure">
+                    <span class="slds-icon_container" title="Search Resource">
+                        <lightning:icon iconName="standard:search" alternativeText="search" title="search" />
+                        <span class="slds-assistive-text">Resource Search</span>
+                    </span>
+                </div>
+                <div class="slds-media__body">
+                    <h2 class="slds-card__header-title">
+                        <span>Search Resources</span>
+                    </h2>
+                </div>
+            </header>
+        </div>
+    </article>
+    <!--Resource Search Header:End-->
+    <div class="container slds-page-header slds-box slds-theme_default slds-theme_backgroundColor-white slds-p-around_none">
+        <!--Buttons:Start-->
+        <div class="slds-theme_shade slds-p-around_small">
+            
+            <lightning:buttonIcon class="slds-button slds-button--brand" iconName="utility:filterList" variant="brand" alternativeText="Filter" title="Filter"
+                                  onclick="{! c.openFilterWindow }" />
+            <lightning:button class="slds-button slds-button--brand" variant="brand" label="Save Filter" title="Save Filter" onclick="{!c.saveFilter}"/>            
+            <lightning:button class="slds-button slds-button--brand" variant="brand" label="Submit For Approval" title="Submit For Approval" onclick="{!c.submitForPDMApproval}"/> 
+            <aura:if isTrue="{!v.isLowerLevelDetails}">
+                <lightning:button class="slds-button slds-button--brand" variant="brand" label="Overview" title="Overview" onclick="{!c.showUpperLevelDetails}"/>
+                <aura:set attribute="else">
+                    <lightning:button class="slds-button slds-button--brand" variant="brand" label="Lower Level Details" title="Lower Level Details" onclick="{!c.showLowerLevelDetails2}"/>
+                </aura:set>
+            </aura:if>
+            <aura:if isTrue="{!v.searchDetailObject.openFromResourceReqScreen}">
+                <lightning:button class="slds-button slds-button--brand" variant="brand" label="Back" title="Back" onclick="{!c.backToResourceRequest}"/>
+            </aura:if>
+        </div>
+        <!--Buttons:End-->
+        <div class="contentWrapper">
+            <!--Filter Panel:Start-->
+            <div class="slds-scrollable filterWindowCollapse" aura:id="filterPanel">
+                <div class="slds-theme_shade fullView">
+                    <div class="slds-grid slds-p-top_small">
+                        <div class="slds-col slds-size_5-of-12 slds-p-horizontal_medium slds-text-heading_large">
+                            <span>Filter</span>
+                        </div>
+                        <div class="slds-col slds-size_7-of-12 ">
+                            
+                            <div class="slds-float_right slds-p-right_xx-small">
+                                <lightning:button class="slds-button slds-button--brand" variant="brand" title="Apply" onclick="{!c.searchOutResources}"
+                                                  label="Apply" />
+                                <lightning:button class="slds-button slds-button--brand" variant="brand" title="Reset" onclick="{!c.resetTheValues}"
+                                                  label="Reset" />
+                                
+                                <lightning:buttonIcon  class="slds-button slds-button--brand" iconName="utility:close" size="medium"
+                                                      alternativeText="close" title="Close Window" onclick="{! c.closeFilterWindow }" />
+                            </div>
+                        </div>
+                        <!--div class="slds-col slds-size_2-of-12 slds-p-left_x-small">
+                        </div-->
+                    </div>
+                    <hr class="thin" />
+                    <lightning:accordion class="slds-theme_shade" aura:id="accordion" allowMultipleSectionsOpen="true">
+                        <aura:if isTrue="{!v.searchDetailObject.openFromResourceReqScreen}">
+                            <lightning:accordionSection name="{!v.accordionResourceRequestDetailsValue}"
+                                                        label="{!v.accordionResourceRequestDetailsValue}">
+                                <aura:set attribute="body">
+                                    <div class="slds-form" role="list">
+                                        <!--Resource request Name-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span
+                                                          class="slds-form-element__label slds-form-element__static">{!v.searchDetailObject.selectedResourceRequest.Name}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Resource Status-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span class="slds-form-element__label">Status</span>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-form-element__static">
+                                                            <div class="slds-form-element__static">
+                                                                <lightning:select aura:id="a_opt" label="" onchange="{!c.statusChange}" value="{!v.searchDetailObject.selectedResourceRequest.pse__Status__c}">
+                                                                    <option value="">--None--</option>
+                                                                    <aura:iteration items="{!v.searchDetailObject.statusList}" var="wrap">
+                                                                        <option text="{!wrap}" value="{!wrap}" />
+                                                                    </aura:iteration>
+                                                                </lightning:select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Requested Hour-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span class="slds-form-element__label">Requested Hour</span>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-form-element__static">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.selectedResourceRequest.pse__SOW_Hours__c}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--Requested Bill Rate-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span class="slds-form-element__label">Requested Bill Rate</span>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-form-element__static">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.selectedResourceRequest.pse__Requested_Bill_Rate__c}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Project-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span class="slds-form-element__label">Project</span>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-form-element__static">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.selectedResourceRequest.pse__Project__r.Name}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!--Opportunity Name-->
+                                        <div class="slds-form__row">
+                                            <div class="slds-form__item" role="listitem">
+                                                <div
+                                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                    <span class="slds-form-element__label">Opportunity</span>
+                                                    <div class="slds-form-element__control">
+                                                        <div class="slds-form-element__static">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.selectedResourceRequest.pse__Opportunity__r.Name}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:set>
+                            </lightning:accordionSection>
+                            <aura:set attribute="else">
+                                <lightning:accordionSection name="{!v.accordionAddressDetailsValue}" label="{!v.accordionAddressDetailsValue}">
+                                    <aura:set attribute="body">
+                                        <lightning:inputAddress streetLabel="Street" cityLabel="City"
+                                                                countryLabel="Country" provinceLabel="Province" postalCodeLabel="PostalCode"
+                                                                street="{!v.searchDetailObject.street}" city="{!v.searchDetailObject.city}"
+                                                                country="{!v.searchDetailObject.country}"
+                                                                province="{!v.searchDetailObject.state}"
+                                                                postalCode="{!v.searchDetailObject.zipCode}" onchange="{!c.addressDetailsChangeCount}"/>
+                                    </aura:set>
+                                </lightning:accordionSection>
+                            </aura:set>
+                        </aura:if>
+                        <aura:if isTrue="{!v.searchDetailObject.customSettingValue}">
+                            <lightning:accordionSection name="{!v.accordionRoleValue}" label="{!v.accordionRoleValue}">
+                                <aura:set attribute="body">
+                                    <lightning:select aura:id="a_opt" label="" onchange="{!c.roleCount}" value="{!v.searchDetailObject.role}">
+                                        <option value="">--None--</option>
+                                        <aura:iteration items="{!v.searchDetailObject.roleList}" var="wrap">
+                                            <option text="{!wrap}" value="{!wrap}" />
+                                        </aura:iteration>
+                                    </lightning:select>
+                                </aura:set>
+                            </lightning:accordionSection>
+                        </aura:if>
+                        <lightning:accordionSection name="{!v.accordionSearchResourceValue}" label="{!v.accordionSearchResourceValue}">
+                            <aura:set attribute="body">
+                                <aura:if isTrue="{!v.searchDetailObject.openFromResourceReqScreen}">
+                                    <div class="">                  
+                                        <lightning:input type="text" value="{!v.searchDetailObject.name}"
+                                                         disabled="true" onchange="{!c.nameChangeMethod}"/>
+                                        <lightning:input type="date" label="Start Date"
+                                                         value="{!v.searchDetailObject.startDate}" onchange="{!c.validateDates}" onclick="{!c.validateDatesClick}"/>
+                                        <lightning:input type="date" label="End Date"
+                                                         value="{!v.searchDetailObject.endDate}" onchange="{!c.validateDates}" onclick="{!c.validateDatesClick}"/>
+                                        <lightning:input type="text" label="Name"
+                                                         value="{!v.searchDetailObject.resourceRequestName}" onchange="{!c.resourceRequestNameChangeMethod}"/>
+                                    </div>
+                                    <aura:set attribute="else">
+                                        <div
+                                             class="">
+                                            <lightning:input type="date" name="input6" label="Start Date"
+                                                             value="{!v.searchDetailObject.startDate}" onchange="{!c.validateDates}" onclick="{!c.validateDatesClick}"/>
+                                            <lightning:input type="date" name="input7" label="End Date"
+                                                             value="{!v.searchDetailObject.endDate}" onchange="{!c.validateDates}" onclick="{!c.validateDatesClick}"/>
+                                            <lightning:input type="text" name="input8" label="Name"
+                                                             value="{!v.searchDetailObject.resourceRequestName}" onchange="{!c.resourceRequestNameChangeMethod}"/>
+                                            <lightning:input type="search" name="input9" label="Resource Request"
+                                                             value="{!v.searchDetailObject.name}"
+                                                             onclick="{!c.openResourceRequestModal}" onchange="{!c.nameChangeMethod}"/>
+                                        </div>
+                                    </aura:set>
+                                </aura:if>
+                            </aura:set>
+                        </lightning:accordionSection>
+                        <lightning:accordionSection name="{!v.accordionAdditionalFiltersValue}" label="{!v.accordionAdditionalFiltersValue}">
+                            <aura:set attribute="body">
+                                <!--Region-->
+                                <div class="slds-grid slds-gutters">
+                                    
+                                    <div class="slds-col slds-size_2-of-12 slds-m-top_medium">
+                                        <span class="slds-form-element__label">Region</span>
+                                    </div>
+                                    
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:select aura:id="regionFilter" label="" value="{!v.searchDetailObject.regionFilter}" onchange="{!c.regionDisabledValueCheck}">
+                                            <option value="">--</option>
+                                            <option value="Is Null">Is Null</option>
+                                            <option value="Not Is Null">Not Is Null</option>
+                                            <option value="Equals">Equals</option>
+                                            <option value="Not Equals">Not Equals</option>
+                                        </lightning:select>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <aura:if isTrue="{!v.regionDisabled}">
+                                            <lightning:input type="search"
+                                                             value="{!v.searchDetailObject.regionValue}"
+                                                             disabled="{!v.regionDisabled}"></lightning:input>
+                                            <aura:set attribute="else">
+                                                <lightning:input type="search"
+                                                                 value="{!v.searchDetailObject.regionValue}"
+                                                                 onclick="{!c.openRegionModal}"
+                                                                 ></lightning:input>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                                <!--Practice-->
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_2-of-12 slds-m-top_medium">
+                                        <span class="slds-form-element__label">Practice</span>
+                                    </div>
+                                    
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:select aura:id="practiceFilter" label="" onchange="{!c.practiceDisabledValueCheck}"
+                                                          value="{!v.searchDetailObject.practiceFilter}">
+                                            <option value="">--</option>
+                                            <option value="Is Null">Is Null</option>
+                                            <option value="Not Is Null">Not Is Null</option>
+                                            <option value="Equals">Equals</option>
+                                            <option value="Not Equals">Not Equals</option>
+                                        </lightning:select>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <aura:if isTrue="{!v.practiceDisabled}">
+                                            <lightning:input type="search" value="{!v.searchDetailObject.practiceValue}"
+                                                             disabled="{!v.practiceDisabled}"
+                                                             ></lightning:input>
+                                            <aura:set attribute="else">
+                                                <lightning:input type="search" value="{!v.searchDetailObject.practiceValue}"
+                                                                 onclick="{!c.openPracticeModal}"
+                                                                 ></lightning:input>
+                                            </aura:set>
+                                        </aura:if>              
+                                    </div>
+                                </div>
+                                <!--Group-->
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_2-of-12 slds-m-top_medium">
+                                        <span class="slds-form-element__label">Group</span>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:select aura:id="groupFilter" label="" onchange="{!c.groupDisabledValueCheck}"
+                                                          value="{!v.searchDetailObject.groupFilter}">
+                                            <option value="">--</option>
+                                            <option value="Is Null">Is Null</option>
+                                            <option value="Not Is Null">Not Is Null</option>
+                                            <option value="Equals">Equals</option>
+                                            <option value="Not Equals">Not Equals</option>
+                                        </lightning:select>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <aura:if isTrue="{!v.groupDisabled}">
+                                            <lightning:input type="search" value="{!v.searchDetailObject.groupValue}"
+                                                             disabled="{!v.groupDisabled}"
+                                                             ></lightning:input>
+                                            <aura:set attribute="else">
+                                                <lightning:input type="search" value="{!v.searchDetailObject.groupValue}"
+                                                                 onclick="{!c.openGroupModal}"
+                                                                 ></lightning:input>
+                                            </aura:set>
+                                        </aura:if>
+                                    </div>
+                                </div>
+                                <!--Cost Rate-->
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_2-of-12 slds-m-top_medium">
+                                        <span class="slds-form-element__label">Cost Rate</span>
+                                    </div>
+                                    
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:select aura:id="costFilter" label="" onchange="{!c.costDisabledValueCheck}"
+                                                          value="{!v.searchDetailObject.defaultCostRateFilter}">
+                                            <option value="">--</option>
+                                            <option value="Is Null">Is Null</option>
+                                            <option value="Not Is Null">Not Is Null</option>
+                                            <option value="Equals">Equals</option>
+                                            <option value="Not Equals">Not Equals</option>
+                                            <option value="Greater">Greater</option>
+                                            <option value="Greater or Equals">Greater or Equals</option>
+                                            <option value="Less">Less</option>
+                                            <option value="Less or Equals">Less or Equals</option>
+                                        </lightning:select>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:input type="Integer" disabled="{!v.costDisabled}"
+                                                         value="{!v.searchDetailObject.defaultCostRateValue}" onchange="{!c.additionalFilterCountCalculation}">
+                                            
+                                        </lightning:input>
+                                    </div>
+                                </div>
+                                <!--Utilization-->
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col slds-size_2-of-12 slds-m-top_medium">
+                                        <span class="slds-form-element__label">Utilization</span>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:select aura:id ="utilizationFilter" label="" onchange="{!c.utilizationDisabledValueCheck}"
+                                                          value="{!v.searchDetailObject.scheduledUtilizationFilter}">
+                                            <option value="">--</option>
+                                            <option value="Is Null">Is Null</option>
+                                            <option value="Not Is Null">Not Is Null</option>
+                                            <option value="Equals">Equals</option>
+                                            <option value="Not Equals">Not Equals</option>
+                                            <option value="Greater">Greater</option>
+                                            <option value="Greater or Equals">Greater or Equals</option>
+                                            <option value="Less">Less</option>
+                                            <option value="Less or Equals">Less or Equals</option>
+                                        </lightning:select>
+                                    </div>
+                                    <div class="slds-col slds-size_5-of-12">
+                                        <lightning:input type="Integer" disabled="{!v.utilizationDisabled}"
+                                                         value="{!v.searchDetailObject.scheduledUtilizationValue}" onchange="{!c.additionalFilterCountCalculation}">
+                                        </lightning:input>
+                                    </div>
+                                </div>
+                            </aura:set>
+                        </lightning:accordionSection>
+                        <lightning:accordionSection name="{!v.accordionSkillValue}" label="{!v.accordionSkillValue}">
+                            <aura:set attribute="body">
+                                <!--Change Start Based Out Of Wrap text Directly From ResourceScreen-->
+                                <aura:iteration items="{!v.searchDetailObject.lstSkill}" var="item" indexVar="varInd">
+                                    <div class="slds-form__row">
+                                        <div class="slds-form__item" role="listitem">
+                                            <div
+                                                 class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                <span class="slds-form-element__label"><ui:inputCheckbox name="{!item.index}"
+                                                                                                         value="{!item.isSelected}"/></span>
+                                                <span class="slds-form-element__label">{!item.skillCertification.Name}</span>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-form-element__static">
+                                                        <div class="slds-form-element__static">
+                                                            
+                                                            <lightning:select label="" name="{!item.index}" value="{!item.skillExp}">
+                                                                <option value="">--None--</option>
+                                                                <aura:iteration items="{!v.searchDetailObject.skillCertRatingList}" var="wrap">
+                                                                    <option text="{!wrap}" value="{!wrap}" />
+                                                                </aura:iteration>
+                                                            </lightning:select>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:iteration>
+                                <!--Chnages End Based Out Of Wrap text Directly From ResourceScreen-->
+                                <div class="slds-grid">
+                                    <div class="slds-col"><lightning:button variant="brand" label="Add"
+                                                                            aura:id="Skill" title="Add" onclick="{! c.handleClick }" /></div>
+                                    <div class="slds-col"><lightning:button aura:id ="skillRemove" variant="brand" label="Remove" title="Remove"
+                                                                            onclick="{!c.removeSkillsAndCertificationNotRequired}" /></div>
+                                    <div class="slds-col"><lightning:radioGroup name="radioButtonGroup"
+                                                                                options="{!v.options}"
+                                                                                value="{!v.searchDetailObject.filterLogicSkill}"
+                                                                                type="button"/></div>
+                                </div>
+                                <!--<lightning:button variant="brand" label="Add Filter Logic" title="Add Filter Logic"
+                                                  onclick="{!c.filterLogicSkills}" />-->
+                                <aura:if isTrue="{!not(empty(v.searchDetailObject.lstSkill))}">
+                                    
+                                    <lightning:textarea name="SkillFilterLogic" placeholder="Add Logic Here..."
+                                                        value="{!v.searchDetailObject.skillFilterCriteria}" />
+                                    
+                                </aura:if>
+                                
+                            </aura:set>
+                        </lightning:accordionSection>
+                        <lightning:accordionSection name="{!v.accordionCertificationValue}" label="{!v.accordionCertificationValue}">
+                            <aura:set attribute="body">
+                                <!--Change Start Based Out Of Wrap text Directly From ResourceScreen-->
+                                <aura:iteration items="{!v.searchDetailObject.lstCertification}" var="item" indexVar="varInd">
+                                    <div class="slds-form__row">
+                                        <div class="slds-form__item" role="listitem">
+                                            <div
+                                                 class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                <span class="slds-form-element__label"><ui:inputCheckbox name="{!item.index}"
+                                                                                                         value="{!item.isSelected}"/></span>
+                                                <span class="slds-form-element__label">{!item.skillCertification.Name}</span>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-form-element__static">
+                                                        <div class="slds-form-element__static">
+                                                            
+                                                            <lightning:select label="" name="{!item.index}" value="{!item.skillExp}">
+                                                                <option value="">--None--</option>
+                                                                <aura:iteration items="{!v.searchDetailObject.skillCertRatingList}" var="wrap">
+                                                                    <option text="{!wrap}" value="{!wrap}" />
+                                                                </aura:iteration>
+                                                            </lightning:select>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:iteration>
+                                <!--Chnages End Based Out Of Wrap text Directly From ResourceScreen-->
+                                
+                                
+                                <div class="slds-grid">
+                                    <div class="slds-col"><lightning:button variant="brand" label="Add" aura:id="Certification"
+                                                                            title="Add" onclick="{! c.handleClick }" /></div>
+                                    <div class="slds-col"><lightning:button aura:id ="certificationRemove" variant="brand" label="Remove" title="Remove"
+                                                                            onclick="{!c.removeSkillsAndCertificationNotRequired}" /></div>
+                                    <div class="slds-col"><lightning:radioGroup name="radioButtonGroup2"
+                                                                                options="{!v.options}"
+                                                                                value="{!v.searchDetailObject.filterLogicCertification}"
+                                                                                type="button"/></div>
+                                </div>
+                                <aura:if isTrue="{!not(empty(v.searchDetailObject.lstCertification))}">
+                                    <lightning:textarea name="CertificationFilterLogic" placeholder="Add Logic Here..."
+                                                        value="{!v.searchDetailObject.certificationFilterCriteria}" />
+                                    
+                                </aura:if>
+                                <!--<lightning:button variant="brand" label="Add Filter Logic" title="Add Filter Logic"
+                                                  onclick="{!c.filterLogicCertifications}" />-->
+                            </aura:set>
+                        </lightning:accordionSection>
+                        <lightning:accordionSection name="{!v.accordionAttributeValue}" label="{!v.accordionAttributeValue}">
+                            <aura:set attribute="body">
+                                <!--Chnages-->
+                                <div class="slds-form__row">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div
+                                             class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                            <span class="slds-form-element__label"><ui:inputCheckbox change="{!c.attributeCountCalculation}" value="{!v.searchDetailObject.workedWithCustomer}"
+                                                                                                     /></span>
+                                            <span class="slds-form-element__label">Worked With Customer</span>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!--2nd-->
+                                <div class="slds-form__row">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div
+                                             class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                            <span class="slds-form-element__label"><ui:inputCheckbox 
+                                                                                                     change="{!c.attributeCountCalculation}" value="{!v.searchDetailObject.availability}"/></span>
+                                            <span class="slds-form-element__label">Availability</span>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <div class="slds-form-element__static">
+                                                        <lightning:select label=""
+                                                                          value="{!v.searchDetailObject.availabilityValue}">
+                                                            <option value="No Assignments">No Assignments</option>
+                                                            <option value="Has Assignments">Has Assignments</option>
+                                                        </lightning:select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--3rd-->
+                                <div class="slds-form__row">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div
+                                             class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                            <span class="slds-form-element__label"><ui:inputCheckbox 
+                                                                                                     change="{!c.attributeCountCalculation}" value="{!v.searchDetailObject.internal}"/></span>
+                                            <span class="slds-form-element__label">Internal</span>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <div class="slds-form-element__static">
+                                                        <lightning:select label=""
+                                                                          value="{!v.searchDetailObject.internalValue}">
+                                                            <option value="Yes">Yes</option>
+                                                            <option value="No">No</option>
+                                                        </lightning:select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--4th-->
+                                <div class="slds-form__row">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div
+                                             class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                            <span class="slds-form-element__label"><ui:inputCheckbox disabled = "{!!v.isLocationAvailble}"
+                                                                                                     change="{!c.attributeCountCalculation}" value="{!v.searchDetailObject.distance}"/></span>
+                                            <span class="slds-form-element__label">Distance</span>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <div class="slds-form-element__static">
+                                                        <lightning:select label=""
+                                                                          value="{!v.searchDetailObject.distanceValue}">
+                                                            <option value="25">25</option>
+                                                            <option value="50">50</option>
+                                                            <option value="100">100</option>
+                                                            <option value="200">200</option>
+                                                            <option value="300">300</option>
+                                                            <option value="All">All</option>
+                                                        </lightning:select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--5th-->
+                                <div class="slds-form__row">
+                                    <div class="slds-form__item" role="listitem">
+                                        <div
+                                             class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                            
+                                            <span class="slds-form-element__label">Distance Unit</span>
+                                            <div class="slds-form-element__control">
+                                                <div class="slds-form-element__static">
+                                                    <div class="slds-form-element__static">
+                                                        <lightning:select label=""
+                                                                          value="{!v.searchDetailObject.distanceUnit}">
+                                                            <option value="km">Kilometers</option>
+                                                            <option value="mi">Miles</option>
+                                                        </lightning:select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--6th-->
+                                <aura:if isTrue="{!v.isRenderRDC}">
+                                    <div class="slds-form__row">
+                                        <div class="slds-form__item" role="listitem">
+                                            <div
+                                                 class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                                <span class="slds-form-element__label"><ui:inputCheckbox change="{!c.attributeCountCalculation}" value="{!v.searchDetailObject.rdcFilter}"/></span>
+                                                <span class="slds-form-element__label">Centralized Delivery Location</span>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-form-element__static">
+                                                        <div class="slds-form-element__static">
+                                                            <lightning:select label="" value="{!v.searchDetailObject.rdcValue}">
+                                                                <option value="">--None--</option>
+                                                                <aura:iteration items="{!v.searchDetailObject.rdcList}" var="wrap">
+                                                                    <option text="{!wrap}" value="{!wrap}" />
+                                                                </aura:iteration>
+                                                            </lightning:select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </aura:if>
+                            </aura:set>
+                        </lightning:accordionSection>
+                    </lightning:accordion>
+                </div>
+            </div>
+            <!--Filter Panel:End-->
+            <!--DataTable:Start-->
+            <div class="slds-scrollable dataTableExpand slds-p-top_small slds-p-left_small" aura:id="ResourceDataTable">
+                <!--aura:if isTrue="{!v.isDisplayingContacts}"-->
+                <div class="slds-grid slds-p-top_small">
+                    <div class="slds-col slds-size_8-of-12 slds-p-horizontal_small slds-text-heading_medium">
+                        <span>Displaying {!v.total} Records • Page {!v.page} / {!v.pages}</span>
+                    </div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <div class="slds-grid slds-align_absolute-center">
+                            <aura:if isTrue="{!v.data4BooleanCheck}">
+                                <div class="slds-col slds-size_3-of-12 "> 
+                                    <lightning:buttonIcon  aura:id="Previous Page" disabled="true" iconName="utility:chevronleft" size="medium"
+                                                          alternativeText="Previous" title="Previous"/>
+                                </div>
+                                <aura:set attribute="else">
+                                    <div class="slds-col slds-size_3-of-12 "> 
+                                        <lightning:buttonIcon  aura:id="Previous Page" disabled="{!v.page == 1}" iconName="utility:chevronleft" size="medium"
+                                                              alternativeText="Previous" title="Previous" onclick="{! c.navigate }"/>
+                                    </div>
+                                </aura:set>
+                            </aura:if>
+                            <div class="slds-colslds-size_6-of-12"> 
+                                <ui:inputSelect aura:id="recordSize" change="{!c.onSelectChange}">
+                                    <ui:inputSelectOption text="10" label="10" value="true" />
+                                    <ui:inputSelectOption text="15" label="15" />
+                                    <ui:inputSelectOption text="20" label="20" />
+                                </ui:inputSelect>
+                                
+                                
+                            </div>
+                            <div class="slds-col slds-size_3-of-12 "> 
+                                <lightning:buttonIcon  disabled="{!v.page == v.pages}" aura:id="Next Page" iconName="utility:chevronright" size="medium"
+                                                      alternativeText="Next" title="Next" onclick="{! c.navigate }"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="thin" />
+                <div class="slds-theme_default slds-theme_backgroundColor-white"> 
+                    <!--div class="slds-page-header" role="banner">
+                            <p class="slds-page-header__title slds-truncate">
+                                {!v.total} Contacts • Page {!v.page} / {!v.pages}
+                            </p>
+                            <ui:inputSelect aura:id="recordSize" label="Display Record Per Page: "
+                                change="{!c.onSelectChange}">
+                                <ui:inputSelectOption text="10" label="10" value="true" />
+                                <ui:inputSelectOption text="15" label="15" />
+                                <ui:inputSelectOption text="20" label="20" />
+                            </ui:inputSelect>
+                        </div-->
+                    <lightning:card  title="" class = "cScrollableTableCmp" > 
+                        <lightning:layout >
+                            <lightning:layoutItem size="12"> 
+                                <ui:scrollerWrapper class="datatable-parent slds-table_header-fixed scroll"> 
+                                    <aura:if isTrue="{!v.isLowerLevelDetails}">
+                                        <lightning:datatable class = "slds-table_header-fixed_container"
+                                                             data="{!v.dataLowerLevelDetails}" columns="{! v.columnsLowerLevelDetails }" keyField="id"
+                                                             hideCheckboxColumn="true"
+                                                             onrowaction="{! c.selectRowActionLowerLevelDetails}"
+                                                             />
+                                        
+                                        <aura:set attribute="else">
+                                            <lightning:datatable class = "slds-table_header-fixed_container"
+                                                                 data="{!v.data4}" columns="{! v.columns4 }" keyField="id"
+                                                                 hideCheckboxColumn="true" 
+                                                                 onrowaction="{! c.selectRowAction}" 
+                                                                 defaultSortDirection="{!v.defaultSortDirection}"
+                                                                 sortedDirection="{!v.sortDirection}"
+                                                                 sortedBy="{!v.sortedBy}"
+                                                                 onsort="{!c.handleSort}" 
+                                                                 />
+                                            total22::::"{!v.data4.total}" <br></br>
+                                            coloumn22::::"{!v.columns4}"
+                                        </aura:set>
+                                    </aura:if>
+                                    <div class="buffer-div"></div>
+                                </ui:scrollerWrapper>   
+                            </lightning:layoutItem>
+                        </lightning:layout > 
+                    </lightning:card> 
+                    <c:ScrollableTableCmp/> 
+                    
+                    <!--       <c:TestTable /> -->
+                    <!--Card Trial:Prakash-->
+                    <!--aura:iteration items="{!v.data4}" var="data">
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container" title="Research Resource">
+
+                                        <lightning:avatar variant="circle" src="/docs/component-library/app/images/examples/avatar2.jpg" initials="RN" fallbackIconName="standard:person_account" alternativeText="Amy Weaver" class="slds-m-right_small"/>
+
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+
+                                        <span>{!data.Name}</span>
+
+                                    </h2>
+                                </div>
+                                <div class="slds-no-flex">
+                                    <div class="{!v.toggleDropdown+' slds-dropdown-trigger slds-dropdown-trigger_click'}">
+                                        <lightning:buttonIcon iconName="utility:down"  variant="bare"   onclick="{!c.openDropDown}" alternativeText="View More" title="View More" />
+
+                                        <div class="slds-dropdown slds-dropdown_actions slds-dropdown_right">
+                                            <ul class="slds-dropdown__list" role="menu">
+                                                <li class="slds-dropdown__item" role="presentation">
+                                                    <a href="javascript:void(0);" role="menuitem" tabindex="0">
+                                                        <span class="slds-truncate" title="Action One">Action One</span>
+                                                    </a>
+                                                </li>
+                                                <li class="slds-dropdown__item" role="presentation">
+                                                    <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                        <span class="slds-truncate" title="Action Two">Action Two</span>
+                                                    </a>
+                                                </li>
+                                                <li class="slds-dropdown__item" role="presentation">
+                                                    <a href="javascript:void(0);" role="menuitem" tabindex="-1">
+                                                        <span class="slds-truncate" title="Action Three">Action Three</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body">
+
+                        </div>
+                    </article>
+
+                </aura:iteration-->
+                    <!--Card Traial-Prakash-->
+                    <!--div class="slds-align_absolute-center">
+                            <lightning:button disabled="{!v.page == 1}" variant="brand" label="Previous Page"
+                                onclick="{! c.navigate }" />
+                            <aura:if isTrue="{!v.displayDisabledNextButton}">
+                                <lightning:button disabled="true" variant="brand" label="Next Page" />
+                                <aura:set attribute="else">
+                                    <lightning:button disabled="{!v.page == v.pages}" aura:id="previousPage"
+                                        variant="brand" label="Next Page" onclick="{! c.navigate }" />
+                                </aura:set>
+                            </aura:if>
+                        </div-->
+                </div> 
+                <!--aura:set attribute="else">
+                        <div class="slds-page-header slds-box slds-theme_default slds-theme_backgroundColor-white dataTableExpand"
+                            aura:id="ResourceDataTable">
+                            <div class="slds-page-header" role="banner">
+                                <p class="slds-page-header__title slds-truncate">
+                                    {!v.total} Contacts • Page {!v.page} / {!v.pages}
+                                </p>
+                                <ui:inputSelect aura:id="recordSize2" label="Display Record Per Page: ">
+                                    <ui:inputSelectOption text="10" label="10" value="true" />
+                                    <ui:inputSelectOption text="15" label="15" />
+                                    <ui:inputSelectOption text="20" label="20" />
+                                </ui:inputSelect>
+                            </div>
+                            <lightning:datatable data="{!v.data4}" columns="{! v.columns4 }" keyField="id" hideCheckboxColumn = "true"/>
+                    <div class="slds-align_absolute-center">
+                        <lightning:button disabled="true" variant="brand" label="Previous Page"  />
+                        <lightning:button disabled="true" aura:id="previousPage2" variant="brand" label="Next Page" />
+                    </div>
+                        </div>
+                    </aura:set-->
+                <!--/aura:if-->
+            </div>
+            <!--DataTable:End-->
+        </div>
+    </div>
+    <!--Modal Start For Skills-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchSkillsModalOpen}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Select Skills
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <!--Code Start Based On Name Of Skill Filter-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="searchedSkill" value="{!v.searchedSkillName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button aura:id="Skill" variant="brand" label="Search" onclick="{!c.handleClick}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <!--Code End Based On Name Of Skill Filter-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!-- <div class="slds-grid slds-p-vertical_large slds-m-around_medium slds-gutters slds-col slds-size_11-of-12"> -->
+                        <lightning:datatable columns="{! v.columns }" data="{! v.data }" keyField="id"
+                                             showRowNumberColumn="true" onrowselection="{! c.getSelectedSkills }" />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                        <lightning:button variant="brand" label="Add" title="Add" onclick="{! c.handleSkills }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Skills-->
+    <!--Modal Start For Certifications-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchCertificationssModalOpen}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Select Certifications
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <!--Code Start Based On Name Of Skill Filter-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="searchedCertification" value="{!v.searchedCertificationName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button aura:id="Certification" variant="brand" label="Go!" onclick="{!c.handleClick}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <!--Code End Based On Name Of Skill Filter-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!-- <div class="slds-grid slds-p-vertical_large slds-m-around_medium slds-gutters slds-col slds-size_11-of-12"> -->
+                        <lightning:datatable columns="{! v.columns2 }" data="{! v.data2 }" keyField="id"
+                                             showRowNumberColumn="true" onrowselection="{! c.getSelectedCertifications }" />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                        <lightning:button variant="brand" label="Add" title="Add"
+                                          onclick="{! c.handleCertifications }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Certifications-->
+    <!--Modal Start For ResouceRequest-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchResourceRequests}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Resource Requests
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="resourceRequestName" value="{!v.resourceRequestName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button variant="brand" label="Go!" onclick="{!c.searchResourceRequest}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <aura:if isTrue="{!v.isResReqTable}">
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning:datatable columns="{! v.columns3 }" data="{! v.data3 }" keyField="id"
+                                                 showRowNumberColumn="true" maxRowSelection="1"
+                                                 onrowselection="{! c.selectParticularRR }" />
+                        </div>
+                    </aura:if>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For ResouceRequest-->
+    <!--Modal Start For Add Filter Logic Skills-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.showfilterLogicSkills}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Add Filter Logic
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning:textarea label="Skill Logic" name="SkillFilterLogic" placeholder="Add Logic Here..."
+                                            value="{!v.searchDetailObject.filterSkillLogic}" />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Add Filter Logic Skills-->
+    <!--Modal Start For Add Filter Logic Certifications-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.showfilterLogicCertifications}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Certifications Logic Screen
+                        </h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!--Modal/Popup Box Body Starts here-->
+                        <lightning:textarea label="Certification Logic" name="CertificationFilterLogic"
+                                            placeholder="Add Logic Here..." value="{!v.searchDetailObject.filterCertificationLogic}" />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Save" title="Save" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Add Filter Logic Certification-->
+    <!--Modal Start For AssignHold-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.assignHold}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <aura:if isTrue="{!v.assignValue}">
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                Assign {!v.conName}
+                            </h2>
+                        </header>
+                    </aura:if>
+                    <aura:if isTrue="{!v.holdValue}">
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                Hold {!v.conName}
+                            </h2>
+                        </header>
+                    </aura:if>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-form__row">
+                            <div class="slds-form__item" role="listitem">
+                                <!--Scheduling Strategy-->
+                                <div
+                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                    <span class="slds-form-element__label">Scheduling Strategy</span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            <div class="slds-form-element__static">
+                                                <lightning:select aura:id="selectPattern" label=""
+                                                                  onchange="{!c.calculateSchedulingPatterns}">
+                                                    <option value="">Choose one...</option>
+                                                    <option value="CalculateEndDateLevelSchedule">Calculate End Date,
+                                                        Level Schedule</option>
+                                                    <option value="CalculateEndDateIgnoreAvailability">Calculate End
+                                                        Date, Ignore Availability</option>
+                                                    <option value="AdjustHoursPerDay">Adjust Hours Per Day</option>
+                                                    <option value="Custom">Custom</option>
+                                                    <option value="PercentAllocation">Percent Allocation</option>
+                                                    <option value="ZeroHourSchedule">Zero Hour Schedule</option>
+                                                </lightning:select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--Start Date-->
+                                <div
+                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                    <span class="slds-form-element__label">Start Date</span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            <aura:if isTrue="{!v.startendDateBasisOfSchedulingPattern}">
+                                                <div class="slds-form-element__static">
+                                                    {!v.scheduleRecord.pse__Start_Date__c}
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <aura:if isTrue="{!v.searchDetailObject.openFromResourceReqScreen}">
+                                                        <div class="slds-form-element__static">
+                                                            {!v.searchDetailObject.selectedResourceRequest.pse__Start_Date__c}
+                                                        </div>
+                                                        <aura:set attribute="else">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.startDate}
+                                                            </div>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--End Date-->
+                                <div
+                                     class="slds-form-element slds-form-element_edit slds-form-element_horizontal slds-hint-parent">
+                                    <span class="slds-form-element__label">End Date</span>
+                                    <div class="slds-form-element__control">
+                                        <div class="slds-form-element__static">
+                                            <aura:if isTrue="{!v.startendDateBasisOfSchedulingPattern}">
+                                                <div class="slds-form-element__static">
+                                                    {!v.scheduleRecord.pse__End_Date__c}
+                                                </div>
+                                                <aura:set attribute="else">
+                                                    <aura:if isTrue="{!v.searchDetailObject.openFromResourceReqScreen}">
+                                                        <div class="slds-form-element__static">
+                                                            {!v.searchDetailObject.selectedResourceRequest.pse__End_Date__c}
+                                                        </div>
+                                                        <aura:set attribute="else">
+                                                            <div class="slds-form-element__static">
+                                                                {!v.searchDetailObject.endDate}
+                                                            </div>
+                                                        </aura:set>
+                                                    </aura:if>
+                                                </aura:set>
+                                            </aura:if>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--2nd Row-->
+                        <aura:if isTrue="{!v.displayForWeeklyHours}">
+                            <div class="table-container">
+                                <table
+                                       class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_col-bordered slds-scrollable">
+                                    <thead>
+                                        <tr class="slds-line-height_reset">
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Sunday">Sunday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Monday">Monday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Tuesday">Tuesday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Wednesday">
+                                                    Wednesday
+                                                </div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Thursday">Thursday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Friday">Friday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Saturday">Saturday</div>
+                                            </th>
+                                            <th class="" scope="col">
+                                                <div class="slds-truncate" title="Total">Total</div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <aura:if isTrue="{!v.customHoursSchedule}">
+                                        <tbody>
+                                            <tr class="slds-hint-parent">
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Sunday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Monday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Tuesday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Wednesday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Thursday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Friday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer"
+                                                                         oncommit="{!c.calculateCustomSchedulePatternTotalHours}"
+                                                                         value="{!v.scheduleRecord.pse__Saturday_Hours__c}" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="slds-truncate">
+                                                        <lightning:input type="Integer" value="{!v.totalHours}" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <aura:set attribute="else">
+                                            <tbody>
+                                                <tr class="slds-hint-parent">
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Sunday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Monday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Tuesday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Wednesday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Thursday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Friday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">
+                                                            {!v.scheduleRecord.pse__Saturday_Hours__c}
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="slds-truncate">{!v.totalHours}</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </aura:set>
+                                    </aura:if>
+                                </table>
+                            </div>
+                        </aura:if>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <aura:if isTrue="{!v.assignValue}">
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Assign" title="Assign"
+                                              onclick="{! c.assignHoldSchedulePattern }" disabled="{!v.disableAssignHoldButton}"/>
+                            <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                        </footer>
+                    </aura:if>
+                    <aura:if isTrue="{!v.holdValue}">
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Hold" title="Hold"
+                                              onclick="{! c.assignHoldSchedulePattern }" disabled="{!v.disableAssignHoldButton}"/>
+                            <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                        </footer>
+                    </aura:if>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For AssignHold-->
+    
+    <!--Start Modal For Map-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.mapOpenClose}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            View In Map Screen
+                        </h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <!--Modal/Popup Box Body Starts here-->
+                        <lightning:map mapMarkers="{! v.mapMarkers }" zoomLevel="{!v.zoomLevel}" />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--End Code For Map-->
+    <!--Modal Start For Region-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchRegionModal}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Region
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="regionName" value="{!v.regionName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button variant="brand" label="Go!" onclick="{!c.searchRegion}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <aura:if isTrue="{!v.isRegionTable}">
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning:datatable columns="{! v.columnsReg }" data="{! v.dataReg }" keyField="id"
+                                                 showRowNumberColumn="true" maxRowSelection="1"
+                                                 onrowselection="{! c.selectParticularegion }" />
+                        </div>
+                    </aura:if>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Region-->
+    <!--Modal Start For Practice-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchPracticeModal}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Practice
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="practiceName" value="{!v.practiceName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button variant="brand" label="Go!" onclick="{!c.searchPractice}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <aura:if isTrue="{!v.isPracticeTable}">
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning:datatable columns="{! v.columnsPrac }" data="{! v.dataPrac }" keyField="id"
+                                                 showRowNumberColumn="true" maxRowSelection="1"
+                                                 onrowselection="{! c.selectParticularPractice }" />
+                        </div>
+                    </aura:if>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Practice-->
+    <!--Modal Start For Group-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSearchGroupModal}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Group
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                            <td style="width: 60%;">
+                                <lightning:input aura:id="groupName" value="{!v.groupName}" />
+                            </td>
+                            <td style="width: 40%;">
+                                <lightning:button variant="brand" label="Go!" onclick="{!c.searchgroup}" />
+                            </td>
+                        </tr>
+                    </table>
+                    <aura:if isTrue="{!v.isGroupTable}">
+                        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                            <lightning:datatable columns="{! v.columnsGroup }" data="{! v.dataGroup }" keyField="id"
+                                                 showRowNumberColumn="true" maxRowSelection="1"
+                                                 onrowselection="{! c.selectParticularGroup }" />
+                        </div>
+                    </aura:if>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Cancel" title="Cancel" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For Group-->
+    <!--Modal Start For PercentAllocation-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.ispercentAllocation}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <aura:if isTrue="{!v.assignValue}">
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                Assign {!v.conName}
+                            </h2>
+                        </header>
+                    </aura:if>
+                    <aura:if isTrue="{!v.holdValue}">
+                        <header class="slds-modal__header">
+                            <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                                  alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                            <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                                Hold {!v.conName}
+                            </h2>
+                        </header>
+                    </aura:if>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-form__row">
+                            <div class="slds-form__item" role="listitem">                             
+                            </div>
+                        </div>
+                        <!--Start-->
+                        <div class="slds-float_left slds-p-right_xx-small">
+                            <lightning:button class="slds-button slds-button--brand" variant="brand" label="Add Date Range" title="Add Date Range" onclick="{!c.addDateRangePercentAllocation}"
+                                              />
+                            <lightning:button class="slds-button slds-button--brand" variant="brand" label="Update" title="Update" onclick="{!c.updatePercentAllocation}"
+                                              />
+                            <lightning:button class="slds-button slds-button--brand" variant="brand" label="Remove" title="Remove" onclick="{!c.deleteParticularRowBasedOnPercentAllocation}"
+                                              />
+                            <lightning:input type="checkbox" label="Ignore Holiday" auraId="checkBox" checked="{!v.ignoreHoliday}" />
+                        </div>
+                        &nbsp;&nbsp;
+                        <!--End-->
+                        
+                        <div class="table-container">
+                            <table style = "overflow: scroll;overflow: auto">
+                                <thead>
+                                    <tr class="slds-line-height_reset">
+                                        <th  scope="col">
+                                            <div class="slds-truncate" style = "width:20px" title="Sunday"></div>
+                                        </th>
+                                        <th  scope="col">
+                                            <div class="slds-truncate" style = "width:120px" title="Sunday">Start Date</div>
+                                        </th>
+                                        <th  scope="col">
+                                            <div class="slds-truncate" style = "width:120px" title="Sunday">End Date</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Sunday">Allocation</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Sunday">Sunday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Monday">Monday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Tuesday">Tuesday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Wednesday">Wednesday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Thursday">Thursday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Friday">Friday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Saturday">Saturday</div>
+                                        </th>
+                                        <th class="" scope="col">
+                                            <div class="slds-truncate" title="Total">Total</div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <aura:iteration items="{!v.percentageAlloationRow}" var="row">
+                                        <tr class="slds-hint-parent">
+                                            <td >
+                                                <div class="slds-truncate" style = "width:20px">
+                                                    <ui:inputCheckbox name="{!row.indexForDeletion}"
+                                                                      value="{!row.isSelectedCheck}"/>                                                    
+                                                </div>
+                                            </td> 
+                                            <td >
+                                                <div class="slds-truncate" style = "width:120px">
+                                                    <lightning:input type="date"                          
+                                                                     value="{!row.startDate}" />
+                                                </div>
+                                            </td>
+                                            <td >
+                                                <div class="slds-truncate" style = "width:120px">
+                                                    <lightning:input type="date"
+                                                                     value="{!row.endDate}" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate" style = "width:60px">
+                                                    <lightning:input type="Double"
+                                                                     value="{!row.percentageAllocation}" />
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Sunday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Monday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Tuesday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Wednesday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Thursday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Friday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">
+                                                    {!row.schedule.pse__Saturday_Hours__c}
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="slds-truncate">{!row.totalHours}</div>
+                                            </td>
+                                        </tr>
+                                    </aura:iteration>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <aura:if isTrue="{!v.showError}">
+                        <div class="{!'slds-box slds-theme–alert-texture slds-theme–' + v.type}" style="background-color: coral">
+                            <lightning:icon iconName="{! 'utility:'+ v.type }" size="medium"
+                                            
+                                            alternativeText="{!v.type}" Class="iconContainer"/>&nbsp;
+                            <span class="slds-text-body–regular">
+                                <aura:unescapedHtml value="{!v.message}"/>
+                            </span>
+                        </div>
+                    </aura:if>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <aura:if isTrue="{!v.assignValue}">
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Assign" title="Assign"
+                                              onclick="{! c.partialAssign }" disabled="{!v.disableAssignHoldButton}"/>
+                            <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                        </footer>
+                    </aura:if>
+                    <aura:if isTrue="{!v.holdValue}">
+                        <footer class="slds-modal__footer">
+                            <lightning:button variant="brand" label="Hold" title="Hold"
+                                              onclick="{! c.partialAssign }" disabled="{!v.disableAssignHoldButton}"/>
+                            <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                        </footer>
+                    </aura:if>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For PercentAllocation-->
+    <!--Modal Start For SendEmail-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isSendEmail}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Send Email
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium">
+                        <lightning:input aura:id="emailAddress" label="To" value="{!v.resEmail}"/>
+                        <lightning:input aura:id="emailSubject" label="Subject" value="{!v.emailSubject}"/>
+                        <lightning:textArea aura:id="emailBody" label="Body" value="{!v.emailBody}"/>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Send" title="Send" onclick="{!c.sendEmailToResource}" />
+                        <lightning:button variant="brand" label="Close" title="Close" onclick="{!c.closeModel}" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For SendEmail-->
+    <!--Modal Start For PastJobs-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isPastJobs}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Past Jobs
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <lightning:datatable columns="{! v.assignmentDataColoumns }" data="{! v.assignmentData }" hideCheckboxColumn="true" keyField="id"
+                                             />
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For PastJobs-->
+    <!--Modal Start For CQ-->
+    <div class="slds-m-around_xx-large right">
+        <aura:if isTrue="{!v.isCQ}">
+            <!-- Modal/Popup Box starts here-->
+            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                     aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                <div class="slds-modal__container">
+                    <!-- Modal/Popup Box Header Starts here-->
+                    <header class="slds-modal__header">
+                        <lightning:buttonIcon iconName="utility:close" onclick="{! c.closeModel }"
+                                              alternativeText="Close" variant="bare-inverse" class="slds-modal__close" />
+                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">
+                            Skills and Certifications
+                        </h2>
+                    </header>
+                    <!--Modal/Popup Box Body Starts here-->
+                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                        <div class="slds-text-align_center slds-text-heading_large">{!v.conNameLowerLevel}</div>
+                        <lightning:accordion class="slds-theme_shade" aura:id="accordionCQ" allowMultipleSectionsOpen="true">
+                            <lightning:accordionSection name="Skills"
+                                                        label="Skills">
+                                <aura:set attribute="body">
+                                    <aura:if isTrue="{!not(empty(v.competenceDataList))}">
+                                        <lightning:datatable columns="{! v.competenceDataColoumns }" data="{! v.competenceDataList }" hideCheckboxColumn="true" keyField="id"
+                                                             />
+                                        <aura:set attribute="else">
+                                            <p>No Skills found for the selected resource.</p>
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:set>
+                            </lightning:accordionSection>
+                            <lightning:accordionSection name="Certifications"
+                                                        label="Certifications">
+                                <aura:set attribute="body">
+                                    <aura:if isTrue="{!not(empty(v.qualificationDataList))}">
+                                        <lightning:datatable columns="{! v.qualificationDataColoumns }" data="{! v.qualificationDataList }" hideCheckboxColumn="true" keyField="id"
+                                                             />
+                                        <aura:set attribute="else">
+                                            <p>No Certifications found for the selected resource.</p>
+                                        </aura:set>
+                                    </aura:if>
+                                </aura:set>
+                            </lightning:accordionSection>
+                        </lightning:accordion>
+                    </div>
+                    <!--Modal/Popup Box Footer Starts here-->
+                    <footer class="slds-modal__footer">
+                        <lightning:button variant="brand" label="Close" title="Close" onclick="{! c.closeModel }" />
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </aura:if>
+    </div>
+    <!--Modal Ends For CQ-->
+    <!--Code Start For Spinner-->
+    <aura:if isTrue="{!v.spinner}">
+        <div role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open">
+            <div aura:id="spinnerId" class="slds-spinner_container">
+                <div class="slds-spinner--brand slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                    <span class="slds-assistive-text">Loading...</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </div>
+    </aura:if>
+    <!--Code Ends For Spinner-->
+</aura:component>

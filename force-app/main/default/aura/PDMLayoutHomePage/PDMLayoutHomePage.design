@@ -1,0 +1,28 @@
+<!--
+ - Created by Lucas_Garcia1 on 23/02/2021.
+ -->
+
+<design:component label="PDM Home Page Layout">
+    <flexipage:template >
+        <flexipage:region name="column1" defaultWidth="Small" />
+        <flexipage:region name="column2" defaultWidth="Small" />
+        <flexipage:region name="column3" defaultWidth="Small" />
+        <flexipage:region name="column4" defaultWidth="Small" />
+        <flexipage:region name="column5" defaultWidth="Small" />
+
+        <flexipage:region name="column6" defaultWidth="Small" />
+        <flexipage:region name="column7" defaultWidth="Small" />
+        <flexipage:region name="column8" defaultWidth="Small" />
+        <flexipage:region name="column9" defaultWidth="Small" />
+
+        <flexipage:region name="column10" defaultWidth="Medium" />
+        <flexipage:region name="column11" defaultWidth="Medium" />
+
+        <flexipage:region name="column12" defaultWidth="Medium" />
+        
+		<flexipage:region name="column13" defaultWidth="Medium" />
+        <flexipage:region name="column14" defaultWidth="Medium" />
+
+    </flexipage:template>
+
+</design:component>

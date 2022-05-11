@@ -1,0 +1,324 @@
+<apex:page controller="CustomPopupController" action="{!openPopup}" showHeader="true" lightningStyleSheets="true">
+    <apex:stylesheet value="https://fonts.googleapis.com/css?family=Roboto"/>
+    <head>
+         <meta charset="utf-8"/>
+                           <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <style >
+        .popupBackground{
+        background-color:white;
+        opacity: 0.20;
+        filter: alpha(opacity = 20);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 9998;
+        }
+        .custPopup{
+        background-color: white;
+        z-index: 9999;
+        left: 50%;
+        padding-right:20px;
+        position: absolute;
+        width: 750px;
+        margin-left: -400px;
+        top:20px;
+        }
+        .button {
+        color: white;
+        padding: 3px 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 14px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 2px;
+        }
+        .alef {
+        font-family: 'Roboto';
+        font-size: 14px;
+        }
+        
+        .btn-primary {
+        color: #fff;
+        background-color: #007bff;
+        border-color: #007bff;
+        }
+        .slds-button_brand{
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-align: center;
+        vertical-align: middle;
+        justify-content: center;
+        transition: border .15s linear;
+        background-color: #0070d2;
+        border: 1px solid #0070d2;
+        color: #fff;
+        }
+        .slds-button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding: 0;
+        background: transparent;
+        background-clip: border-box;  
+        border-radius: 1px;
+        line-height: 1.875rem; 
+        white-space: normal; 
+        user-select: none;
+        }
+        .aligned { 
+        display: flex; 
+        align-items: center; 
+        } 
+        .mainHeading {
+        width: 100%;
+        height: 130px;
+        background-repeat: no-repeat;
+        background: linear-gradient(60deg, #41b6e6, #0076ce), transparent 0;
+        }
+        .dell_logo {
+        width: 100px;
+        height:100px;
+        float: left;
+        
+        }
+        .What_s_new_in_this_release_ {
+        font-style: normal;
+        font-weight: lighter;
+        font-size: 30px;
+        display: block;
+        color: #fff;
+        width: 89%;                                   
+        padding-top: 35px;
+        text-align: center;
+        }
+        .speaker {
+        width: 100%;
+        height: 130px;
+        overflow: visible;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+        }
+        
+        ul.b {
+        list-style-type: square;
+        }
+        
+    </style>
+    <apex:form >
+        <apex:pageBlock > 
+            <apex:outputPanel id="tstpopup" rendered="{!showPopup}">
+                <apex:outputPanel styleClass="popupBackground" layout="block" />
+                <apex:outputPanel styleClass="custPopup" layout="block" >
+                    <center>
+                        <apex:image width="15%"  url="{!$Resource.salesforce_logo}"/>
+                    </center>
+                    
+                    <!--     <apex:image width="100%" url="{!$Resource.Dell_logo}"/>
+<table width="100%">
+<tr>
+<td CLASS="MYTABLE" width="50%"> <font color="#0076ce" class ="alef"><b><ul style="padding-inline-start: 10px">Release Date : {!$Label.Release_Date}</ul></b></font></td>
+<td width="20%" > <font color="#0076ce" class ="alef"><b><ul style="padding-inline-end: 10px">Version : {!$Label.Version}</ul></b></font></td>
+</tr>
+</table>
+
+
+
+<div>
+<span style="float: right; font-weight: bold">Version : {!$Label.Version}</span>
+<span style="float: left; font-weight: bold">Release Date : {!$Label.Release_Date}</span>
+</div> 
+<br></br><br></br> --> 
+                    
+                    
+                    
+                    <div class="mainHeading">         
+                      <!--commented due to broken logo-->  <svg class="dell_logo" viewBox="-80 -45 160 150">
+                            <path fill="rgba(255,255,255,1)" id="dell_logo" d="M 37.90435028076172 0.2999999821186066 C 17.30578994750977 0.2999999821186066 0.3000002205371857 17.30578994750977 0.3000002205371857 37.90435028076172 C 0.3000002205371857 58.50291442871094 17.0662727355957 75.50870513916016 37.90435028076172 75.50870513916016 C 58.742431640625 75.50870513916016 75.50870513916016 58.742431640625 75.50870513916016 37.90435028076172 C 75.50870513916016 17.06627082824707 58.50291442871094 0.3000004589557648 37.90435028076172 0.3000004589557648 Z M 37.90435028076172 71.67641448974609 C 19.2219352722168 71.67641448974609 4.132289409637451 56.58676528930664 4.132289409637451 37.90435028076172 C 4.132289409637451 19.22193717956543 19.2219352722168 4.132289886474609 37.90435028076172 4.132289886474609 C 56.58676528930664 4.132289886474609 71.67641448974609 19.2219352722168 71.67641448974609 37.90435028076172 C 71.67641448974609 56.58676528930664 56.58676528930664 71.67641448974609 37.90435028076172 71.67641448974609 Z M 67.12556457519531 42.93423080444336 L 67.12556457519531 46.2874870300293 L 56.58676910400391 46.2874870300293 L 56.58676910400391 29.76073455810547 L 60.41905975341797 29.76073455810547 L 60.41905975341797 42.93423080444336 L 67.12556457519531 42.93423080444336 Z M 18.02434349060059 46.04796600341797 C 21.85663604736328 46.04796600341797 25.20988845825195 43.41326522827148 25.92844390869141 39.82049560546875 L 35.26964950561523 47.00603866577148 L 44.61085891723633 39.82049560546875 L 44.61085891723633 46.04796600341797 L 55.14965438842773 46.04796600341797 L 55.14965438842773 42.6947135925293 L 48.20362854003906 42.6947135925293 L 48.20362854003906 29.52121543884277 L 44.371337890625 29.52121543884277 L 44.371337890625 35.74868774414063 L 35.5091667175293 42.93423080444336 L 33.59302139282227 41.25760269165039 L 37.90434646606445 37.90435028076172 L 42.45519638061523 34.31157684326172 L 39.82049560546875 32.15591430664063 L 30.95832443237305 39.1019401550293 L 29.04217910766602 37.42531585693359 L 37.90434646606445 30.71880722045898 L 35.26964569091797 28.56314468383789 L 25.92844009399414 35.74868774414063 C 24.97036743164063 32.15591430664063 21.85663032531738 29.52121543884277 18.02433967590332 29.52121543884277 L 11.31783008575439 29.52121543884277 L 11.31783008575439 46.04796600341797 C 11.31783008575439 46.04796600341797 18.02433967590332 46.04796600341797 18.02433967590332 46.04796600341797 Z M 14.91060829162598 42.93423080444336 L 14.91060829162598 32.87446975708008 L 17.78482627868652 32.87446975708008 C 20.18000793457031 32.87446975708008 22.33567237854004 35.03013229370117 22.33567237854004 37.90435028076172 C 22.33567237854004 40.5390510559082 20.41952514648438 42.93423080444336 17.78482627868652 42.93423080444336 C 17.78482627868652 42.93423080444336 14.91060733795166 42.93423080444336 14.91060733795166 42.93423080444336 Z">
+                            </path>
+                        </svg> 
+                        <div class="What_s_new_in_this_release_">
+                            <span>What's new in this release for SFDC?</span>
+                        </div>
+                        <!-- <div class="headingFooter">                                         
+<div class="Release_date_">
+<span>Release date:</span>
+</div>
+<div class="date">
+<span>03-NOV-2020</span>
+</div>
+<div class="Version">
+<span>Version : 1.0</span>
+</div>
+</div>-->
+                        <table width="100%">
+                            <tr>
+                                <td width="50%"> <font color="#fff" class ="alef"><b><ul style="padding-inline-start: 30px">Release Date : {!$Label.Release_Date}</ul></b></font></td>
+                                <td width="12%" > <font color="#fff" class ="alef"><b><ul style="padding-inline-end: 5px">Version : {!$Label.Version}</ul></b></font></td>
+                            </tr>
+                        </table>
+                        <div  class="speaker">                               
+                            <svg style="width:inherit;height:inherit;overflow:visible;">
+                               <!-- <rect fill="url(#Dell_Svg)" width="100%" height="100%"></rect>-->
+                                <pattern elementId="Dell_Svg" id="Dell_Svg" x="0" y="0" width="100%" height="100%">
+                                    <image x="0" y="0" width="100%" height="100%" href="{!$Label.DellSvgUrl}"></image>
+                                </pattern>
+                            </svg>
+                        </div>
+                        
+                    </div>
+                    
+                    
+                    <!--    <p><apex:image width="10%" style="padding-inline-start:20px; padding-top:20px;" url="{!$Resource.Dell}"/><ui style="padding-left: 65px;font-size: 30px;"> What's new in the release?</ui></p>-->
+                    <!--<ul class ="alef"><ul><b><p>&nbsp; Release Date : {!$Label.Release_Date} <ui style="float: right;">Version : {!$Label.Version}&emsp;&emsp;</ui></p></b></ul></ul>-->
+                    <!-- Services_Datapoints -->
+                    <br/>
+                    <div class="aligned" style="{! IF(Service_Datapoints.size > 0, 'display:block', 'display:none')}"> 
+                       <apex:image style="width:50px" url="{!$Resource.service_logo}"/>
+                        &nbsp;&nbsp;<span style="color: #00447c;font-weight: bold;font-size: 16px;font-family: 'Roboto'">Services</span> 
+                    </div>                 
+                    
+                    <apex:outputPanel rendered="{! IF(Service_Datapoints.size > 0, true, false)}">
+                        <apex:repeat var="e" value="{!Service_Datapoints}">
+                            <font color="#0076ce" class ="alef">
+                                <ul style="padding-left: 30px" class="aligned">
+                                    <b >{!e.Heading__c}</b> 
+                                </ul>
+                            </font>
+                            <ul style="padding-left: 20px">
+                                <font class ="alef">
+                                    <ul><li>{!e.Body__c}</li></ul>
+                                    <apex:outputPanel rendered="{!e.Body1__c != ''}">
+                                        <ul><li >{!e.Body1__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body2__c != ''}">
+                                        <ul><li>{!e.Body2__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body3__c != ''}">                               
+                                        <ul><li>{!e.Body__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body4__c != ''}">
+                                        <ul><li>{!e.Body4__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body5__c != ''}">                               
+                                        <ul><li>{!e.Body5__c}</li></ul>
+                                    </apex:outputPanel>
+                                </font>
+                            </ul>
+                        </apex:repeat>
+                    </apex:outputPanel>
+                    <!-- Sales_Datapoints -->
+                    
+                     <div class="aligned" style="{! IF(Sales_Datapoints.size > 0, 'display:block', 'display:none')}"> 
+                        <apex:image style="width:50px" url="{!$Resource.service_logo}"/>
+                        &nbsp;&nbsp;<span style="color: #00447c;font-weight: bold;font-size: 16px;font-family: 'Roboto'">Campaigns, Leads And Opportunities</span> 
+                    </div>                       
+                    
+                    <apex:outputPanel rendered="{! IF(Sales_Datapoints.size > 0, true, false)}">    
+                        <apex:repeat var="e" value="{!Sales_Datapoints}">
+                            <font color="#0076ce" class ="alef">
+                                <ul style="padding-left: 30px">
+                                    <b >{!e.Heading__c}</b> 
+                                </ul>
+                            </font>
+                            <ul style="padding-left: 20px">
+                                <font class ="alef">
+                                <apex:outputPanel rendered="{!e.Body__c != ''}">
+                                    <ul class ="body"><li>{!e.Body__c}</li></ul>
+                                    <apex:outputPanel rendered="{!e.Heading__c == 'User Experience Enhancements on Lead Detail Page'}">
+                                    <ul class="b" style="padding-left: 20px" >
+                                        <li><b>Customer, marketing and sales comments – </b> along with call to action next steps – are now consolidated with the new <b>Talking Points</b> section.</li>
+                                        <li><b>AISR Details</b> section within Talking Points provides qualification and appointment details to support the AISR Team for federal.</li>
+                                        <li><b>Unused and under-utilized fields </b> are removed or repositioned to simplify the Lead View interface.</li>
+                                        </ul>
+                                         </apex:outputPanel>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body1__c != ''}">
+                                        <ul class ="body"><li>{!e.Body1__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body2__c != ''}"> 
+                                        <ul class ="body"><li>{!e.Body2__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body3__c != ''}">
+                                        <ul class ="body"><li>{!e.Body3__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body4__c != ''}">
+                                        <ul class ="body"><li>{!e.Body4__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body5__c != ''}">
+                                        <ul class ="body"><li>{!e.Body5__c}</li></ul>
+                                    </apex:outputPanel>
+                                </font>
+                            </ul>
+                        </apex:repeat> 
+                    </apex:outputPanel>  
+                    <!--Deals-->
+                     <div class="aligned" style="{! IF(Deal_Datapoints.size > 0, 'display:block', 'display:none')}"> 
+                        <apex:image style="width:50px" url="{!$Resource.service_logo}"/>
+                        &nbsp;&nbsp;<span style="color: #00447c;font-weight: bold;font-size: 16px;font-family: 'Roboto'">Deal Registration</span> 
+                    </div>                       
+                    
+                    <apex:outputPanel rendered="{! IF(Deal_Datapoints.size > 0, true, false)}">    
+                        <apex:repeat var="e" value="{!Deal_Datapoints}">
+                            <font color="#0076ce" class ="alef">
+                                <ul style="padding-left: 30px">
+                                    <b >{!e.Heading__c}</b> 
+                                </ul>
+                            </font>
+                            <ul style="padding-left: 20px">
+                                <font class ="alef">
+                                    <ul class ="body"><li>{!e.Body__c}</li></ul>
+                                    <apex:outputPanel rendered="{!e.Body1__c != ''}">
+                                        <ul class ="body"><li>{!e.Body1__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body2__c != ''}"> 
+                                        <ul class ="body"><li>{!e.Body2__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body3__c != ''}">
+                                        <ul class ="body"><li>{!e.Body3__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body4__c != ''}">
+                                        <ul class ="body"><li>{!e.Body4__c}</li></ul>
+                                    </apex:outputPanel>
+                                    <apex:outputPanel rendered="{!e.Body5__c != ''}">
+                                        <ul class ="body"><li>{!e.Body5__c}</li></ul>
+                                    </apex:outputPanel>
+                                </font>
+                            </ul>
+                        </apex:repeat> 
+                    </apex:outputPanel>
+                       
+                    <apex:actionFunction name="updateFields" action="{!updateCurrentRecord}" rerender="msgs">
+                        <apex:param name="checkboxField" value="false" assignTo="{!inputText}"/>            
+                    </apex:actionFunction>
+                    <ul><ul><b>
+                        &nbsp;&nbsp;<font class ="alef">Don't show me this again until next Release</font>&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" id="someText" style="outline: 1px solid"/>
+                        </b></ul></ul>
+                    <ul>
+                        <!-- <button class= "button" onclick="onClickScreen();" type="button" style="background:#0076ce">Ok</button> -->
+                        <button class="slds-button slds-button_brand" style="background:#0076ce;width:10%;height:32px;float:right;" onclick="onClickScreen();" type="button">OK</button>
+                    </ul>
+                </apex:outputPanel>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
+    <apex:pageMessages id="msgs"/>
+    <script>
+    function onClickScreen(){
+        
+        var number = document.getElementById("someText").checked;
+        console.log(number);
+        updateFields(number);
+        // history.back();
+    }
+    function onClickCancel(){
+        cancel();
+    }
+    </script>
+</apex:page>

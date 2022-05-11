@@ -1,0 +1,26 @@
+<aura:component implements="force:appHostable,force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+	 <aura:attribute name="recordId" type="String" />
+    <!--<aura:handler name="init" value="{!this}" action="{!c.init}" />-->
+    <aura:html tag="style">
+                 .cuf-content {
+            padding: 3 3rem !important;
+        }
+        .slds-p-around--medium {
+            padding: 3rem !important;
+        }       
+        .slds-modal__content{
+            overflow-y:hidden !important;
+            height:unset !important;
+            max-height:unset !important;
+        }   .slds-modal__container{
+                min-width: 70%;
+                max-width: 70%;     
+                }
+                .modal-body{ 
+                min-height: 80%;
+                max-height: 80%; 
+                }
+   		    </aura:html>
+    
+    <c:fbe_FPRM_DealClonelwc recordId="{!v.recordId}"/>
+</aura:component>

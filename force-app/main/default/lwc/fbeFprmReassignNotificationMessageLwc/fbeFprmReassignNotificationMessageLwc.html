@@ -1,0 +1,49 @@
+<!--
+  @description       : 
+  @author            : Sitaram Teki
+  @group             : 
+  @last modified on  : 02-01-2022
+  @last modified by  : Sitaram Teki
+-->
+<template>
+    <template if:true={showdealmessage}>
+        <div class="demo-only" style="height:4rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast my-background">
+                    <span class="slds-assistive-text">warning</span>
+                    <span
+                        class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top"
+                        title="Description of icon when needed">
+                        <lightning-icon icon-name='custom:custom53' alternative-text='warning' variant='inverse'
+                            size='medium' title='warning' class="my-icon"></lightning-icon>
+
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_medium my-text">Do Not Use the Reassign Button for Deal
+                            Registration Approval Process.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={showdealextmessage}>
+        <div class="demo-only" style="height:4rem">
+            <div class="slds-notify_container slds-is-relative">
+                <div class="slds-notify slds-notify_toast my-background">
+                    <span class="slds-assistive-text">warning</span>
+                    <span
+                        class="slds-icon_container slds-icon-utility-warning slds-m-right_small slds-no-flex slds-align-top"
+                        title="Description of icon when needed">
+                        <lightning-icon icon-name='custom:custom53' alternative-text='warning' variant='inverse'
+                            size='medium' title='warning' class="my-icon"></lightning-icon>
+
+                    </span>
+                    <div class="slds-notify__content">
+                        <h2 class="slds-text-heading_medium my-text">Do Not Use the Reassign Button for Deal Extension
+                            Approval Process.</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+</template>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>50.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>FPRM Hero</masterLabel>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+         <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__RecordPage">
+            <property name="resourceUrl" type="String" label="Resource URL" description="Where to get resource from" default="/images/FBE_FPRM_Capital_Hero_Live.png"/>
+            <property name="imgOrVideo" type="String" label="Resource Type" description="Whether to show an image or a video." datasource="Image" default="Image"/>
+            <property name="title" type="String" label="Title" default=""/>
+<property name="slogan" type="String" label="Slogan" default=""/>
+           <property name="heroDetailsPosition" type="String" label="Hero Text Block Position" datasource="c-hero-center-left,c-hero-center-right,c-hero-center-default,c-hero-center-center"/>
+           <property name="overlay" type="Boolean" label="Overlay" description="Apply dark overlay over hero" default="true"/>
+            <property name="opacity" type="Integer" label="Overlay Opacity" description="How dark the overlay should be. 0 (no overlay) - 1 (completely dark)" min="0" max="10" default="5"/>
+          </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

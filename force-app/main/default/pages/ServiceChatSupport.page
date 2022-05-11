@@ -1,0 +1,99 @@
+<apex:page sidebar="false" controller="ServiceFormController" cache="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+
+<apex:composition template="ServiceTemplate">
+<apex:define name="content">
+<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+<apex:includeScript value="{!URLFOR($Resource.ServicePortalJavascript)}"/>
+<script>
+setPageTitle('Live Chat');
+initChat('{!baseUrl}', '{!orgId}', '{!chatDeploymentId}', '{!buttonId}'); 
+function doSubmit(form) {
+   if (form.checkValidity() === false) return false;
+   let firstName = getElem('first-name').value;
+   let lastName = getElem('last-name').value;
+   let email = getElem('email').value;
+   let issue = getElem('issue').value;
+   let company = getElem('company').value;
+   let phone = getElem('phone').value
+   let extension = getElem('extension').value;
+   let recTypeId = '{!caseRecordTypeId}';
+   let queueName = '{!$CurrentPage.parameters.queueName}';
+   let serviceTag = '{!$CurrentPage.parameters.servicetag}';
+   return submitChat(firstName, lastName, email, company, phone, extension, serviceTag, queueName, issue, recTypeId);      
+}
+</script>
+<main>
+   <div class="dds__container">
+      <div style="padding-top:15px">
+      <a href="/ServiceOrderStatus" target="_blank">Order Status</a>
+      </div>
+   <div style="padding-top:20px">   
+   <div id="form">
+      <h1>Welcome to Federal Chat Support</h1>
+      <div style="padding-top:0px">
+         Service Tag: {!$CurrentPage.parameters.servicetag}
+      </div>
+      <div style="padding-top:30px">
+         <h3>Tell us about the problem you're having.</h3>
+      </div>
+      <div style="padding-top:0px">
+         <h5>We will email you a transcript of our chat today. If the chat is disconnected, we will call you back.</h5>
+      </div>
+      <div style="width:325px;padding-top:20px">
+      <form data-toggle="dds__form-validation" onsubmit="return doSubmit(this)" data-validate="true">
+         <div class="dds__form-group">
+            <label for="company">Company Name (optional)</label> 
+            <input type="text" class="dds__form-control" maxlength="80" name="company" id="company" aria-invalid="false" aria-describedby=""></input>
+         </div>
+         <div class="dds__form-group">
+            <label for="first-name">First Name</label> 
+            <input type="text" class="dds__form-control" maxlength="80" name="first-name" id="first-name" required="true" aria-invalid="false" aria-describedby=""></input>
+            <div class="dds__invalid-feedback" id="input-error-first-name"> Please enter first name. </div>
+         </div>
+         <div class="dds__form-group">
+            <label for="last-name">Last Name</label> 
+            <input type="text" class="dds__form-control" maxlength="80" name="last-name" id="last-name" required="true" aria-invalid="false" aria-describedby=""></input>
+            <div class="dds__invalid-feedback" id="input-error-last-name"> Please enter last name. </div>
+         </div>
+         <div class="dds__form-group">
+            <label for="email">Email Address</label> 
+            <input type="email" class="dds__form-control" maxlength="80" name="email" id="email" required="true" aria-invalid="false" aria-describedby=""></input>
+            <div class="dds__invalid-feedback" id="input-error-email"> Please enter a valid email address. </div>
+         </div>
+         <div class="dds__form-group">
+            <label for="phone">Phone Number</label> 
+            <input type="phone" maxlength="80" name="phone" id="phone" placeholder="(___) ___-____" set-cursor="1" pattern="\([1-9]{1}[0-9]{2}\) [0-9]{3}-[0-9]{4}" class="dds__form-control dds__input-masked" data-charset="(XXX) XXX-XXXX" required="true" aria-invalid="false" aria-describedby=""></input>
+            <div class="dds__invalid-feedback" id="input-error-phone"> Please enter a valid phone number. </div>
+         </div>
+         <div class="dds__form-group" id="add-phone-extension">
+            <a href="#" onclick="return showChatExtension()">Add Extension</a> 
+         </div>
+         <div style="display:none" class="dds__form-group" id="phone-extension">
+            <label for="extension">Phone Extension</label> 
+            <input type="text" class="dds__form-control" maxlength="255" name="extension" id="extension" aria-invalid="false" aria-describedby=""></input>
+         </div>
+         <div class="dds__form-group">
+            <label for="issue">Issue Description (32,000 character limit)</label> 
+            <textarea class="dds__form-control" id="issue" name="issue" rows="3" required="true" maxlength="32000"></textarea>
+            <div class="dds__invalid-feedback" id="input-error-issue"> Please enter issue description. </div>
+         </div>
+         <div id="PrimaryMiniButton" data-content="<button type=&quot;button&quot; class=&quot;dds__btn dds__btn-primary dds__btn-sm dds__text-truncate&quot;>Primary Mini Button</button>" class="rendered-container">
+            <button id="button" class="dds__btn dds__btn-primary dds__btn-sm dds__text-truncate">Start Chat</button>
+         </div>
+      </form>
+   </div>
+   </div>
+   <div id="chat" style="display:none">
+      <h1>FIRST Chat</h1>
+      <h3>Hang tight while we connect you with a live agent.</h3>
+      <h4>Chat session will begin in the lower right corner of your screen...</h4>
+      <img src="https://qph.fs.quoracdn.net/main-qimg-fe14c462c2025fcfe5a696fc2a64b2bb" style="padding-top:40px;width:225px"></img>
+   </div>
+   </div>
+</div>
+<p id="snapinplaceholder"/>
+</main>
+<br/><br/><br/><br/>
+</apex:define>
+</apex:composition>
+</apex:page>

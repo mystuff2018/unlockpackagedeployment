@@ -1,0 +1,32 @@
+<apex:component controller="FBE_FindBDQuadForOpty" access="global">
+    <apex:attribute name="OptyId" type="Id" Description="Opportunity Deal Review information" assignTo="{!oppid}" />
+	<apex:repeat value="{!OptyBDQuad}" var="bdq">
+	<tr>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;Account and Deal Information</b></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lines of Business: </b><apex:outputfield value="{!bdq.Lines_of_Business__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Conus/Oconus/Both: </b><apex:outputfield value="{!bdq.CONUS_OCONUS_Both__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Approach Direct/Indirect: </b><apex:outputfield value="{!bdq.DirectIndirect__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Partners List (Priority Order): </b><apex:outputfield value="{!bdq.Partners_List__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Supplier: </b><apex:outputfield value="{!bdq.Supplier__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Type: </b><apex:outputfield value="{!bdq.Type__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Award Decision Criteria: </b><apex:outputfield value="{!bdq.Award_Decision_Criteria__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Non Standard Elements: </b>{!bdq.Non_Standard__c}</td><br/>
+		<br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;Other Relevant Information</b></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dell Pursuit Team: </b><apex:outputfield value="{!bdq.Dell_Pursuit_Team__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Procurement Details: </b><apex:outputfield value="{!bdq.Procurment_Details__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Asks: </b><apex:outputfield value="{!bdq.Asks__c}"/></td><br/>
+		<br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;Deal Overview and Win Strategy</b></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Deal/Opportunity Overview: </b><apex:outputfield value="{!bdq.Deal_Overview__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WIN Strategy: </b><apex:outputfield value="{!bdq.WIN_Strategy__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SAB: </b><apex:outputfield value="{!bdq.SAB__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formal actions to date: </b><apex:outputfield value="{!bdq.Formal_actions_to_date__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Pricing Strategy: </b><apex:outputfield value="{!bdq.Pricing__c}"/></td><br/>
+		<br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;Customer and Competitive Info</b></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Competitive Landscape/Type: </b><apex:outputfield value="{!bdq.CompetitiveLandscapeType__c}"/></td><br/>
+		<td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Special Competitor Pricing Strategy: </b><apex:outputfield value="{!bdq.PricingCompLandscape__c}"/></td><br/>
+	</tr>
+	</apex:repeat>  
+</apex:component>

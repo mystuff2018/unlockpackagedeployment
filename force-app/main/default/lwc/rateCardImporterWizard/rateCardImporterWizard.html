@@ -1,0 +1,65 @@
+<template>
+    <lightning-card class="component-card" title="Rate Card Importer">
+        <div class="card-body slds-p-around_medium slds-m-around_medium slds-p-bottom_x-small">
+            <!-- <lightning-input type="file" 
+            label="Select a CSV file"
+            accept=".csv"
+            onchange={onFileUpload}>test</lightning-input> -->
+            <div class="file-upload-container">
+                <label class="slds-form-element__label">Select a CSV file</label>
+                <input accept=".csv" type="file" class="hidden-input hidden-file-input" onchange={onFileUpload}>
+                <div class="drop-region" ondragover={onDragOver} ondrop={onDropFile} ondragleave={onDragLeave} ondragenter={onDragEnter}>
+                    <div class="drop-input">
+                        <lightning-button icon-name="utility:upload" variant="neutral" label="Select File" title="Select File" onclick={onClickFileUpload}></lightning-button>
+                        <span class="slds-file-selector__text slds-medium-show">Or drop a file</span>
+                    </div>
+                    <template if:true={rateCardFile}>
+                        <p>{rateCardFile.filename}</p>
+                    </template>
+                </div>
+            </div>
+            <template if:true={rateCardFilePreview}>
+                <article class="slds-card slds-card_boundary slds-p-around_small input-container">
+                    <details class="file-preview">
+                        <summary>File preview</summary>
+                        <pre>{rateCardFilePreview}</pre>
+                    </details>
+                </article>
+            </template>
+            <lightning-button variant="brand"
+            disabled={isButtonDisabled}
+            label="Import Rate Cards"
+            title="Import Rate Cards" 
+            onclick={handleImportRateCard} 
+            class="import-button"></lightning-button>
+        </div>
+    </lightning-card>
+
+    <template if:true={showModal}>
+        <div class="error-modal" style="height:24rem">
+            <section role="alertdialog" tabindex="0" aria-labelledby="prompt-heading-id" aria-describedby="prompt-message-wrapper" class="slds-modal slds-fade-in-open slds-modal_prompt" aria-modal="true">
+                <div class="slds-modal__container">
+                    <header class="slds-modal__header slds-theme_error slds-theme_alert-texture">
+                        <button onclick={closeModal} class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                            <svg class="slds-button__icon slds-button__icon_large" aria-hidden="true">
+                                <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#close"></use>
+                            </svg>
+                            <span class="slds-assistive-text">Close</span>
+                        </button>
+                        <h2 class="slds-text-heading_medium" id="prompt-heading-id">Importer Failed</h2>
+                    </header>
+                    <div class="slds-modal__content slds-p-around_medium" id="prompt-message-wrapper">
+                        <p>Something went wrong during rate cards import process. Check details below:</p>
+                        <pre>{errorMsg}</pre>
+                    </div>
+                    <footer class="slds-modal__footer slds-theme_default">
+                        <button onclick={closeModal} class="slds-button slds-button_neutral">Close</button>
+                    </footer>
+                </div>
+            </section>
+            <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+    </template>
+
+
+</template>

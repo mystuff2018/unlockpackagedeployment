@@ -1,0 +1,950 @@
+ROW_ID~X_FBE_PROD_BRAND~X_FBE_LOB~TYPE~X_FBE_PROD_TYPE~X_FBE_PROD_GROUP~X_RECURRING_BILL_FLG~X_NDAA_FLG~X_CORP_DISC_FLG~X_EXCEPTION_FLG~Last_Upd~
+1-CVJHXT~VSPHERE~VMware~Dell DFN Siebel~~~~~~~28-JAN-20~
+1-CVJHXY~VREALIZE BUSINESS~VMware~Dell DFN Siebel~~~~~~~30-JAN-20~
+1-CVJHY3~VREALIZE AUTOMATION~VMware~Dell DFN Siebel~~~~~~~30-JAN-20~
+1-CVJHY8~OEM Networking~Dell EMC NFV ready bundle for VMware base bundle with VSAN & VCloud director~Dell DFN Siebel~~~~~~~28-JAN-20~
+1-2FP0-786~18" and Below Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-785~19-20" Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-787~21-23" Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-11U-3715~LATITUDE 3350~Latitude~Dell DFN Siebel~Client Solutions PBU~Commercial~~~~~16-DEC-19~
+1-2FP0-790~24-26" Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1377~24x7 Support for Appassure <L> [3701]~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-788~27-29" Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-850~3-Cell 31WHR Primary Battery E7240 Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~31-JAN-20~
+1-2GO6-845~3-Cell 39WHr Battery E7250 Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~31-JAN-20~
+1-2FP0-789~30" and Larger Monitors~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-964~3M~Client Peripherals~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1295~3RD Party Hardware Installation~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-1093~3rd party Networking~NETWORKING~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2342~3RD Party S&P Warranty Extension <W>[2402]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-1094~3rd party Storage~STORAGE~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-254~3S PocketNet Technology Inc.~IP Surveillance Cameras~Dell DFN Siebel~S&P~Security~N~N~Y~N~26-JAN-20~
+1-2GO6-848~4-Cell 45WHR Primary Battery E7240 Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-843~4-Cell 52WHr Battery E7250 Customer Install~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-849~4-Cell 54WHr Battery E7450 Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1047~4ward Cloud in-a-box CBX, powered by DELL VRTX~PowerEdge~Dell DFN Siebel~Enterprise Solution Group~PowerEdge Servers~N~N~Y~N~26-JAN-20~
+1-2GO8-1153~4ward Cloud in-a-box Extender CBX-E, powered by DELL VRTX~PowerEdge~Dell DFN Siebel~Enterprise Solution Group~PowerEdge Servers~N~N~Y~N~26-JAN-20~
+1-2GO6-841~6 Cell Primary Battery 65Whr Simplo Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-847~9 Cell Primary Battery 97Whr Simplo Customer Install (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-221~A10 Networks~Networking Solutions~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-1089~ABAQUS~FEA/CFD~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2GO6-658~Absolute - Dell Data Security~Security Software~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-771~Absolute Software~Absolute MTM~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-291~Absolute Software - Test EOL APJ~Non Tied Enterprise~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-289~Absolute Software - Test EOL EMEA~Non Tied Enterprise~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-292~Absolute Software - Test EOL LATAM~Non Tied Enterprise~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-290~Absolute Software - Test EOL NA~Non Tied Enterprise~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-2341~Accelerators~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-1092~Accelrys~Chem Research~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2FP0-743~Access software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-413~AccessData~AccessData Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-BPYIWH~Accessories - Carrying Cases~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2340~Accessories - Carrying Cases - Alienware~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2243~Accessories - Carrying Cases - Tablets~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2238~Accessories - Carts- Furniture- Mounts~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2239~Accessories - Chassis-Plastics~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-BPYIWC~Accessories - Docks~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-BPYIW7~Accessories - Docks - Tablets~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2338~Accessories - Docks - Tablets - Type-C~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-BPYIW2~Accessories - Docks - Type-C~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2244~Accessories - Healthcare-Point of Care~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-BPYIVX~Accessories - Kbm - Keyboards~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2228~Accessories - Kbm - Keyboards - Alienware~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2223~Accessories - Kbm - Mice and Pointing Devices~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2227~Accessories - Kbm - Mice and Pointing Devices - Alienware~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2225~Accessories - Kbm - Misc~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2226~Accessories - Kbm - Misc - Tablets~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2224~Accessories - Kbm - Touchpad~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2240~Accessories - Locks- Security~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2236~Accessories - Mb- Procs~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2242~Accessories - Misc~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2234~Accessories - Tablets~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2237~Accessories - Video Cards- Graphics~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2235~Accessories - Web Cameras~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-151~Accidental Damage (CompleteCare - includes Multicover and Theft Protection)~Protection Services for Assets and Data~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2215~Accidental Damage - 3RD Party Insured <a> [1205]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2216~Accidental Damage - Anz (3Rd Party) Insured <a> [1208]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2217~Accidental Damage <a> [1200]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2213~Accidental Damage with Theft - 3RD Party Insured <a> [1215]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2214~Accidental Damage with Theft - Dell / 3RD Party Insured <a> [1212]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2212~Accidental Damage with Theft <a> [1210]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1429~Accounting software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1186~ACE Load Balancer~Cisco~Dell DFN Siebel~S&P~Non Tied Enterprise~N~N~Y~N~26-JAN-20~
+1-2FP0-693~ACT-NONTIED DEPLOYMENT SERVICES~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-690~ACT-NONTIED EDUCATION~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-688~ACT-NONTIED OTHER SERVICE~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-694~ACT-NONTIED RESIDENCY~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3068~ACT-POWERONE BASE WARRANTY~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3077~ACT-POWERONE CONFIGURATION AND LOGISTICS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3079~ACT-POWERONE DEPLOYMENT SERVICES~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3076~ACT-POWERONE EDUCATION~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3074~ACT-POWERONE HARDWARE~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3070~ACT-POWERONE HW SUPPORT SERVICE~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3067~ACT-POWERONE HW SUPPORT SERVICE RENEWAL~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3075~ACT-POWERONE OTHER SERVICE~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3078~ACT-POWERONE RESIDENCY~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3073~ACT-POWERONE SOFTWARE LICENSES~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3072~ACT-POWERONE SW SUPPORT SERVICE~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3071~ACT-POWERONE SW SUPPORT SERVICE RENEWAL~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3486~ACT-VXBLOCK BASE WARRANTY~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3493~ACT-VXBLOCK CONFIGURATION AND LOGISTICS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3492~ACT-VXBLOCK DEPLOYMENT SERVICES~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3490~ACT-VXBLOCK EDUCATION~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3488~ACT-VXBLOCK HARDWARE~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3484~ACT-VXBLOCK HW SUPPORT SERVICE~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3485~ACT-VXBLOCK HW SUPPORT SERVICE RENEWAL~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3489~ACT-VXBLOCK OTHER SERVICE~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3491~ACT-VXBLOCK RESIDENCY~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3487~ACT-VXBLOCK SOFTWARE LICENSES~Converged Infrastructure Trans~Dell DFN Siebel~Enterprise Solution Group~Converged Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-3482~ACT-VXBLOCK SW SUPPORT SERVICE~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3481~ACT-VXBLOCK SW SUPPORT SERVICE RENEWAL~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2701~Action games~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2106~Active Directory Consulting (Agile)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2209~Active Directory Consulting (Wadi)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2210~Active Directory Consulting (Wadi) -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2107~Active Directory Migration and Management Software Svcs -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-297~Active Directory, Sql-Storage~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2GO8-866~Active System Appliance~Data Center Virtualization~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2GO8-689~Active System Custom Configuration~Data Center Virtualization~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2GO8-1251~Active System Manager~Data Center Virtualization~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2GO6-205~Acumentrics Corp~UPS Products~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2GO6-269~Adaptec~Adaptec Storage~Dell DFN Siebel~S&P~Storage~N~N~Y~N~26-JAN-20~
+1-2GO8-1207~Adapter~Client~Dell DFN Siebel~S&P~S&P~N~N~Y~N~26-JAN-20~
+1-2GO6-369~Adapters~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1709~Add a Host~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-1018~ADIC~Non Tied Enterprise~Dell DFN Siebel~S&P~S&P~N~N~Y~N~26-JAN-20~
+1-2FP0-707~Administration software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1181~Adobe~E SIGN License~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-222~Adtran~Telecommunications Networking Equipment~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-914~Adva Optical Networking~Adva Optical - New License~Dell DFN Siebel~S&P~Enterprise~N~N~Y~N~26-JAN-20~
+1-2FP0-1638~Advanced Exchange <SW> [2050]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1523~Advanced Exchange <SW> [2050]-Storage~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2049~Advanced Exchange <W> [1975]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-217~Advanced Exchange <W> [2075]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1527~Advanced Exchange KACE <SW> [2050]~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-194~Advanced Exchange KACE <W> [2075]~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2703~Adventure games~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2104~Advisory Service~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO8-67~Aerohive Networks~Wireless hardware & Software Solutions~Dell DFN Siebel~S&P~Enterprise Technologies~N~N~Y~N~26-JAN-20~
+1-2GO6-206~AFCO Systems~Rack Products~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-2211~Agile Active Directory Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1091~Agile Citrix Consulting~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1098~Agile Citrix Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2881~Agile Citrix Data Center Virtualization-Citrix-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2871~Agile Citrix Data Center Virtualization-Microsoft-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2872~Agile Citrix Data Center Virtualization-VMWare-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1089~Agile Citrix VDI~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1101~Agile Citrix VDI -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2859~Agile Cloud and Data Center Virtualization - Citrix~Software~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-2865~Agile Cloud and Data Center Virtualization - Microsoft~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2861~Agile Cloud and Data Center Virtualization - VMWare~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-647~Agile Consulting for Application Management~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1240~Agile Consulting for Application Management -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2508~Agile Consulting for Data Archive~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2506~Agile Consulting for Data Archive (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2422~Agile Consulting for Data Protection~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2420~Agile Consulting for Data Protection (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2406~Agile Consulting for Data Storage~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2403~Agile Consulting for Data Storage (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1117~Agile Consulting for End Point Device Mgmt~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1118~Agile Consulting for Microsoft System Center~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-588~Agile Consulting for Microsoft System Center -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-731~Agile Consulting for Networking~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-725~Agile Consulting for Networking (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1094~Agile Desktop Imaging Cons. (ZeroTouch,LifeTouch,GoldImageDev)-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1086~Agile Desktop Imaging Cons.(Zero-Touch, Life Touch, Gold Image Dev)~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1090~Agile Desktop Virtualization Consulting~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1104~Agile Desktop Virtualization Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-109~Agile Lync Consulting~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-116~Agile Lync Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-837~Agile Messaging Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-841~Agile Messagsing Consulting~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-639~Agile Office 365~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-839~Agile Office 365 -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-293~Agile SharePoint~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-290~Agile SharePoint -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-286~Agile Sql Platform Consulting - C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1087~Agile VMWare VDI~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1103~Agile VMWare VDI -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-593~Agile Win 7/Win8 Migration Readiness -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1116~Agile Windows Migration Readiness~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2GO8-315~Agilix~Non Tied Enterprise~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-238~AKS~AKS~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2FP0-2089~Alerting~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2087~AlienWare 13~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-397~AlienWare 13 (Cassini)~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-76~AlienWare 13 MLK~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2085~Alienware 13 R2~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2084~Alienware 13 R3~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2083~Alienware 14~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2082~AlienWare 15~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-398~AlienWare 15 (Cassini)~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-117~Alienware 15 CFL-H CTO~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-130~AlienWare 15 MLK~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2081~Alienware 15 R2~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2080~Alienware 15 R3~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2079~Alienware 15 R4~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2078~AlienWare 17~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-399~AlienWare 17 (Cassini)~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2077~Alienware 17 51MR2~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-118~Alienware 17 CFL-H CTO~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-131~AlienWare 17 MLK~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2076~Alienware 17 R2~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2074~Alienware 17 R3~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2073~Alienware 17 R4~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2072~Alienware 17 R5~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2071~AlienWare 18~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-1017~Alienware 25 Gaming Monitor : AW2521HF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1084~Alienware 27 Gaming Monitor ( Retail ) : AW2720HF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1083~Alienware 27 Gaming Monitor : AW2720HF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1086~Alienware 34 Curved Gaming Monitor (Retail ) : AW3420DW~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1085~Alienware 34 Curved Gaming Monitor : AW3420DW~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1082~Alienware 55 OLED Gaming Monitor : AW5520QF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2067~AlienWare Area 51~XPS Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-1212~AlienWare Area 51 ALX~XPS Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2070~Alienware Area 51 AMD~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2069~Alienware Area 51 COLFAX~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2068~Alienware Area 51 SKL~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-792~AlienWare Area 51, AMD_TR, R1 Chassis~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-1249~Alienware Area 51, AMD_TR, R2 Chassis, CTO~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-891~Alienware Area 51, Colfax~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-116~Alienware Area 51, SKL_X, R2 Chassis, CTO~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-115~Alienware Area 51, SKL_X2, R2 Chassis, CTO~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2066~Alienware Area-51M~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-851~Alienware Area-51M CTO~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2065~AlienWare Aurora~XPS Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-1211~AlienWare Aurora ALX~XPS Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2063~Alienware Aurora R11 CML~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2062~Alienware Aurora R5~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2061~Alienware Aurora R6~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-364~Alienware Aurora R7~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2060~Alienware Aurora R7 CFL~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-313~Alienware Aurora R8~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2059~Alienware Aurora R8 CFL~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-1053~Alienware Aurora R9~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~N~N~26-JAN-20~
+1-2FP0-2058~Alienware Aurora R9 CFL~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-1015~Alienware Aurora Ryzen~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-2057~Alienware Aurora Ryzen AMD~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1957~Alienware Aurora Ryzen CFL AMD~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-227~Alienware Desktops - Update to Dell Detail Product~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1956~Alienware M14X~XPS Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1955~Alienware M15~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-878~Alienware M15 CFL-H CTO~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1954~Alienware M15 R2~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1952~Alienware M15 R3~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1951~Alienware M17~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-879~Alienware M17 CFL-H CTO~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1950~Alienware M17 R2~AlienWare Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1949~Alienware M17 R3~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-589~Alienware Monitor AW2518 (Retail)~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1948~Alienware Monitor AW2518H~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-365~Alienware Monitor AW2518H (Retail)~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1947~Alienware Monitor AW2518HF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1030~Alienware Monitor AW2521HF TAA~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1946~Alienware Monitor AW2720HF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1945~Alienware Monitor AW3418DW~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-394~Alienware Monitor AW3418DW (Retail)~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1944~Alienware Monitor AW3418HW~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-393~Alienware Monitor AW3418HW (Retail)~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1943~Alienware Monitor AW3420DW~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1941~Alienware Monitor AW5520QF~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-228~Alienware Notebooks - Update to Dell Detail Product~Alienware Notebooks~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-1248~AlienWare Steam Machine~AlienWare Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1940~Alienware X51~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-997~All Flash-IoTSS (Airport, Smart City, Retail, Stadium, SLED, Casino, Campus, Hospital, Government, T~Internet of Things - IOT~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2GO8-915~Allied Telesis~Non Tied Enterprise~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-223~Allied Telesis Inc~Network Infrastructure/Telecommunications~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-1086~Altair - PBS Pro~Job Scheduling~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2FP0-1257~Ambient music or advertising messaging software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-224~Amped Wireless~High Power, Long Range Wi-Fi routers~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-908~Amulet Hotkey~Non Tied Enterprise~Dell DFN Siebel~S&P~Cloud VDI~N~N~Y~N~26-JAN-20~
+1-2FP0-1140~Analytical or scientific software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1088~ANSYS~CFD~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2GO6-548~Anywhere Carts~Client Peripherals~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-198~APC~APC Rack PDU's~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2GO8-1223~APG Cash Drawer~APG Cash Drawer~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1219~APOS Client~APOS~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2GO8-1221~APOS Client & Enterprise~APOS~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2GO8-1220~APOS Enterprise~APOS~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-1782~APP ARCHIVE & RETIRE~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1787~App Mod Application Assessment~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1794~App Mod Business Process Assessment~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1783~App Mod Dell Analyzer Edition~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1795~App Mod Roadmap Add-On~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1793~App Mod Technical Analysis~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1925~Appassure~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-1924~Appassure Lic~Software - Storage~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2FP0-1923~Appassure Maint~Software - Storage~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2FP0-1922~Appassure Pso~Software - Storage~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2FP0-1921~Appassure Service~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-1919~Appassure Software~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-1918~Application Assessment & Design~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1812~Application Development~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2847~Application Development for Azure~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1294~Application Installation~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1806~Application Lifecycle Management~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1805~Application Migration~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2843~Application Migration for Azure~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2858~Application Migration on Force.com~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1809~Application Monitoring and Event Management~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1780~APPLICATION PORTFOLIO STRATEGY & ASSESSMENT~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-744~Application server software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-772~Application Server Software - VMWare-D~VMware SnP~Dell DFN Siebel~VmWare~VmWare~N~N~Y~N~26-JAN-20~
+1-2FP0-2853~Application Support for Azure~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1784~Application Upgrade~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2GO6-239~Approved Memory~Approved Memory~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2GO6-255~AppSense~Management Solutions for Secure User Environments~Dell DFN Siebel~S&P~Security~N~N~Y~N~26-JAN-20~
+1-2FP0-1771~Appsync~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1770~Appsync Advanced~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1769~Appsync Af Advanced~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1768~Appsync All Flash~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1767~Appsync Basic~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-917~Apstra~Apstra - New License~Dell DFN Siebel~S&P~Enterprise~N~N~Y~N~26-JAN-20~
+1-2GO8-967~ARCHE Systeme~Complex Mobile Military Networking~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-611~Archiving~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-166~Arista~10GigE~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2FP0-699~Arr Custom Non Offer Requirement~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-698~Arr Residual Value Recovery~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1766~ASM100~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1672~ASM100R2~Alienware Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-742~Assessment - Application Performance~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-726~Assessment - Application Performance (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-740~Assessment - Network Optimization~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-734~Assessment - Network Topology~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-728~Assessment - Network Topology & Optimization~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-730~Assessment - O365 Network Readiness (Microsoft Azure)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1667~Asset Management Services~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO6-225~ATEN Technology~Connectivity and Access Management~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-763~Aternity~Aternity Software~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-423~Attachmate~Attachmate Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-226~ATTO TECHNOLOGY~Storage Connectivity~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-798~Audio~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1659~Audio Misc~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-240~AUDIOCODES~AUDIOCODES~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2FP0-3192~Authentication server software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-772~Autodesk~Autodesk AutoCAD Vault Pro~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-21~Autonomy~New License~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-89~Autopilot - Factory Provisioning~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-86~Autopilot - Factory Registration~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-318~Avaya~Other Avaya Products~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-410~AvePoint~AvePoint SharePoint Solutions~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1138~Aviation ground support software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1152~Aviation test software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-204~Avocent~Avocent DCIM (Hardware & Software IT Management)~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2GO8-1031~Axiom Memory~Client Peripherals~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1241~Azure Stack HCI~Datacenter Virtualization~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2FP0-1656~B1165NFW~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1655~B1265DFW~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-734~Back-Up-aaS Solution (Data Protection, Avamar, Networker, Data Domain, etc.)~Cloud Infrastructure Platform~Dell DFN Siebel~Enterprise Solution Group~Service Provider Solutions~N~N~Y~N~26-JAN-20~
+1-2FP0-852~Backup Monitoring & Management~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-3197~Backup or archival software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1649~Banking & Financial Services Outsourcing~Business Process Outsourcing~Dell DFN Siebel~Services~Business Process Outsourcing~N~N~Y~N~26-JAN-20~
+1-2FP0-1813~Banking, Financial, Security, & Insurance - Bfsi~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1148~Bar coding software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1189~Barco~Other Electronics~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-60~Barracuda Networks~Barracuda Total Email Protection~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-227~Base Warranty <SW> [1025]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-195~Base Warranty KACE <SW> [1025]~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-187~Base Warranty Storage <SW> [1025]~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-1633~Basic Custom <SW> [2350]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-935~Basic Deployment for Client~ProDeploy Services~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2GO8-101~Basic Hardware Service~Hardware Warranty~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2GO8-102~Basic Hardware Service for Multivendor~Hardware Warranty~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-1642~Basic Hardware Svc Dell Extended Maintenance <SW> [3205]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-776~Basic Hardware Svc for Multivendor Next Business Day <SW> [2625]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-777~Basic Hardware Svc for Multivendor Same Business Day <SW> [3200]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1648~Basic Hardware Svc Post Standard Support <SW> [3210]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-832~Basic Installation for Enterprise~ProDeploy Services~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2218~BASIC PROTECTION SERVICE <A> [1234]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2051~Basic Tech Support <S> [1325]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-204~Basic Tech Support <S> [3450]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1636~Basic Tech Support <S> [3475]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1525~Basic Tech Support <S> [3475] - Storage~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-196~Basic Tech Support KACE <S> [3450]~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2052~Basic Tech Support with Advanced Exchange (Bundle) <SW> [2000]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1530~Basic Tech Support with Advanced Exchange (Bundle) <SW> [2025]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-205~Basic Tech Support with Advanced Exchange (Bundle) <SW> [2100]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2054~Basic Tech Support with Carry In (Bundle) <SW> [1625]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1630~Basic Tech Support with Carry In (Bundle) <SW> [1650]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-206~Basic Tech Support with Carry In (Bundle) <SW> [1700]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2169~Basic Tech Support with Collect & Return (Bundle) <SW> [1750]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1631~Basic Tech Support with Collect & Return (Bundle) <SW> [1800]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-207~Basic Tech Support with Collect & Return (Bundle) <SW> [1850]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2055~Basic Tech Support with Mail In (Bundle) <SW> [1450]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1629~Basic Tech Support with Mail In (Bundle) <SW> [1500]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-208~Basic Tech Support with Mail In (Bundle) <SW> [1550]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1519~Basic Tech Support with NBD (Bundle) Storage <SW> [2375]~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2056~Basic Tech Support with Next Business Day (Bundle) <SW> [2275]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1635~Basic Tech Support with Next Business Day (Bundle) <SW> [2375]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-209~Basic Tech Support with Next Business Day (Bundle) <SW> [2825]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2158~Basic Tech Support with Same Business Day (Bundle) <SW> [2925]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1531~Basic Tech Support with Same Business Day (Bundle) <SW> [2950]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-230~Basic Tech Support with Same Business Day (Bundle) <SW> [3425]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-842~Battery : 6-cell (65Wh) Primary Battery (Kit)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-839~Battery : Primary 3-cell 32W/HR ExpressCharge Capable (Kit) (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-846~Battery : Primary 4-cell 40W/HR ExpressCharge Capable (Kit) (Battery)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1008~BATTERY CHARGER~PERIPHERALS~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1518~Battery Replacement Service <W> [2425]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-201~BayTech~PDU's, RPC's,ATS's~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-1369~BC/DR~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1382~Bcdr Current State Capacity Assessment -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1376~Bcdr Design. Planning & Implementation~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1379~Bcdr Design. Planning & Implementation -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1381~Bcdr Risk & Business Impact Analysis -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1378~Bcdr Staff Augmentation Services -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1380~Bcdr Testing. Standard, Review & Maintenance -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1517~Bdrs~Software - Storage~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2FP0-1915~BearingPoint Consulting~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2GO8-314~Belkin~Any Belkin products~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1515~BIG DATA AND HADOOP~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-155~Big Data as a Service~Big Data & Analytics~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2GO6-653~Big Data Consulting (Hadoop, Cloudera, Oracle)~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2GO6-651~Big Data Consulting (Microsoft SQL, Microsoft Azure, Microsoft APS, Power BI)~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2GO6-652~Big Data Consulting (SAP Hana)~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-1516~BIG DATA ISILON~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1514~BIG DATA TRANSFORMATION~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-241~Black Box Network Services~Black Box Network Services~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2GO8-424~Blackberry~EMM Secure WorkSpace v10.1 â€“ Annual CAL for iOS and Android~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-1160~BMC~New License~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-705~Bomgar~Bomgar - B400~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1509~Boomi~Boomi~Dell DFN Siebel~Software~Boomi Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1507~Boomi License~Boomi~Dell DFN Siebel~Software~Boomi Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1506~Boomi Prof Svcs~Boomi~Dell DFN Siebel~Software~Boomi Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1508~Boomi Quickstart Data Warehouse~Boomi~Dell DFN Siebel~Software~Boomi Software~N~N~Y~N~26-JAN-20~
+1-2GO8-97~Boomi Solution~Other Electronics~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-1536~Break/Fix Hw Support (Custom)~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO8-152~Bretford~Bretford~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-758~Bridge software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-415~BridgeHead~BridgeHead Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-167~Bright Computing~Bright Cluster Manager - Renewal~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-1214~Brocade 300 8GB~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-1166~Brocade 300 8GB 24P+ perf pack~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1504~Brocade 300 Switch~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-518~Brocade 6505~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1503~Brocade 6505 Switch~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-517~Brocade 6510~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-780~Brocade 6520~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1502~Brocade 6520 Switch~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-192~Brocade Broad Peak G62000PF~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-191~Brocade Broad Peak G62024PF~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-190~Brocade Broad Peak G62024PR~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-521~Brocade DCX 8510 Blade 32P 16GB FC~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-522~Brocade DCX 8510 Blade 48P 16GB FC~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-523~Brocade DCX 8510 Blade 64P 8GB FC~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-519~Brocade DCX 8510-4~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-520~Brocade DCX 8510-8~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1501~Brocade M5424~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1500~Brocade M6505~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1505~BROCADE1~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1498~Bronze <SW> [2725]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-510~Bull Atos~Bullion Server~Dell DFN Siebel~S&P~IOT (Internet of Things)~N~N~Y~N~26-JAN-20~
+1-2FP0-1496~Bundled Offers~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1494~Business Analytics~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2855~Business Analytics Solution On Azure~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2GO6-871~Business Applications Consulting (Dynamics, CRM Online, Salesforce, SFDC)~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-1371~Business Intelligence Consulting (Bi, Etl, Edm, Power Bi, Visualization)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1373~Business Intelligence Consulting (Boomi)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-872~Business Intelligence Consulting (ETL, EDM, BI, Data Visualisation)~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-1365~BVS Idm Software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1367~BVS Idm Software - VMWare-D~VMware SnP~Dell DFN Siebel~VmWare~VmWare~N~N~Y~N~26-JAN-20~
+1-2GO8-31~CA~ERwin Model Navigator - New license~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-667~Cables & Adapters~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-403~Cables To Go~Cables To Go~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2GO6-1165~Canonical Ubuntu Enterprise Cloud 10.04 LTS Server Edition~Cloud Software~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-551~Capsa Healthcare~Client Peripherals~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2408~CARBON BLACK~Data Security Solutions~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-19~Carbonite~Security Software~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-919~Cardinality~Cardinality - New License~Dell DFN Siebel~S&P~Enterprise~N~N~Y~N~26-JAN-20~
+1-2GO8-961~Caringo~Software-Defined Object Storage~Dell DFN Siebel~S&P~Software Defined~N~N~Y~N~26-JAN-20~
+1-2GO8-303~Carry Case : Targus Campus Backpack up to 16 inchÂ (Case)~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-296~Carry Case : Targus Meridian Toploader up to 15,6 inchÂ Â Â Â ~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2159~Carry In <W> [1600]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1645~Carry In <W> [1675]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-210~Carry In <W> [1725]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1286~Carry In Service - Owr <W> [1235]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-306~Carrying Case,17,Drifter - S and PÂ Â Â Â ~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-797~Carrying Cases~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-1183~Catalyst~Cisco~Dell DFN Siebel~S&P~Non Tied Enterprise~N~N~Y~N~26-JAN-20~
+1-2FP0-1155~Categorization or classification software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1362~Ccc Unidesk Management for VDI~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2GO6-865~CCV Consulting Microsoft (Public/Hybrid/Private Cloud, Converged/Hyper-Converged, Software Defined,~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2GO6-866~CCV Consulting Other/OpenStack (Public/Hybrid/Private Cloud, Converged/Hyper-Converged, Software Def~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2GO6-867~CCV Consulting VMWare (Public/Hybrid/Private Cloud, Converged/Hyper-Converged, Software Defined, Man~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2GO8-1013~CD/ROM STORAGE~SPARES~Dell DFN Siebel~S&P~S&P~N~N~Y~N~26-JAN-20~
+1-2FP0-1361~Ceph MD1400~Dell Storage OEM~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1360~Ceph R630~Dell Storage OEM~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1359~Ceph R720XD~Dell Storage OEM~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1358~Ceph R730XD~Dell Storage OEM~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO8-414~Certeon~Certeon Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-109~Certified Data Destruction~Protection Services for Assets and Data~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-1356~Certified Data Destruction - Storage <D> [140]~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-1357~Certified Data Destruction <D> [140]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-80~CFI Asset Management~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-79~CFI Configuration Services~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-618~CFI Drop In The Box~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-619~CFI Hardware and Software Integration~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-78~CFI Image Management Services~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-77~CFI Project Management~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-83~CFS Asset Management~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-82~CFS Configuration Services~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-328~CFS Enterprise Integrated Solutions~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-81~CFS Image Management Services~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-84~CFS Logistics~Configuration Services~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1807~Change, Release, and Deployment Management~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-1231~Changebase SW Svs -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO8-90~Channel - Onsite Server Deployment (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-92~Channel - Onsite Storage Deployment (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-207~Chatsworth~Rack Products~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2GO8-416~Check Point~Check Point Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-916~Chelsio~High performance Networking Software~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1354~Cheng Ming 3967~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-719~Cheng Ming 3967 180W PSU(China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO6-484~Cheng Ming 3967 290W PSU(China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2FP0-1353~Cheng Ming 3968~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-487~CHENG MING 3968 (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2FP0-1352~Cheng Ming 3977~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-654~Cheng Ming 3977 (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO8-720~Cheng Ming 3977 180W PSU (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO6-655~Cheng Ming 3977 290W PSU (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO6-350~Cheng Ming 3980 Tower - Kylin 180W PSU (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-134~Cheng Ming 3980 Tower - Kylin 290W PSU (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO6-1078~Cheng Ming 3988 (China Only)~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1351~Chengming 3980 Tower~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1350~Chengming 3988~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2FP0-1349~Chengming 3990~Vostro Desktops~Dell DFN Siebel~Client Solutions~Consumer~N~N~Y~N~26-JAN-20~
+1-2GO8-1224~Chief~Chief~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-229~Chrome - Update to Dell Detail Product~Chrome~Dell DFN Siebel~Client Solutions~Cloud Client~N~N~Y~N~26-JAN-20~
+1-2FP0-1348~Chromebook 11 3120~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1253~Chromebook 11 3180~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1252~Chromebook 11 3189~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1251~Chromebook 13 3380~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1250~Chromebook 13 7310~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2GO8-387~Chromebook 13 7310 Celeron~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-386~Chromebook 13 7310 i3 Non Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-62~Chromebook 13 7310 i3 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-388~Chromebook 13 i5 Non Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-389~Chromebook 13 i5 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-1249~Chromebook 3100~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1248~Chromebook 3100 2-In-1~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2GO8-849~Chromebook 3100 2-IN-1 4G/32G~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-29~Chromebook 3100 2-IN-1 4G/32G FHD NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-27~Chromebook 3100 2-IN-1 4G/32G WFC~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-28~Chromebook 3100 2-IN-1 4G/64G WFC~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-848~Chromebook 3100 4G/16G (1xUSB-C) NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-24~Chromebook 3100 4G/16G (2xUSB-C) NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-25~Chromebook 3100 4G/32G NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-26~Chromebook 3100 4G/32G Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-1247~Chromebook 3105~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-541~Chromebook 3180 2/16 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-673~Chromebook 3180 4/16 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-585~Chromebook 3180 4/16 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-542~Chromebook 3180 4/32 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-586~Chromebook 3180 4/32 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-577~Chromebook 3189 4/16~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-674~Chromebook 3189 4/32~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-578~Chromebook 3189 4/64~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-675~Chromebook 3380 Cel/4/16 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-579~Chromebook 3380 Cel/4/16 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-580~Chromebook 3380 Cel/4/32 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-581~Chromebook 3380 Cel/4/32 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-582~Chromebook 3380 Cel/4/64 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-583~Chromebook 3380 i3/4/16 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-584~Chromebook 3380 i3/4/32 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-1246~Chromebook 3400~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2GO6-30~Chromebook 3400 4G/32G FHD NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-850~Chromebook 3400 4G/32G NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-32~Chromebook 3400 4G/64GÂ NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-31~Chromebook 3400 8G/64G FHD NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-1245~Chromebook 5190~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2GO6-689~Chromebook 5190 4/16 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-692~Chromebook 5190 4/16 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-690~Chromebook 5190 4/32 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-693~Chromebook 5190 4/32 Touch~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-691~Chromebook 5190 4/64 NT~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-695~Chromebook 51902in1 4/32 EMR~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-694~Chromebook 51902in1 4/32 Non-EMR~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-697~Chromebook 51902in1 4/64/EMR~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-696~Chromebook 51902in1 8/32 EMR~Commercial Chrome~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-1497~Chromebook Bundle~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1243~CHROMEBOOK51902IN1~Commercial Chrome~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-1242~Chromebox 3010~Tablets~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2GO8-624~Cisco FEX B22~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-1080~Cisco IB MSFS7000~PowerEdge~Dell DFN Siebel~Enterprise Solution Group~PowerEdge Servers~N~N~Y~N~26-JAN-20~
+1-2FP0-1241~Cisco Nexus B22DELL Fabric Ext~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-1177~Citrix~NetScaler Renewal~Dell DFN Siebel~S&P~software~N~N~Y~N~26-JAN-20~
+1-2FP0-656~Client Application Compatibility~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1232~Client Application Compatibility -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO8-198~Client Application Management (App Packaging, Remediation, Testing)~Managed Deployment~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-651~Client Application Packaging~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1230~Client Application Packaging (MD)~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-654~Client Application Packaging - UAT Consulting~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1237~Client Application Packaging - UAT Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1239~Client Application Packaging -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-659~Client Application Packaging Requirements Gathering~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1235~Client Application Packaging Requirements Gathering -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1107~Client Application Virtualization~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1093~Client Application Virtualization -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1363~Client Cables, Hubs & Adapters~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2696~Client Configuration - CIS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1297~Client Gts <S> [4900]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1228~Client Installation~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1227~Client Installation Add-On'S~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-329~Client Installation Services (CIS)~Client Installation Services (CIS)~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1226~Client Mobility Consulting~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1225~Client Mobility Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1224~Client Networking~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1223~Client Power - Batteries~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1218~Client Power - Misc~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-BPYIWM~Client Power - NB Adapters~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1220~Client Power - Surge~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1219~Client Power - UPS Under 1500~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-342~Client Repurpose - CIS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1212~Client Services~CS Other Services~Dell DFN Siebel~Client Solutions~CS Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1108~Client Storage - External Hdd~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1109~Client Storage - Internal Hdd-Ssd~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1115~Client Storage - Misc~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1114~Client Storage - Nas~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1113~Client Storage - Optical~Client Peripherals~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2697~Client Upgrade - CIS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2876~Cloud and Virtualization - Citrix - C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2880~Cloud and Virtualization - Microsoft-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1081~Cloud and Virtualization - Openstack -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2877~Cloud and Virtualization - VMWare -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2862~Cloud and Virtualization Assessments and Healthchecks~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2848~Cloud Application Management~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2842~Cloud Application Strategy Assessment~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2844~Cloud Application Strategy Workshop~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2604~Cloud Client Computing Training~CS Education Services~Dell DFN Siebel~Client Solutions~CS Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2791~Cloud Client Manager~Wyse~Dell DFN Siebel~Client Solutions~Thin Client~N~N~Y~N~26-JAN-20~
+1-2FP0-2792~Cloud Clientmanager~Wyse~Dell DFN Siebel~Client Solutions~Thin Client~N~N~Y~N~26-JAN-20~
+1-2FP0-2787~CLOUD NATIVE APPLICATIONS~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2789~CLOUD NATIVE PLATFORMS~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2869~Cloud Readiness Assessment -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO6-499~Cloud Servers - Update to Dell Detail Product~Cloud Servers~Dell DFN Siebel~Enterprise Solution Group~Cloud Servers~N~N~Y~N~26-JAN-20~
+1-2FP0-3293~Cloud Solutions~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2785~Cloud Subscription - Annual Order~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2784~Cloud Subscription - Initial Order~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2783~Cloud Subscription - Recurring Order~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-632~CloudEdge Deployment~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-93~CloudEdge Deployment (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FPT-91~Cloudera~Cloud Software~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO8-1084~Cluster Resources (MOAB)~Job Scheduling~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2GO8-1083~ClusterCorp~Cluster Mgmt~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2GO8-88~Clustering (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3188~Clustering software/Virtualization~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-3190~Clustering Software/Virtualization - VMWare-D~VMware SnP~Dell DFN Siebel~VmWare~VmWare~N~N~Y~N~26-JAN-20~
+1-2FP0-73~Codec stacks~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2160~Collect & Return <W> [1775]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1644~Collect & Return <W> [1825]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-211~Collect & Return <W> [1875]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1917~Commercial Applications~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2780~Commercial Chrome~Non PC~Dell DFN Siebel~Product Offering~Client Solutions PBU~N~N~Y~N~26-JAN-20~
+1-2GO8-562~Commercial Latitude - Update to Dell Detail Product~Latitude~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO8-563~Commercial Optiplex - Update to Dell Detail Product~OptiPlex Desktops~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2FP0-2778~Commercial Sales Operations (Cso)~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3184~Commercial Sales Operations (Cso)-KACE~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-299~Commercial Sales Operations (Cso)-Storage~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2777~Commercial Surveillance~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2776~Commissioning~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-227~CommScope~Wired & Wireless Management~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-665~Communication and Collaboration Umbrella~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-873~Communications and Collaboration Consulting (Exchange, Skype / Lync, VOIP, Office 365,SharePoint, On~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-761~Communications server software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-1178~Commvault~New License/Maintenance~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-84~Compact disc Cd or Dvd or sound card software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-72~Compact disc Cd server software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-504~Compellent - Update to Dell Detail Product~Compellent~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2772~Compellent 3RD~Dell Storage PS~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2759~Compellent Copilot 24X7 Support Center NBD <W> [4200]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2760~Compellent Copilot 24X7 Support Center Only <S> [4250]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2758~Compellent Copilot 24X7 Support Center Priority <W> [4225]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2761~Compellent Copilot 9X5 Support Center NBD <W> [4175]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2764~Compellent Copilot 9X5 Support Center with NBD (Bundle) <SW> [4180]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-331~Compellent Copilot Optimize~Hardware Support~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2769~Compellent Copilot Optimize <S> [4125]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-332~Compellent Copilot Optimize Reporting~Hardware Support~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2770~Compellent Copilot Optimize Reporting <S> [4150]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-333~Compellent Copilot SAN Health Check~Value-Added~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2771~Compellent Copilot SAN Health Check <S> [4100]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2766~Compellent Copilot Support Center Parts Only <W> [1305]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2762~Compellent Copilot Support Center with NBD (Bundle) <SW> [4205]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2765~Compellent Copilot Support Center with SBD (Bundle) <SW> [4227]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2763~Compellent Copilot Support Cntr with Parts Only(Bundle) <SW> [1310]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-515~Compellent Service Renewal~Hardware Support~Dell DFN Siebel~Services~Support Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2754~Compellent Software Support <L> [4275]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1551~Compellent Training~ESG Education Services~Dell DFN Siebel~Enterprise Solution Group~ESG Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2755~Compellentservice~Dell Storage SC~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2144~Compiler and decompiler software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2753~Compliance (including Intrust for Windows) Software Svcs -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1143~Compliance software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1291~Comprehensive Hardware Support <W> [1241]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1264~Compute Node Tech Support <S> [4975]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1395~Computer aided design Cad software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1397~Computer aided manufacturing Cam software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1976~Computer based training software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-608~Computer firmware~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-263~Computer hardware maintenance support service~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-264~Computer vocational training services~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1293~Computrace Licenses~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-243~Concierge Pon Services <S> [4876]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2661~Concierge Services <S> [4878]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-564~Configuration & Deployment - Update to Dell Detail Product~Configuration & Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2151~Configuration management software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-483~Configuration Services Connected Configuration~Configuration Services and Logstics~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2689~Connected Classroom~Displays~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2687~Connected Configuration - Dedicated~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-351~Connected Configuration - ProDeployFlex~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2688~Connected Configuration - Shared~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-320~Connected Infrastructure (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2686~Connectrix~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-2685~Connectrix 6520~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2684~Connectrix 6610~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1048~Connectrix 6620~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2683~Connectrix 6630~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2682~Connectrix 7810~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2681~Connectrix 7840~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2679~Connectrix 9132T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2678~Connectrix 9148~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2677~Connectrix 9148T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1049~Connectrix 9250~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2676~Connectrix 9396~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2675~Connectrix 9396T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2674~Connectrix Bseries Licenses~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2673~Connectrix Dcnm~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1230~Connectrix DCNM 9100~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1231~Connectrix DCNM 9300~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO8-954~Connectrix Dell OSC Update to Dell Product Details~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-943~Connectrix DS-300B 8GB~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-944~Connectrix DS-6505B 16GB~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-945~Connectrix DS-6510B 16GB~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-1224~Connectrix DS-6520B~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1223~Connectrix DS-6610B~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1~Connectrix DS-6620B 32GB~OEM Networking~Dell DFN Siebel~Enterprise Solution Group~Networking~N~N~Y~N~26-JAN-20~
+1-2GO6-1232~Connectrix DS-6630B~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2672~Connectrix Mds Licenses~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1235~Connectrix MDS-9132T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1228~Connectrix MDS-9148S~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1236~Connectrix MDS-9148T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1229~Connectrix MDS-9396S~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1237~Connectrix MDS-9396T~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1234~Connectrix MP-7810B~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1233~Connectrix MP-7840B~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2671~Connectrix Sannav~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1225~Connectrix SANnav Base~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1226~Connectrix SANnav Enterprise~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO6-1227~Connectrix SANnav Global View~Storage Integrated Offer~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2GO8-658~Consulting Credits~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-2507~Consulting for Data Archive - Assess & Design~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2505~Consulting for Data Archive - Assess & Design (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2421~Consulting for Data Protection - Assess & Design~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2419~Consulting for Data Protection - Assess & Design (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2405~Consulting for Data Storage - Assess & Design~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2402~Consulting for Data Storage - Assess & Design (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2670~Consumables - 3D~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2668~Consumables - Inkjet~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2666~Consumables - Laser~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2667~Consumables - Laser - Misc~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2665~Consumables - Non-Laser/Inkjet~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2664~Consumables - Refurbished~Imaging~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-244~Consumer Data Recovery<D>[144]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2662~Consumer Premium Tech Suppt <S> [4875]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2610~Consumer Tablet~Tablets~Dell DFN Siebel~Client Solutions~Non PC~N~N~Y~N~26-JAN-20~
+1-2FP0-118~Contact Center Consulting -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-766~Contact center software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2153~Content workflow software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-3291~Converged Infrastructure Solutions~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-202~CoolIT Inc.~Direct Liquid Cooling on Chip~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2GO8-417~Corel~Corel Products~Dell DFN Siebel~S&P~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-242~Corning~Corning~Dell DFN Siebel~S&P~Other~N~N~Y~N~26-JAN-20~
+1-2GO8-1097~CR100~PowerEdge~Dell DFN Siebel~Enterprise Solution Group~PowerEdge Servers~N~N~Y~N~26-JAN-20~
+1-2GO8-288~CradlePoint~Cellular Mobile Data Access~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2GO8-1222~Cray CX1-iWS~HPC Workstation & Entry Cluster~Dell DFN Siebel~S&P~HPCC~N~N~Y~N~26-JAN-20~
+1-2FP0-2609~Credant~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~~~~~17-DEC-19~
+1-2FP0-2608~Credant Service~Latitude~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2FP0-2607~Credant Software~Latitude~Dell DFN Siebel~Client Solutions~Commercial~N~N~Y~N~26-JAN-20~
+1-2GO8-267~Crestron~Crestron Products~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2138~CRM AND ERP~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2412~Crowdstrike and Secureworks Otb~Data Security Solutions~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO6-14~CrowdStrike Falcon Prevent (NGAV)~Security Software~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-15~CrowdStrike Falcon Prevent and Insight (NGAV+EDR)~Security Software~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2GO6-16~CrowdStrike Other~Security Software~Dell DFN Siebel~Dell Software~Software~N~N~Y~N~26-JAN-20~
+1-2FP0-2413~Crowdstrike Volume~Data Security Solutions~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2GO8-565~CS Software & Peripherals - Update to Dell Detail Product~CS Software & Peripherals~Dell DFN Siebel~Hardware~S&P~N~N~Y~N~26-JAN-20~
+1-2FP0-2602~CTS (Charged Tech Support) <S> [3525]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-910~Cumulus Networks Inc.~Networking Software~Dell DFN Siebel~S&P~Software Defined~N~N~Y~N~26-JAN-20~
+1-2GO6-234~Curvature~Network Maintenance~Dell DFN Siebel~S&P~Networking~N~N~Y~N~26-JAN-20~
+1-2FP0-1664~Custom Asset Report~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1663~Custom Asset Tag~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-140~Custom Bios Configuration~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-124~Custom Carrier~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2511~Custom Cybersecurity~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-126~Custom Delivery~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-736~Custom End User Managed Services~IT Managed Services~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2598~Custom for ESP - Application Modernization~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2596~Custom for ESP - ARS - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2593~Custom for ESP - CFI - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2591~Custom for ESP - CFI Ximage - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2590~Custom for ESP - CIS - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2589~Custom for ESP - Cloud - DCS - NO SKUS~Cloud Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2588~Custom for ESP - EIS - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2585~Custom for ESP - Infrastructure Outsourcing - NO SKUS~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2584~Custom for ESP - Infrastructure Services - Mc - NO SKUS~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2583~Custom for ESP - Itaas - NO SKUS~Cloud Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2582~Custom for ESP - Managed Deploy - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2580~Custom for ESP - Managed Security - NO SKUS~Security Services~Dell DFN Siebel~Security~Security Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2579~Custom for ESP - Monitored Security - NO SKUS~Security Services~Dell DFN Siebel~Security~Security Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2577~Custom for ESP - Package Implementation & Maintenance - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2578~Custom for ESP - PESS - NO SKUS~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2576~Custom for ESP - Security Consulting - NO SKUS~Security Services~Dell DFN Siebel~Security~Security Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2574~Custom for ESP - Testing - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2599~Custom for ESP- Application Consulting - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2597~Custom for ESP- Application Management & Support - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2600~Custom for ESP- Applications Development & Maintenance - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2595~Custom for ESP- BPO - NO SKUS~Business Process Outsourcing~Dell DFN Siebel~Services~Business Process Outsourcing~N~N~Y~N~26-JAN-20~
+1-2FP0-2594~Custom for ESP- Business Intelligence & Data Warehousing - NO SKUS~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-2587~Custom for ESP- Enterprise Deploy - NO SKUS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2586~Custom for ESP- Ic & Ent Dply - Des - NO SKUS~ESG Education Services~Dell DFN Siebel~Enterprise Solution Group~ESG Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2575~Custom for ESP- Sms - NO SKUS~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1260~Custom Image Load~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-618~Custom Integration~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-863~Custom Managed Deployment~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO8-85~Custom Managed Deployment (Deployment, Migration, POC, Windows Desktop, Win10, Win8, Win7)~Managed Deployment~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-733~Custom Network Consulting~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-727~Custom Network Consulting (ESG)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO6-743~Custom Partner-Led Managed Services~IT Managed Services~Dell DFN Siebel~Services~Deployment Services~N~N~Y~N~26-JAN-20~
+1-2FP0-2514~Custom Rack Integration~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2513~Custom Security~Security Services~Dell DFN Siebel~Security~Security Services~N~N~Y~N~26-JAN-20~
+1-2FP0-145~Custom Software Settings~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-5~Custom WSSD (S2D) Ready Solution Onsite (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-6~Custom WSSD (S2D) Ready Solution Remote (EIS)~Enterprise Installation Services (EIS)~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2430~Customer relationship management CRM software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1119~Customer Specific -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO8-590~D3100, USB 3 docks, CP~S&P~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO6-208~Damac Products~Rack Products~Dell DFN Siebel~S&P~Data Center Infrastructure~N~N~Y~N~26-JAN-20~
+1-2FP0-2695~Data and Settings - CIS Csmr~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2509~Data Archive Consulting Umbrella~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2483~Data base management system software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2427~Data base reporting software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2429~Data base user interface and query software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2499~Data Center Hosting and Operations~Infra Managed Services~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2GO8-91~Data Center Integration (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-662~Data Center Management Tools Integration~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2498~Data Center Migration Application Assessment and Design -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2495~Data Center Migration Deployment/Execution -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2492~Data Center Migration Discovery and Analysis -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2494~Data Center Migration Project Management -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2496~Data Center Migration Staff Augmentation -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2497~Data Center Migration Strategy/Planning -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2490~DATA CENTER PLANNING & INFRASTRUCTURE~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO8-230~Data Center Virtualization - Update to Dell Detail Product~Data Center Virtualization~Dell DFN Siebel~Enterprise Solution Group~Engineered Solutions & Reference Architectures~N~N~Y~N~26-JAN-20~
+1-2FP0-664~Data Center Workshop~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-75~Data compression software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-2487~Data Domain Virtual Edition~Data Protection App Trans~Dell DFN Siebel~Enterprise Solution Group~Data Protection Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-1711~Data Migration~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-1785~Data Migration (App Modernization)~Applications Services~Dell DFN Siebel~Services~Applications~N~N~Y~N~26-JAN-20~
+1-2FP0-349~Data Migration - ProDeployFlex~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-3183~Data Migration - Storage~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2GO8-529~Data Migration Services (EDT)~Enterprise Deployment~Dell DFN Siebel~Services~Configuration & Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2428~Data mining software~CS 3rd Party Software~Dell DFN Siebel~Client Solutions~CS Software and Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-1368~DATA PROTECTION~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-177~Data Protection Accelerators-Appassure~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-610~Data Protection and Recovery~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-179~Data Protection as a Service (AppAssure)~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2423~Data Protection Consulting Umbrella~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-871~Data Protection License & 1ST Year Maint~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2175~Data Protection Prof Srvcs~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-3250~Data Protection Renewals and Ppm~Software - Storage~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2418~Data Protection Suite~EMC~Dell DFN Siebel~Enterprise Solution Group~Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2417~Data Protection Suite V1~Data Protection SW Trans~Dell DFN Siebel~Enterprise Solution Group~Data Protection Storage~N~N~Y~N~26-JAN-20~
+1-2FP0-2416~Data Sanitization - ProDeployFlex~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2410~Data Software Solutions~Data Security Solutions~Dell DFN Siebel~Client Solutions~Ecosystem Products~N~N~Y~N~26-JAN-20~
+1-2FP0-2407~Data Storage Consulting Umbrella~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2875~Data Transformation & Migration-C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2400~Data Wipe - Prodeployplus~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-2698~Data, Settings and Software - CIS~Deployment Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-877~Database Mgmt License & 1ST Year Maint~BI Applications~Dell DFN Siebel~Software~Data Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2241~Database Mgmt Prof Srvcs~BI Applications~Dell DFN Siebel~Software~Data Management~N~N~Y~N~26-JAN-20~
+1-2FP0-3257~Database Mgmt Renewals and Ppm~BI Applications~Dell DFN Siebel~Software~Data Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2501~Database Platform Consulting (Cloudera, Hortonworks, Hadoop)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2503~Database Platform Consulting (Microsoft Azure Sql, Azure Ml, Event Hubs)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2500~Database Platform Consulting (SAP HANA)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2502~Database Platform Consulting (Sql Server, MSFT Aps, Oracle)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1068~Datacenter Transformation - Readiness (Design & Planning)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-2491~Datacenter Transformation - Requirements (Discover & Assess)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2FP0-1069~Datacenter Transformation - Rollout (Implementation)~ESG Other Services~Dell DFN Siebel~Enterprise Solution Group~ESG Other Service~N~N~Y~N~26-JAN-20~
+1-2GO8-1081~DataDirect Networks~Storage Systems~Dell DFN Siebel~S&P~IOT (Internet of Things)~N~N~Y~N~26-JAN-20~
+1-2GO8-1036~Datalogic~Client Peripherals~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2GO8-153~Datamation~Datamation~Dell DFN Siebel~S&P~Peripherals~N~N~Y~N~26-JAN-20~
+1-2FP0-636~DataSafe Online <D> [151]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2FP0-637~DataSafe Online Premium <D> [156]~Support Services~Dell DFN Siebel~Services~Support and Deployment~N~N~Y~N~26-JAN-20~
+1-2GO6-869~DC Transformation Consulting (Consolidation, Migration, Transformation, Mergers, Acquisitions, Dives~Dell Consulting~Dell DFN Siebel~Services~Consulting~N~N~Y~N~26-JAN-20~
+1-2FP0-2103~DCF - Advisory Service -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2775~DCF - Commissioning -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2246~DCF - Concept Design -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-663~DCF - Data Center Workshop -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2398~DCF - Dcim -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2247~DCF - Detailed Design -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1668~DCF - Facilities Energy Efficiency (Power & Cooling) -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1669~DCF - Facilities Risk Assessment -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-171~DCF - Feasibility Study -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2245~DCF - Green Field (New Buildings) -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-1670~DCF - Operations Assessment -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-597~DCF - Operations Management -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-172~DCF - Options Analysis -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-598~DCF - Policies & Procedures (Mop, Sop, Eop, Life Safety & Security) -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-599~DCF - Preventive Maintenance -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-804~DCF - Product Deployment -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-800~DCF - Product Design -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2157~DCF - Retrofit (Existing Buildings) -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-801~DCF - Site Construction -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-803~DCF - Site Design -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-170~DCF - Site Selection -C&Si~Infrastructure Consulting~Dell DFN Siebel~Services~Infrastructure and Cloud~N~N~Y~N~26-JAN-20~
+1-2FP0-2399~Dcim~PowerEdge~Dell DFN Siebel~Enterprise Solution Group~PowerEdge Servers~N~N~Y~N~26-JAN-20~
+1-2FP0-2309~DCM Hourly Professional Services~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2308~DCM Hourly Training~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2304~DCM Lajolla 7X24 Support Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2299~DCM Lajolla 7X24 Support Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2298~DCM Lajolla 7X24 Support Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2303~DCM Lajolla 7X24 Support X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2337~DCM Lajolla License Aws Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2317~DCM Lajolla License Aws Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2318~DCM Lajolla License Aws Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2390~DCM Lajolla License Aws X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2313~DCM Lajolla License Google Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2331~DCM Lajolla License Google Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2391~DCM Lajolla License Google Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2329~DCM Lajolla License Google X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2324~DCM Lajolla License Joyent Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2319~DCM Lajolla License Joyent Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2332~DCM Lajolla License Joyent Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2311~DCM Lajolla License Joyent X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2392~DCM Lajolla License Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2322~DCM Lajolla License Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2314~DCM Lajolla License Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2323~DCM Lajolla License X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2206~DCM Lajolla Standard Support Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2204~DCM Lajolla Standard Support Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2205~DCM Lajolla Standard Support Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2296~DCM Lajolla Standard Support X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2300~DCM Leviathin 7X24 Support Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2306~DCM Leviathin 7X24 Support Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2301~DCM Leviathin 7X24 Support Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2302~DCM Leviathin 7X24 Support X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2397~DCM Leviathin License Aws Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2394~DCM Leviathin License Aws Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2335~DCM Leviathin License Aws Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2312~DCM Leviathin License Aws X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2325~DCM Leviathin License Google Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2330~DCM Leviathin License Google Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2310~DCM Leviathin License Google Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2395~DCM Leviathin License Google X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2320~DCM Leviathin License Joyent Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2333~DCM Leviathin License Joyent Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2326~DCM Leviathin License Joyent Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2321~DCM Leviathin License Joyent X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2334~DCM Leviathin License Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2315~DCM Leviathin License Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2336~DCM Leviathin License Small~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2396~DCM Leviathin License X-Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2293~DCM Leviathin Standard Support Large~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~
+1-2FP0-2207~DCM Leviathin Standard Support Medium~Software - Server and Other~Dell DFN Siebel~Software~Systems Management~N~N~Y~N~26-JAN-20~

@@ -1,0 +1,203 @@
+<!--<aura:component controller="FBEDealProductLookup" implements="flexipage:availableForRecordHome,force:hasRecordId,lightning:actionOverride" access="global" >-->
+<aura:component implements="force:hasRecordId,lightning:actionOverride,force:lightningQuickAction,forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes"
+                 controller="FBEProductSelectCtrl" access="global">     
+    <aura:attribute name="lstSelectedRecords" type="Product2[]" default="[]" />
+    <aura:attribute name="listOfSearchRecords" type="List" />
+    <aura:attribute name="listOfSelectedRecords" type="List" />
+    <aura:attribute name="listOfAllProducts" type="list"/> 
+    <aura:attribute name="SearchKeyWord" type="string"/>
+    <aura:attribute name="Message" type="String" default=""/>
+    <aura:attribute name="Result" type="String"/>
+    <aura:attribute name="objectAPIName" type="string" default="Product2"/>
+    <aura:attribute name="parentRecordId" type="String"/>
+    <aura:attribute name="recordId" type="String"/>  
+    <aura:attribute name="priceBookList" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>    
+    <aura:attribute name="PaginationList" type="list"/> 
+    <aura:attribute name="selectedCount" type="integer" default="0"/>
+    <aura:attribute name="startPage" type="Integer" />
+    <aura:attribute name="endPage" type="Integer"/>
+    <aura:attribute name="totalRecordsCount" type="Integer"/>
+    <aura:attribute name="pageSize" type="Integer" default="10"/>
+    <aura:attribute name="currentPage" type="integer" default="1"/>   
+    <aura:attribute name="totalPagesCount" type="integer" default="1"/>  
+    <aura:attribute name="bNoRecordsFound" type="boolean"/>
+     <aura:attribute name="callType" type="String" default="init"/>
+    <aura:attribute name="searchText" type="String"/>
+	<aura:attribute name="showSearchButton" type="boolean" default="false"/> 
+    <aura:attribute name="showViewAll" type="boolean" default="false"/>
+   <!-- <aura:handler name="oSelectedRecordEvent" event="c:selectedsObjectRecordsEvent" action="{!c.handleComponentEvent}"/>     
+     -->
+    <div class="container" style="background-color:rgb(243, 242, 242);min-height: 37rem;"> 
+    <aura:iteration items="{!v.priceBookList}" var="priceBook" indexVar="idx">
+        <aura:if isTrue="{!idx == 0}">
+            <lightning:card iconName="standard:product" title="{!'Price Book : ' +priceBook.priceBookName}">
+            </lightning:card> 
+        </aura:if>
+    </aura:iteration>     
+
+    
+     <div aura:id="searchRes" class="slds-form-element slds-lookup slds-is-close">        
+        <div class="slds-form-element__control">
+            <div class="slds-input-has-icon slds-input-has-iconright" style="margin:1rem;">
+               <div aura:id="lookup-pill" class="autocompleteWrapper slds-grow">
+                    <div aura:id="lookupField" class="slds-combobox__form-element slds-input-has-icon slds-input-has-icon_right"  
+                      style="width: 100%;">
+                        <ui:inputText 
+                                      updateOn="keyup"
+                                      keyup="{!c.keyPressController}"
+                                      class="slds-lookup__search-input slds-input inputSize"
+                                      value="{!v.SearchKeyWord}"
+                                      placeholder="Search"/>
+                        
+                        <span class="slds-icon_container slds-icon-utility-search slds-input__icon slds-input__icon_right">
+                            <lightning:icon iconName="utility:search" size="x-small" alternativeText="icon"/>
+                        </span>
+                    </div>
+                   <aura:if isTrue="{! v.showSearchButton}">
+                   <div onclick="{!c.searchByKeyword}" class="lookup__menu showEmptyContent uiAbstractList uiAutocompleteList uiInput uiAutocomplete uiInput--default uiInput--lookup" role="listbox" style="margin-top: auto;padding: .5rem;">
+                   <div class="searchButton itemContainer slds-lookup__item-action--label slds-text-link--reset slds-grid slds-grid--vertical-align-center slds-truncate lookup__header highlighted" role="option">
+                       <lightning:icon iconName="utility:search" size="x-small" alternativeText="icon"/>
+                       <span class="itemLabel slds-truncate slds-show--inline-block slds-m-left--xx-small" title="{!v.searchText}">{!v.searchText}</span>
+                   </div>
+                   </div>
+                   </aura:if>
+                   <!--  <aura:iteration items="{!v.lstSelectedRecords}" var="sr">
+                        <lightning:pill class="slds-m-around_xx-small" label="{!sr.Name}" name="{!sr.Id}" onremove="{! c.clear }">
+                            <aura:set attribute="media">
+                                <lightning:icon iconName="standard:Product" size="x-small" alternativeText="icon"/>
+                            </aura:set>
+                        </lightning:pill>
+                    </aura:iteration> -->
+                </div>
+            </div>
+         <!--   <ul style="min-height:40px;margin-top:0px !important" class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-lookup__menu slds" role="listbox">
+            <lightning:spinner class="slds-hide" variant="brand" size="small" aura:id="mySpinner"/>
+            <center> {!v.Message}</center>
+            <aura:iteration items="{!v.listOfSearchRecords}" var="singleRec">                
+                <c:reUsableMultiSelectLookupResult oRecord="{!singleRec}" iconName="standard:Product"/>
+            </aura:iteration>
+            </ul> -->
+        </div>
+      </div>
+        
+    <aura:if isTrue="{!v.bNoRecordsFound}">
+        
+		<div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+            <span class="slds-assistive-text">error</span>
+            <h2>No record found.</h2>
+        </div>
+        <aura:set attribute="else">
+          <aura:if isTrue="{! v.showViewAll}">
+              <div class="clearSearchContainer" style="margin-left:1rem"><a href="javascript:void(0);" onclick="{!c.clear}" >View All</a></div> 
+            </aura:if>
+            <div class="selectedCount" style="margin:.7rem">
+                <aura:if isTrue="{!v.selectedCount > 0}">
+                <a href="javascript:void(0);" onclick="{!c.showSelected}" >Show Selected ({!v.selectedCount > 0 ? v.selectedCount  : '0'})</a>
+                <aura:set attribute="else">
+                    <span>Show Selected ({!v.selectedCount > 0 ? v.selectedCount  : '0'})</span>
+                    </aura:set>
+                </aura:if>
+                </div> 
+            
+			
+         
+            <table class="slds-table slds-table_bordered slds-table_cell-buffer">
+                <thead>
+                    <tr class="slds-text-title_caps">
+					
+                        <th style="width:3.25rem;" class="slds-text-align_right">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <label class="slds-checkbox">
+                                        <ui:inputCheckbox disabled="true"
+                                                          aura:id="selectAllId"/>
+                                        <span class="slds-checkbox_faux"></span>
+                                        <span class="slds-form-element__label"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Product Name">Product Name</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Line Of Business">Line Of Business</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="Product Family">Product Type</div>
+                        </th>
+                           <th scope="col">
+                            <div class="slds-truncate" title="Product Family">Business Unit</div>
+                        </th>
+                      </tr>
+                </thead>
+                <tbody>
+                       <aura:iteration items="{!v.PaginationList}" var="obj">
+                        <tr>
+                            <td scope="row" class="slds-text-align_right" style="width:3.25rem;">
+                                <div class="slds-form-element">
+                                    <div class="slds-form-element__control">
+                                        <label class="slds-checkbox">
+                                            <ui:inputCheckbox text="{!obj.ObjProduct2.Id}" name="{!obj.ObjProduct2.Name}"
+                                                              value="{!obj.isChecked}"
+                                                              change="{!c.checkboxSelect}"/>
+                                            <span class="slds-checkbox_faux"></span>
+                                            <span class="slds-form-element__label text"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </td>
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!obj.ObjProduct2.Name}">
+                                    {!obj.ObjProduct2.Name}
+                                </div>
+                            </td> 
+                            <td scope="row">
+                                <div class="slds-truncate" title="{!obj.ObjProduct2.FBE_LOB__c}">
+                                    {!obj.ObjProduct2.FBE_LOB__c}
+                                </div>
+                            </td>                           
+                             <td scope="row">
+                                <div class="slds-truncate" title="{!obj.ObjProduct2.FBE_Product_Type__c}">
+									{!obj.ObjProduct2.FBE_Product_Type__c}
+                                </div>
+                            </td>
+                             <td scope="row">
+                                <div class="slds-truncate" title="{!obj.ObjProduct2.FBE_Business_Unit__c}">
+									{!obj.ObjProduct2.FBE_Business_Unit__c}
+                                </div>
+                            </td>
+                         </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+             <!-- DataTable End -->
+            <br/>         
+            <div class = "slds-align_absolute-center">        
+                <lightning:button label="Previous"
+                                  disabled="{!v.startPage == 0}"  
+                                  onclick="{!c.navigation}"
+                                  variant="brand"
+                                  iconName="utility:back"
+                                  name="previous"/>             
+                
+                <lightning:button label="Next"
+                                  disabled="{!(v.endPage + 1) >= v.totalRecordsCount}" 
+                                  onclick="{!c.navigation}"
+                                  variant="brand"
+                                  iconName="utility:forward"
+                                  iconPosition="right"
+                                  name="next"/>
+               <!-- <span>{!v.currentPage}/{!v.totalPagesCount}</span><lightning:button variant="brand" label="Add Details" onclick="{!c.EditDealProductData}" />-->
+                <lightning:button label="Save" class="slds-button_brand" onclick="{!c.handleSaveDealProduct}"/>
+                <lightning:button label="Cancel" class="slds-button_brand" onclick="{!c.CancelProducts}"/>     
+                
+         </div>                
+             
+        </aura:set> 
+    </aura:if>                     
+                                                                                                
+    </div>    
+        
+</aura:component>

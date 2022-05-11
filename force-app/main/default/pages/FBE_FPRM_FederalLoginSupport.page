@@ -1,0 +1,69 @@
+<apex:page sidebar="false" cache="false" showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" >
+    
+    <html><head><title>Federal Terms of Use</title>
+        <style>
+            body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            }
+            .masthead-logo img {
+            width: 230px;
+            }
+            .masthead-logo {            
+            padding: 20px;
+            background-color: #0076ce !important
+            }
+            h1 {
+            padding-bottom: 15px;
+            line-height: 48px;
+            font-size: 2.5rem;
+            text-align: center;
+            color: #444;
+            font-weight: 300;
+            }
+            #TandC {
+            line-height: 24px;
+            font-size: 1.2rem;
+            margin: 0px 100px;
+            }
+            div, p {
+            color: #444;
+            text-align: justify;
+            font-weight: 200;
+            }
+            ul {
+            list-style: disc;
+            }
+            * {
+            font-family: Roboto,Arial,Helvetica,sans-serif;
+            }
+        </style>
+        </head><body>
+        <div class="main" style="width:100%;">
+            <div class="masthead-logo">
+                <img src="https://www.delltechnologies.com/content/dam/delltechnologies/images/ghf/dell-tech-logo.svg" />
+            </div>
+            <div id="TandC">
+                <h1>Dell Federal Login Support Contact Information</h1>
+                <p>
+                    Send the email request to: <a target="_blank" href="mailto:DellFederalLoginSupport@federal.dell.com?subject=Login%20Assistance">DellFederalLoginSupport@federal.dell.com</a>, which are incorporated herein by reference as if fully set forth below.
+                </p>
+                
+                <p> 
+                    Please click on the above link, or copy it to a new email and use the subject line "Login Assistance".
+                </p>
+                <p>
+                    NOTE:
+                </p>
+                <p>
+                    After submitting this request, you'll receive a confirmation notification followed by a detailed notification with the temporary password.
+                </p>
+                <p>
+                    Thanks for choosing Dell Federal.
+                </p>
+            </div>
+        </div>
+        </body></html>
+    
+</apex:page>

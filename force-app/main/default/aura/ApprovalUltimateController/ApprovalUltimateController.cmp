@@ -1,0 +1,24 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" controller="FBE_FPRM_RejectionController">
+    <aura:attribute name="strRecordId" type="String" />
+    <lightning:overlayLibrary aura:id="overlayLibDemos1"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    <aura:attribute name="DisclaimerValue" type="Boolean" default="false"/>
+    <div class="slds-theme_default">
+        <lightning:recordEditForm aura:id="editform"
+                                  onsubmit="{!c.handleSubmit}"
+                                  onsuccess="{!c.handleSuccess}"
+                                  recordId="{!v.strRecordId}"
+                                  objectApiName="Deal_Registration__c">
+            <lightning:messages />
+
+            <lightning:inputField fieldName="Name" aura:id="accName" />
+            <lightning:inputField fieldName="FBE_Deal_Registration_Status__c" />
+            <lightning:inputField fieldName="FBE_Declined_Reason__c" aura:id="declined"/> 
+            <lightning:inputField fieldName = "FBE_Show_Rejection_Popup__c" value="{!v.DisclaimerValue}" class="slds-hidden" />
+            <!--<lightning:inputField fieldName="Type" />-->
+            <div class="slds-m-top_medium">
+                <lightning:button variant="brand" type="submit" name="save" label="Save"/>
+            </div>
+        </lightning:recordEditForm>
+    </div>
+</aura:component>

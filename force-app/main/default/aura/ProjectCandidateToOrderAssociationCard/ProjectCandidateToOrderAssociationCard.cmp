@@ -1,0 +1,55 @@
+<aura:component controller="CandidateProjectsToAssCardController">
+    <aura:attribute name="orderNumber" type="Id" />
+    <aura:attribute name="proj" type="pse__Proj__c" />
+    <aura:attribute name="matchReason" type="string" />   
+    <aura:attribute name="stage" type="string" />  
+    <aura:attribute name="association" type="boolean"/> 
+    <aura:attribute name="finish" type="boolean"/> 
+    
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    
+    <div class="slds-media sdls-media_center"> 
+        <div class="slds-media__body">
+            <div class="slds-grid">
+                <a href="{!v.url+'/'+v.proj.Id}">
+                    <h3 class="slds-text-heading_small ">{!v.proj.Name}</h3>
+                </a>
+                <span class="{!'slds-badge slds-m-left--medium slds-shrink-none slds-align-middle slds-badge-stage-'+v.stage}">{!v.proj.pse__Stage__c}</span>
+            </div>
+            <div aura:id="projectDetails" class="slds-m-top_small">
+                <ul >                    
+                    <li class="slds-list__item slds-size_2-of-2"><span class="slds-text-color_weak slds-m-right_small">Account:</span>{!v.proj.pse__Account__r.Name}</li>
+                    <aura:if isTrue="{!and(v.proj.pse__Start_Date__c!=null, v.proj.pse__End_Date__c!=null)}">
+                        <li class="slds-list__item slds-size_2-of-2"><span class="slds-text-color_weak slds-m-right_small">Interval:</span>({!v.proj.pse__Start_Date__c}) - ({!v.proj.pse__End_Date__c})</li>
+                    </aura:if>
+                    <!-- <li class="slds-list__item slds-size_2-of-2"><span class="slds-text-color_weak slds-m-right_small">Reason:</span>{!v.matchReason}</li> -->
+                </ul>
+            </div>
+        </div>
+        
+        <aura:if isTrue="{!v.association}">
+            <div class="slds-media__figure">
+                <lightning:buttonIcon onclick="{!c.associate}" iconName="utility:link" alternativeText="Associate with Current Order."/>
+            </div>
+        </aura:if>
+
+    </div>
+
+    <br/>
+
+    <div class="slds-media sdls-media_right"> 
+        <div class="slds-media__body">
+            <div class="slds-grid">
+                <aura:if isTrue="{!v.finish}">
+                
+                    <div class="slds-col slds-size_8-of-12"><b style="font-size:16px">Order successfully associated!</b></div>
+                    <div class="slds-col slds-size_4-of-12">
+                        <lightning:button variant="brand" label="Finish!" title="Finish" onclick="{!c.refreshScreen}"/>
+                    </div>
+                </aura:if> 
+            </div>
+        </div>
+    </div>
+    
+    <!--<lightning:flow aura:id="flowData" onstatuschange="{!c.handleStatusChange}"/>-->
+</aura:component>

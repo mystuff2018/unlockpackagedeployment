@@ -1,0 +1,113 @@
+<apex:page showheader="false" applyHtmlTag="false" applyBodyTag="false" >
+<html lang="en">
+<head>
+<title></title>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<apex:stylesheet value="{!URLFOR($Resource.DellDesignSystem,'dds-all-with-fonts.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.DellDesignSystem,'dds-reboot.min.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.DellDesignSystem,'index.min.js')}"/>
+<link href="{!URLFOR($Resource.DellDesignSystem,'favicon.ico')}" rel="shortcut icon" type="image/x-icon"></link>
+
+<style type='text/css'>
+   .embeddedServiceHelpButton .helpButton .uiButton {
+      background-color: #005290;
+      font-family: "Comic Sans MS", sans-serif;
+   }
+   .embeddedServiceHelpButton .helpButton .uiButton:focus {
+      outline: 1px solid #005290;
+   }
+</style>
+</head>
+
+<body>
+<div data-toggle="dds__msthd" class="dds__msthd dds__msthd-offcanvas-wrapper">
+   <div class="dds__navbar dds__msthd-navbar-top dds__navbar-expand-md">
+      <div class="dds__msthd-top dds__container dds__no-gutters">
+         <div class="dds__row dds__no-gutter">
+            <div class="dds__msthd-top-ctnr">
+               <div class="dds__msthd-icon-ctnr dds__msthd-logo"><a href="/" class="dds__icons dds__msthd-dell-icon w-inline-block"></a></div>
+            </div>
+            <div class="dds__msthd-brand-ctnr dds__d-none dds__d-lg-block">
+               <!--<div>Design System 1.3.3</div>-->
+            </div>
+           
+            <div class="w-embed">
+               <div class="dds__msthd-top-ctnr dds__msthd-hidden">
+                  <button class="dds__msthd-icon-ctnr" data-toggle="dds__msthd-offcanvas" data-target="msthd-off-canvas-menu" aria-label="Menu" aria-haspopup="true" aria-expanded="false">
+                     <svg focusable="false">
+                        <!--<use xlink:href="#dds__menu-closed"></use>-->
+                     </svg>
+                     <span class="dds__msthd-label dds__text-truncate">Menu</span> 
+                  </button>
+                  <div id="msthd-off-canvas-menu" class="dds__msthd-offcanvas-menu" hidden="">
+                     <ul role="list">
+                        <li role="menuitem" class="dds__msthd-offcanvas-tier-1">
+                           <a data-toggle="dds__collapse" data-target="#item1-tier1" aria-expanded="false" href="#" class="dds__msthd-offcanvas-nav-item dds__collapsed w-button"> Components<span class="dds__icons dds__arrow-tri-solid-right"> </span> </a> 
+                           <ul id="item1-tier1" role="list" class="dds__collapse">
+                              <li role="menuitem" class="dds__msthd-offcanvas-tier-2"><a href="/components" class="dds__msthd-offcanvas-nav-item">View All Components</a></li>
+                              <li>
+                                 <div class="w-dyn-list">
+                                    <div aria-labelledby="components-menu-btn" role="list" class="w-dyn-items">
+                                       <div role="listitem" class="dds__msthd-offcanvas-tier-2 w-dyn-item"><a tabindex="-1" role="menuitem" href="/components/accordions" class="dds__msthd-offcanvas-nav-item">Accordions</a></div>
+                                    </div>
+                                 </div>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div aria-label="main menu" class="dds__navbar dds__msthd-navbar-bottom dds__navbar-expand-lg dds__msthd-shadow">
+      <div class="dds__msthd-shadow-gradient">
+         <div class="dds__msthd-bottom dds__container">
+            <ul id="main-menu" role="list" aria-label="main menu" data-w-id="a8fc3c46-a6f6-fd84-1314-0cb5fd440bd8" class="dds__msthd-menu-top">
+               <!--
+               <li role="none presentation" class="dds__msthd-menu-top-item">
+                  <a aria-haspopup="true" aria-expanded="false" tabindex="0" href="#" class="dds__msthd-menu-top-link">Components</a>
+                  <ul role="list" aria-label="components" class="dds__msthd-menu-ctnr dds__msthd-menu-tier-one">
+                     <li role="none presentation" class="dds__msthd-menu-item"><a tabindex="-1" role="menuitem" href="/components" class="dds__msthd-menu-link">View All Components</a></li>
+                     <li>
+                        <div class="w-dyn-list">
+                           <div aria-labelledby="components-menu-btn" role="list" class="w-dyn-items">
+                              <div role="listitem" class="dds__msthd-menu-item w-dyn-item"><a tabindex="-1" role="menuitem" href="/components/accordions" class="dds__msthd-menu-link">Accordions</a></div>
+                              <div role="listitem" class="dds__msthd-menu-item w-dyn-item"><a tabindex="-1" role="menuitem" href="/components/anchored-nav" class="dds__msthd-menu-link">Anchored Nav</a></div>
+                           </div>
+                        </div>
+                     </li>
+                  </ul>
+               </li>
+               -->
+            </ul>
+         </div>
+      </div>
+   </div>
+   <div class="dds__msthd-overlay dds__show display-none" style="display: none;"></div>
+</div>
+
+<apex:insert name="content" />
+
+<footer class="dds__default-footer" data-toggle="dds__footer">
+   <nav class="dds__footer-nav">
+      <div class="dds__container">
+         <ul class="dds__page-nav">
+            <li> <a href="//www.dell.com/learn/us/en/uscorp1/site-terms-of-use-copyright" class="">About Dell</a> </li>
+            <li> <a href="//www.dell.com/learn/us/en/uscorp1/terms-of-sale" class="">Careers</a> </li>
+            <li> <a href="//www.dell.com/learn/us/en/uscorp1/site-terms-of-use-copyright" class="">Community</a> </li>
+            <li> <a href="//www.dell.com/learn/us/en/uscorp1/terms-of-sale" class="">Events</a> </li>
+            <li> <a href="//www.dell.com/content/public/xdbredirect.aspx?link=global:nav:partners&~ck=mn" class="">Partner Program</a> </li>
+            <li> <a href="//www.dell.com/learn/us/en/04/premier?~ck=mn" class="">Premier</a> </li>
+            <li> <a href="//www.delltechnologies.com/en-us/index.htm?~ck=mn" class="">Dell Technologies</a> </li>
+            <li> <a href="//dfs.dell.com/Pages/DFSHomePage.aspx?~ck=mn" class="">Make a Payment</a> </li>
+         </ul>
+      </div>
+   </nav>
+</footer>
+<script src="https://uicore.dellcdn.com/1.3.3/js/dds-all.min.js"></script>
+</body>
+</html>
+</apex:page>

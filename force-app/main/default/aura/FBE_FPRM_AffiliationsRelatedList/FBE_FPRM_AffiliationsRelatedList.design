@@ -1,0 +1,8 @@
+<design:component>
+    <design:attribute name="environmentType" label="Environment Type" datasource="Community,Standard" required="true" 
+                      description="Please indicate which environment this component is hosted on."/>
+    <design:attribute name="navigateToPage" label="View All Page Name"
+                      description="This variable is used to indicate the page to navigate to when User clicks View All. Define a value based on standard / community"/>
+    <design:attribute name="viewAllRecords" label="Show default records?" required="true"/>
+    <design:attribute name="enableInfiniteLoading" label="Load All Rows via Scrolling?" required="false"/>
+</design:component>

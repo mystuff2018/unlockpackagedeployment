@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:attribute name="contact" type="Contact" default="{ 'sobjectType': 'Contact'}"/>
+	<aura:attribute name="contactCols" type="List" />
+    <aura:attribute name="recordId" type="Id" />
+    <aura:attribute name="currentUserId" type="Id"/>
+    <aura:attribute name="environmentType" type="String" 
+                    description="This variable is used to indicate which environment this component is displayed on, f.i. community vs standard lightning" />
+    <aura:attribute name="navigateToPage" type="String" 
+                    description="This variable is used to indicate the page to navigate to when User clicks View All. Define a value based on standard / community"/>
+    <aura:attribute name="viewAllRecords" type="boolean" default="true"/>
+    <aura:attribute name="enableInfiniteLoading" type="boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    
+    <!--
+    <aura:handler name="viewAllFields" event="c:FBE_FPRM_ViewAllContacts_Event" action="{!c.displayAllFields}"/>
+    <aura:attribute name="showAllFields" type="boolean" default="false"/>
+    -->
+    <c:FBE_FPRM_RelatedList recordId="{!v.recordId}" 
+                            objectApiName="Contact"
+                            conditionFieldApiName="AccountId"
+                            fields="Id, Name, Email, Phone,Country_Code_CAM__c,Extension_CAM__c,FBE_FPRM_Reseller_Flag__c,FBE_FPRM_Reseller_Account__r.Name"
+                            columns="{!v.contactCols}"
+                            defineCustomActions="false"
+                            prmUserVisibility="true"
+                            environmentType="{!v.environmentType}"
+                            navigateToPage="{!v.navigateToPage}"
+                            viewAllRecordsFlag="{!v.viewAllRecords}"
+                            enableInfiniteLoading="{!v.enableInfiniteLoading}"
+                            />
+</aura:component>

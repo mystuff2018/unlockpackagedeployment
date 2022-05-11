@@ -1,0 +1,4 @@
+<!-- This page is written for the 'On View' trigger - FBE_OppContactRoleHelper. This page is to be included in the
+     page Layout of the Oppty Record Types. Everytime the user navigates to an Opportunity layout the code will execute. -->
+     
+<apex:page standardController="Opportunity" extensions="FBE_OppContactRoleHelper" action="{!rollupOppContacts}" />

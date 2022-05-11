@@ -1,0 +1,19 @@
+.THIS hr.Inbound {
+  background-color: #6ea204;
+  width: 100%;
+  height: 25px; 
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+ 
+.THIS hr.Outbound {
+  background-color: #00447c;
+  width: 100%;
+  height: 25px;
+  border-bottom-left-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}

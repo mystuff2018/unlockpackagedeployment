@@ -1,0 +1,50 @@
+<template>
+    <template if:true={saving}>
+        <lightning-spinner alternative-text="Loading"></lightning-spinner>
+    </template>
+
+    <div class="slds-page-header slds-page-header_record-home slds-card_boundary">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                      <span class="slds-icon_container slds-icon-standard-account" title="opportunity">
+                          <lightning-icon icon-name="custom:custom83"></lightning-icon>
+                      </span>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h2 class="slds-card__header-title">
+                                    <span class="slds-truncate selectAllcls" title="Mass Edit Orders">Mass Edit Orders</span>
+                                </h2>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Select Order Number, Choose a Milestone and click 'Save'</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slds-page-header__row slds-page-header__row_gutters">
+            <div class="slds-page-header__col-details">
+                <ul class="slds-page-header__detail-row">
+                    <li class="orderList">
+                        <div>
+                            <lightning-input type="checkbox" label="Order Number" name="selectAllBox" value={selectAll} onchange={handleSelectAllChange} class="selectAllcls"></lightning-input>
+                            <lightning-checkbox-group name="Order" options={orders} value={selectedOrder}
+                                                      onchange={handleOrderChange}></lightning-checkbox-group>
+                            </br>
+                            <c-lookup onsearch={handleSearch} onselectionchange={handleSelectionChangeOrder} label="Milestones"
+                                      placeholder="Search Milestones">
+                            </c-lookup> 
+                            </br>
+                            <div>
+                                <lightning-button onclick={handleSave} label="Save" disabled={isDisabledSave}></lightning-button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>

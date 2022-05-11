@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <label>OrderNumber</label>
+    <protected>false</protected>
+    <values>
+        <field>Action_Category__c</field>
+        <value xsi:type="xsd:string">ITP</value>
+    </values>
+    <values>
+        <field>Action_Operation__c</field>
+        <value xsi:type="xsd:string">insert</value>
+    </values>
+    <values>
+        <field>Action_Status__c</field>
+        <value xsi:type="xsd:string">Open</value>
+    </values>
+    <values>
+        <field>Action_TemplateFlag__c</field>
+        <value xsi:type="xsd:string">N</value>
+    </values>
+    <values>
+        <field>Action_Type_x__c</field>
+        <value xsi:type="xsd:string">Inbound</value>
+    </values>
+    <values>
+        <field>Contact_FBELeadContactType__c</field>
+        <value xsi:type="xsd:string">Customer</value>
+    </values>
+    <values>
+        <field>Contact_FBEPartyTypeCode__c</field>
+        <value xsi:type="xsd:string">N</value>
+    </values>
+    <values>
+        <field>Contact_FBEPrivacyCode__c</field>
+        <value xsi:type="xsd:string">Opt-Out: All Parties</value>
+    </values>
+    <values>
+        <field>Contact_Operation__c</field>
+        <value xsi:type="xsd:string">insert</value>
+    </values>
+    <values>
+        <field>Endpoint_URL__c</field>
+        <value xsi:type="xsd:string">https://OSCtest.federal.dell.com:41443/fbesfdc/FBEOSCCreateUpdateSRInt/CreateUpdateSR</value>
+    </values>
+    <values>
+        <field>Log_transations__c</field>
+        <value xsi:type="xsd:string">All</value>
+    </values>
+    <values>
+        <field>Request_Operation__c</field>
+        <value xsi:type="xsd:string">insert</value>
+    </values>
+    <values>
+        <field>Request_Owner__c</field>
+        <value xsi:type="xsd:string">SADMIN</value>
+    </values>
+    <values>
+        <field>Request_SR_Type__c</field>
+        <value xsi:type="xsd:string">Request</value>
+    </values>
+    <values>
+        <field>Request_Status__c</field>
+        <value xsi:type="xsd:string">Open</value>
+    </values>
+</CustomMetadata>

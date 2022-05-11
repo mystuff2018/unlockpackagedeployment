@@ -1,0 +1,29 @@
+<template>
+	<template if:true={isOnlyQuote}>
+		<div class="slds-page-header slds-page-header_record-home">
+			<div class="slds-page-header__row">
+				<div class="slds-page-header__col-actions">
+					<div class="slds-page-header__controls">
+						<div class="slds-page-header__control">
+							<ul class="slds-button-group-list">
+								<li>
+									<!--<button class="slds-button slds-button_neutral">Download-->
+									<lightning-button-menu label="Download Quote(s)" icon-name="utility:download"
+										menu-alignment="right" onselect={handleMenuItem} disabled={quoteData.isbuttonDissable}>
+										<template if:true={quoteData.files} for:each={quoteData.files} for:item="file"
+											for:index="idx">
+
+											<lightning-menu-item key={file.docId} value={file.docId} label={file.fType}>
+												<a href={returnId}></a></lightning-menu-item>
+										</template>
+									</lightning-button-menu>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</template>
+</template>

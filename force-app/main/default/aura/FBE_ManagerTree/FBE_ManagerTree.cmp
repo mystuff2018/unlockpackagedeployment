@@ -1,0 +1,51 @@
+<!--/*******************************************************************************************************/
+/* Developer : LavaKumar (Dell)                                                                            */
+/* Requirment : Displaying Account team, account and opportunity as hierarchy by using Lightning tree grid.*/
+/* Story : 7972134  */
+/* Defect : 11326843 - Added the tooltip on Account team member/Account/Oppty names & removed the error message on load */
+/* Defect : 11296995 - Converted the string into currency format in the Amount column */                                                                       
+/********************************************************************************************************/-->
+<aura:component implements="force:appHostable" controller="FBE_Manager_Tree">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    <aura:attribute name="gridColumns" type="List" />
+    <aura:attribute name="gridData" type="Object[]" />
+    <aura:attribute name="gridFilData" type="Object[]" />
+    <aura:attribute name="userList" type="String[]"/>
+    <aura:attribute name="all" type="boolean"/>
+     <aura:attribute name="nullCheck" type="boolean"/>
+    
+    <aura:if isTrue="{!not(empty(v.gridData))}">
+		<div class="slds-m-around_xx-large " >
+			<div class="slds-align_absolute-center">
+                <lightning:select name="select" label="Filter by user" required="true" onchange="{!c.filterByuser}">
+					<aura:iteration items="{!v.userList}" var="user">
+						<option value="{!user}" text="{!user}"></option>
+					</aura:iteration>
+				</lightning:select>
+			</div><br></br>
+			<aura:if isTrue="{!v.all}">
+				<div class="slds-table_fixed-layout">
+						<lightning:treeGrid columns="{! v.gridColumns }"
+											data="{! v.gridData }"
+											keyField="name"
+											aura:id="mytree"
+											hideCheckboxColumn="true"
+                                            />
+				 </div>				
+			 <aura:set attribute="else">
+				<div>
+					<lightning:treeGrid columns="{! v.gridColumns }"
+										data="{! v.gridFilData }"
+										keyField="name"
+										aura:id="mytree"
+										hideCheckboxColumn="true"
+										/>
+				 </div>
+			 </aura:set>
+			 </aura:if>
+		</div>
+    </aura:if>
+    <aura:if isTrue="{!v.nullCheck}">
+            <div class="slds-align_absolute-center slds-text-body_regular"><lightning:icon iconName="action:info" alternativeText="Info" title="Info" />&nbsp;<div><h1 class="slds-text-title_bold">No data to display.</h1></div></div> 
+        </aura:if>
+</aura:component>

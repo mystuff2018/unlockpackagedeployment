@@ -1,0 +1,184 @@
+<!--
+  @description       : 
+  @author            : Sitaram Teki
+  @group             : 
+  @last modified on  : 02-22-2022
+  @last modified by  : Sitaram Teki
+-->
+<apex:page controller="FBE_FPRM_TermsAcceptanceController" action="{!displayTermsPageAndConditions}" sidebar="false" cache="false"
+    showheader="false" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false">
+    <apex:form >
+        <apex:pageBlock rendered="{!displayTerms}">
+            <html>
+
+            <head>
+                <title>Dell Federal Terms of Use</title>
+                <style>
+                    body {
+                        margin: 0;
+                        padding: 0;
+                        text-align: center;
+                    }
+
+                    .masthead-logo img {
+                        width: 230px;
+                    }
+
+                    .masthead-logo {
+                        padding: 20px;
+                        background-color: #0076ce !important
+                    }
+
+                    h1 {
+                        padding-bottom: 10px;
+                        line-height: 40px;
+                        font-size: 1.8rem;
+                        text-align: center;
+                        color: #444;
+                        font-weight: 240;
+                    }
+
+                    .TandC {
+                        line-height: 18px;
+                        font-size: 1.0rem;
+                        margin: 0px 100px;
+                    }
+
+                    div,
+                    p {
+                        color: #444;
+                        text-align: justify;
+                        font-weight: 160;
+                    }
+
+                    ul {
+                        list-style: disc;
+                    }
+
+                    * {
+                        font-family: Roboto, Arial, Helvetica, sans-serif;
+                    }
+                </style>
+            </head>
+
+            <body>
+                <div class="slds-m-around_large">
+                    <div class="main" style="width:100%;">
+                        <div class="masthead-logo">
+                            <img src="https://www.delltechnologies.com/content/dam/delltechnologies/images/ghf/dell-tech-logo.svg" />
+                        </div>
+                        <div class="slds-box">
+                            <div class="TandC">
+                                <h1>Dell Federal Terms of Use</h1>
+                                <div class="slds-scrollable" style="height:25rem">
+                                    <p>
+                                        These Federal Terms of Use govern your use of the Tool and its content. They supplement the Terms of Use found at
+                                        <a target="_blank" rel="noopener noreferrer" href="https://www.dell.com/learn/us/en/uscorp1/site-terms-of-use">https://www.dell.com/learn/us/en/uscorp1/site-terms-of-use</a>, which are incorporated
+                                        herein by reference as if fully set forth below.
+                                    </p>
+                                    <p>
+                                        You shall report to Dell Federal Security (
+                                        <a href="mailto:securityteam@federal.dell.com">securityteam@federal.dell.com</a>) any (i) unauthorized use/access, (ii) compromised
+                                        authenticators or (iii) suspicious activity associated with the portals within 4
+                                        hours of your discovery. You also shall continuously review your site user and site
+                                        administrator accounts to ensure only authorized users receive access.
+                                    </p>
+                                    <p>
+                                        You shall use only agency or company provided email addresses as a site user or site administrator.
+                                    </p>
+                                    <p>
+                                        THE TOOL AND ITS CONTENT ARE PROVIDED "AS IS", AND DELL EXPRESSLY DISCLAIMS ALL WARRANTIES AND/OR GUARANTEES AS TO THE ACCURACY,
+                                        RELIABILITY, USEFULNESS, QUALITY OR NON-INFRINGEMENT OF INTELLECTUAL PROPERTY OF
+                                        THE TOOL OR ITS CONTENT. DELL RESERVES THE RIGHT TO MODIFY THE TOOL OR ITS CONTENTS
+                                        WITHOUT PRIOR NOTIFICATION TO YOU.
+                                    </p>
+                                    <p>
+                                        You shall treat all information relating to U.S. Government customers of Dell resulting from your use and access to Dell’s
+                                        sites in accordance with all laws, regulations and directives governing the safeguarding
+                                        of federal contract information and controlled unclassified information (including
+                                        without limitation, unclassified national security information). Such laws, regulations
+                                        and directives include, without limitation, 18 U.S.C. § 793, 18 U.S.C. § 794, FAR
+                                        52.204-21, DFARS 252.204-7012, DoD Manual 5200.01 Vol. 4 and NSA/CSS Policy 1-46.
+                                        For purposes of this provision, the terms "federal contract information" and "controlled
+                                        unclassified information" mean:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            "Federal contract information" or "FCI" means information, not intended for public release, that is provided by or generated
+                                            for the U.S. Government under a contract to develop or deliver a product or service
+                                            to the U.S. Government, but excluding information provided by the U.S. Government
+                                            to the public (such as on public Web sites) or simple transactional information
+                                            such as necessary to process payments.
+                                        </li>
+                                        <li>
+                                            "Controlled unclassified information" or "CUI" means unclassified controlled technical information or other information,
+                                            as described in the Controlled Unclassified Information (CUI) Registry at
+                                            <a target="_blank" rel="noopener noreferrer" href="http://www.archives.gov/cui/registry/category-list.html">http://www.archives.gov/cui/registry/category-list.html</a>, and includes "covered
+                                            defense information" as that term is defined in DFARS 252.204-7012.
+                                        </li>
+
+                                    </ul>
+                                    <p>
+                                        You shall ensure that no foreign national employee, consultant or representative of yours will receive access to CUI that
+                                        might result in disclosure of unclassified national security information or information
+                                        marked "NOFORN." For purposes of this provision, the terms "foreign national," "unclassified
+                                        national security information" and "NOFORN" mean:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            "Foreign national" means any person who is not a U.S. citizen by birth or naturalization. This includes permanent resident
+                                            aliens, "Green Card" holders, refugees and émigrés. Possession of a valid Social
+                                            Security Number neither guarantees nor verifies U.S. citizenship.
+                                        </li>
+                                        <li>
+                                            "Unclassified national security information" means any unclassified information that an enemy could use to its advantage.
+                                            This includes unclassified but sensitive information, the loss, misuse or unauthorized
+                                            access to or modification of, which could adversely affect the national interest
+                                            or the conduct of federal programs or the privacy to which individuals are entitled
+                                            under 5 U.S.C. § 552a (the Privacy Act), but that has not been specifically authorized
+                                            under criteria established by an Executive Order or an Act of Congress to be
+                                            kept classified in the interest of national defense or foreign policy.
+                                        </li>
+                                        <li>
+                                            "NOFORN" means "Not Releasable to Foreign Nationals." NOFORN is a caveat on certain information used within the U.S. Government.
+                                        </li>
+                                    </ul>
+                                    <p>
+                                        Before sharing (i) any FCI or CUI you have accessed on this website with any third party, or (ii) your account credentials
+                                        with any third party consultant or representative of yours, you must first ensure
+                                        that third party understands and agrees in writing to comply with these Federal Terms
+                                        of Use. You may not share your unique login credentials with another individual or
+                                        third party at any time.
+                                    </p>
+                                    <div>
+                                        <div>
+                                            <apex:commandButton value="Agree" action="{!onAgree}" style="background:#0076ce;width:10%;height:32px;color:#FFFFFF;border-radius: 6px;border: none;"
+                                                styleClass="slds-button slds-button_brand" />
+                                            <span class="slds-p-left_x-small">BY SELECTING THIS OPTION OR USING THE TOOL, YOU AGREE TO THESE TERMS OF USE.
+                                            </span>
+                                        </div>
+                                        <div>
+                                            <apex:commandButton value="Disagree" action="{!doLogout}" style="background:#0076ce;width:10%;height:32px;margin-top:12px;color:#FFFFFF;border-radius: 6px;border: none;"
+                                                styleClass="slds-button slds-button_brand" oncomplete="doLogout();" />
+                                            <span class="slds-p-left_x-small">BY SELECTING THIS OPTION YOU DO NOT AGREE TO THE TERMS OF USE AND ARE DENIED
+                                                ACCESS TO THE TOOL</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+
+            </html>
+            <apex:pageMessages />
+
+        </apex:pageBlock>
+    </apex:form>
+    <script>
+        function doLogout() {
+            window.location = "{!$Site.Prefix}/secur/logout.jsp";
+        }
+    </script>
+</apex:page>

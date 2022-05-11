@@ -1,0 +1,128 @@
+<template>
+    <lightning-progress-indicator current-step="3">
+        <lightning-progress-step label="Step 1" value="1"></lightning-progress-step>
+        <lightning-progress-step label="Step 2" value="2"></lightning-progress-step>
+        <lightning-progress-step label="Step 3" value="3"></lightning-progress-step>
+    </lightning-progress-indicator>
+    <p class="slds-var-p-horizontal_small slds-var-p-vertical_medium">Associating order(s)</p>
+    <div class="slds-var-m-horizontal_small slds-var-p-vertical_small" style="height:200px; width:100%;"> 
+        <div class="dt-outer-container" style="height: 100%; position: relative;">
+            <div class="slds-scrollable_x" style="height:100%">
+                <div class="slds-scrollable_y" style="width:100%">
+                    <table aria-multiselectable="true" class="slds-table slds-table_header-fixed slds-table_bordered slds-table_edit slds-table_resizable-cols slds-tree slds-table_tree" role="grid" aria-label="Orders to select"
+                    style="table-layout:fixed;width:100%">
+                        <thead>
+                            <tr class="slds-line-height_reset">
+                                <th aria-label="Order Number" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:130px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Number">Order Number</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Order Status" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:120px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Status">Order Status</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Buid" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:81px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Buid">BUID</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Account Name" aria-sort="none" class="slds-is-resizable slds-is-sortable" style="width:200px;" scope="col">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                            <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="" title="Account Name">Account Name</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Line Items" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:107px">
+                                    <a class="slds-th__action slds-text-link_reset" role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Line Items">Line Items</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                                <th aria-label="Order Amount" aria-sort="none" class="slds-is-resizable slds-is-sortable" scope="col" style="width:163px">
+                                    <a class="slds-th__action slds-text-link_reset"  role="button" tabindex="0">
+                                        <span class="slds-assistive-text">Sort by: </span>
+                                        <div class="slds-grid slds-grid_vertical-align-center slds-has-flexi-truncate">
+                                            <span class="slds-truncate" title="Order Amount">Order Amount</span>
+                                            <span class="slds-icon_container slds-icon-utility-arrowdown">
+                                            <svg class="slds-icon slds-icon-text-default slds-is-sortable__icon " aria-hidden="true">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#arrowdown"></use>
+                                            </svg>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <template for:each={gridData} for:item="order">
+                                <tr key={order.Id} aria-selected="false" class={order.IsDisabled} data-id={order.Id}>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.OrderNumber__c}>{order.OrderNumber__c}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.Status}>{order.Status}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.Status}>{order.BUID__c}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.AccountName}>{order.AccountName}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.LineItems}>{order.LineItems}</div>
+                                    </td>
+                                    <td role="gridcell">
+                                        <div class="slds-truncate" title={order.TotalAmount}>{order.TotalAmount}</div>
+                                    </td>
+                                </tr> 
+                            </template>                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p class="slds-var-p-horizontal_small">This association might create new project under the selected engagement, or assign the order's line items to existing 
+        child project if such projects are still in the setup phase. Would you like to proceed with this association?
+    </p> 
+</template>

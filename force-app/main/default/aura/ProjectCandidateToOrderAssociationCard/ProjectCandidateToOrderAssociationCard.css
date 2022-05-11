@@ -1,0 +1,18 @@
+.THIS {
+}
+.THIS .slds-badge-stage-InProgress{
+	background: green;
+	color: white;        	
+}
+.THIS .slds-badge-stage-Cancelled{
+	background: #c23934;
+	color: white;        	
+}
+.THIS .slds-badge-stage-Closure{
+	background: blue;
+	color: white;        	
+}
+.THIS .slds-badge-stage-Draft{
+	background: orange;
+	color: white;        	
+}

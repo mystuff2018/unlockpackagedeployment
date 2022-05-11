@@ -1,0 +1,232 @@
+<aura:component controller="FBE_LeadConvertCtrl" implements="force:lightningQuickAction,force:hasRecordId" >
+    
+    <!--Attributes-->
+    <aura:attribute name="enduser" type="String"  access="global"/>    
+    <aura:attribute name="AccName" type="String"  access="global"/>    
+    <aura:attribute name="accNameEmpty" type="Boolean"  default="false" access="global"/>
+    <aura:attribute name="accountId" type="String"  access="global"/>    
+    <aura:attribute name="opportunityId" type="String"  access="global"/>    
+    <aura:attribute name="contactId" type="String"  access="global"/>
+    <aura:attribute name="recordOwner" type="String"  access="global"/>    
+    <aura:attribute name="isLoading" type="Boolean"  default="true" access="global"/>    
+    <aura:attribute name="SelectedOppty" type="String" default="" access="global"/>
+    <aura:attribute name="SelectedCont" type="String" default="" access="global"/>
+    <aura:attribute name="RecordType" type="String" default="" access="global"/>
+    <aura:attribute name="data" type="Opportunity[]"/>
+    <aura:attribute name="relatedOppty" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="leadRec" type="Lead"/> 
+    <aura:attribute name="OpptyName" type="String"/> 
+    <aura:attribute name="newOpportunity" type="Opportunity" default="{ 'sobjectType': 'Opportunity',
+                           'Name': '','FBE_Opportunity_Classification__c': '',
+                           'FBE_Pursuit_Type__c':'','Type':'',
+                           'StageName':'','FBE_Contracting_Status__c':'', 'CloseDate':'',
+                           'FBE_Funding_Source__c':'','RecordTypeId':'', 'FBE_Storage_Selling_Motion__c':''                                      
+                       }"/>
+    <aura:attribute name="newContact" type="Contact" default="{ 'sobjectType': 'Contact',
+                           'FirstName': '','LastName': '',
+                           'Phone':'','Email':'',
+                           'Country_Code_CAM__c':'','Extension_CAM__c':''                                                                
+                       }"/>
+    <aura:attribute name="disableOppty" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="error" type="Boolean" default="false" access="global"/>
+    <aura:attribute name="selectedValue" type="String" default="Converted without Opportunity"/>
+    <aura:attribute name="returnSObject" type="SObject[]" access="global" />   
+     <aura:attribute name="showSuccessPage" type="Boolean"  default="false" access="global"/>
+    <aura:attribute name="accountRec" type="Account" />
+    <aura:attribute name="contRec" type="Object" />
+    <aura:attribute name="oppRec" type="Object" />
+    <aura:attribute name="ShowOrHideField" type="boolean" default="false" access="global"/>
+    
+    <aura:attribute name="existingOptySize" type="Integer" />
+    
+     <lightning:overlayLibrary aura:id="overlayLibDemo"/>
+    <!--handler and events-->
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}"/>
+    
+	<aura:if isTrue="{!v.showSuccessPage}">
+        <c:FBE_SuccessPage oppRec="{!v.oppRec}" contRec="{!v.contRec}"/>
+    </aura:if>
+    
+    <aura:attribute name="showSpinner" type="Boolean" default="false" />
+   
+    <aura:if isTrue="{!v.showSpinner}">
+        <lightning:spinner variant="brand"/>
+    </aura:if> 
+    
+    
+    <aura:if isTrue="{!v.isLoading}">
+        <div  style="height:6rem">
+            <div role="status" class="slds-spinner slds-spinner_medium">
+                <span class="slds-assistive-text">Loading</span>
+                <div class="slds-spinner__dot-a"></div>
+                <div class="slds-spinner__dot-b"></div>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            
+            <aura:if isTrue="{!not(v.accNameEmpty)}">
+                <!--style to increase width-->
+                <aura:html tag="style">
+                    .slds-modal__container{
+                    max-width: 80rem !important;
+                    
+                    width:80% !important;
+                    
+                    }
+                     .slds-modal__content{
+                      overflow-y:hidden !important;
+                      height:unset !important;
+                      max-height:unset !important;
+        }
+                </aura:html>
+                <div class="slds-align_absolute-center" style="margin-bottom: 10px;">
+                    <lightning:button label="Convert" variant="brand" title="" onclick="{! c.handleClick }"/>
+                </div>
+                
+                <aura:if isTrue="{!v.error}">
+                    <p class="slds-align_absolute-center requiredText" style="color: #e32;">Required Fields Missing</p>
+                </aura:if>
+                <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Lead">
+                    <lightning:messages />
+                    
+                    <h2 class="slds-card__header-title">
+                        <lightning:icon iconName="standard:account" alternativeText="Account" size="small" title="Account" />
+                        <span style="margin-left: 10px;">Account</span>                
+                    </h2>
+                    <aura:if isTrue="{!not(empty(v.enduser))}">
+                        <lightning:outputField variant="label-hidden" fieldName="FBE_End_User_Account__c" style="font-size: xx-large;"/>
+                    </aura:if>
+                    <aura:if isTrue="{!not(empty(v.AccName))}">            
+                        <lightning:outputField variant="label-hidden" fieldName="FBE_Account_Name__c" style="font-size: xx-large;"/>            
+                    </aura:if>
+                </lightning:recordViewForm>
+                
+                <br/>
+                <h2 class="slds-card__header-title" >
+                    <lightning:icon iconName="standard:contact" alternativeText="Contact" size="small" title="Contact" />
+                    <span style="margin-left: 10px;">Contact</span>                
+                </h2>
+                <lightning:select  aura:id="selectCont" name="selectCont"  onchange="{! c.onChangeCont }">
+                    <option value="">select one...</option>
+                    <option value="newCont">Create New </option>
+                    <option value="existingCont">Choose Existing </option>        
+                </lightning:select>  
+                
+                
+                <aura:if isTrue="{!v.SelectedCont=='newCont'}">
+                    <lightning:recordEditForm objectApiName="Contact" aura:id="ContCreate" >                         
+                        <lightning:layout>
+                            <lightning:layoutitem size="4" padding="around-small">  
+                                <div class="slds-box" style="background-color:lightgray">                                             
+                                    <lightning:inputField fieldName="FirstName" value="{!v.leadRec.FirstName}" aura:id="contRec" required="true"/>                                       
+                                    <lightning:inputField fieldName="LastName" value="{!v.leadRec.LastName}" aura:id="contRec"/>
+                                    <lightning:inputField fieldName="Email" value="{!v.leadRec.Email}" required="true" aura:id="contRec"/>
+                                                                      
+                                </div>
+                            </lightning:layoutitem>
+                            
+                            
+                            <lightning:layoutitem size="4" padding="around-small">
+                                <div class="slds-box" style="background-color:lightgray">  
+                                    <lightning:inputField fieldName="Country_Code_CAM__c"  aura:id="contRec"/>
+                                   <!-- <div  style="margin-left: 4px;" class="slds-form-element__label">Phone </div>
+                                    <div  style="margin-left: 4px;margin-right: 4px;margin-bottom: 8px;"> --><lightning:inputField fieldName="Phone" value="{!v.leadRec.Phone}" aura:id="contRec" required="true"/>
+                                    <lightning:inputField fieldName="Extension_CAM__c" aura:id="contRec"/> 
+                                </div>
+                            </lightning:layoutitem> 
+                        </lightning:layout>
+                    </lightning:recordEditForm>
+                    
+                </aura:if>
+                
+                <aura:if isTrue="{!v.SelectedCont=='existingCont'}">
+                    <div style="font-size: 17px; margin-bottom: 20px; margin-top: 10px;">
+                        Related Contacts to Account
+                    </div>
+                    <c:FBE_ContactSection accountId="{!v.accountId}" contactId="{!v.contactId}"/>
+                </aura:if>
+                
+                <br/>
+                <h2 class="slds-card__header-title" >
+                    <lightning:icon iconName="standard:opportunity" alternativeText="Opportunity" size="small" title="Opportunity" />
+                    <span style="margin-left: 10px;">Opportunity</span>                
+                </h2>
+                <lightning:select aura:id="selectOppty" name="selectOppty" label="" disabled="{!v.disableOppty}" onchange="{! c.onChangeOppty }">
+                    <option value="none">select one...</option>
+                    <option value="newOppty">Create New </option>
+                    <option value="existingOppty">Choose Existing </option>        
+                </lightning:select>
+                
+                
+                <aura:if isTrue="{!and(v.SelectedOppty=='newOppty',not(v.disableOppty))}">
+                    
+                    <!--lightning:layoutitem size="4" padding="around-small"--> 
+                    <lightning:select aura:id="selectRecType" name="select" label="Record Type" onchange="{!c.onChangeRecType}">                        
+                        <option value="standard">Standard Opportunity</option>
+                        <option value="APOS">APOS Opportunity</option>
+                        <option value="channel">Channel Opportunity</option>
+                        <option value="DFS">DFS Opportunity</option>                       
+                    </lightning:select>
+                    <br/>
+                    <!--/lightning:layoutitem-->
+                    
+                    	<lightning:recordEditForm objectApiName="Opportunity" aura:id="OpptyCreate" recordTypeId="{!v.RecordType}">                                                                                                                                                    
+                        <lightning:layout >                               
+                                <lightning:layoutitem size="6" padding="around-small"> 
+                                    <lightning:inputField fieldName="Name" value="{!v.OpptyName}" aura:id="opptyRec"/>
+                                    <lightning:inputField fieldName="FBE_Pursuit_Type__c" value="" aura:id="opptyRec" required="true"/>
+                                    <lightning:inputField fieldName="Type" value="" aura:id="opptyRec" required="true"/>
+                                    <lightning:inputField fieldName="FBE_Funding_Source__c" value="" aura:id="opptyRec" required="true"/>
+                                <!--<aura:if isTrue="{!v.RecordType==$Label.c.OpptyStandardRecTypeId}">
+                                    <lightning:inputField fieldName="FBE_Federal_Alliance_Segment__c" value="" aura:id="opptyRec" required="true"/>
+                                    </aura:if> -->
+                                    
+                                </lightning:layoutitem>
+                                <lightning:layoutitem size="6" padding="around-small"> 
+                                    <lightning:inputField fieldName="StageName" value="" aura:id="opptyRec" required="true"/>
+                                    <lightning:inputField fieldName="FBE_Contracting_Status__c" value="" aura:id="opptyRec" required="true"/>
+                                    <lightning:inputField fieldName="CloseDate" value="" aura:id="opptyRec" required="true"/>
+                                    <aura:if isTrue="{!and(v.ShowOrHideField, v.RecordType==$Label.c.OpptyStandardRecTypeId)}">
+                                        <lightning:inputField fieldName="FBE_Storage_Selling_Motion__c" value="" aura:id="opptyRec"/>
+                                    </aura:if>
+                                </lightning:layoutitem>
+                                    
+                            </lightning:layout>
+                                                                                                                        
+                    </lightning:recordEditForm>                    
+                </aura:if>
+                
+                <aura:if isTrue="{!and(v.SelectedOppty=='existingOppty',not(v.disableOppty))}">
+                    <c:FBE_OpportunitySection recordId="{!v.recordId}" accountId="{!v.accountId}" opportunityId="{!v.opportunityId}" optysize="{!v.existingOptySize}"/>
+                </aura:if>
+                <br/>
+                <ui:inputCheckbox aura:id="checkbox"   change="{!c.OnClkdisableOppty}" label="Don't create an opportunity upon conversion"/>
+                
+                <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Lead">
+                    <lightning:layout>
+                        <lightning:layoutitem size="6" padding="around-small"> 
+                            <lightning:inputField fieldName="FBE_RecordOwner__c" value="{!v.recordOwner}" aura:id="recordOwnerId" required="true"/>
+                        </lightning:layoutitem>
+                        <lightning:layoutitem size="6" padding="around-small"> 
+                            <lightning:select aura:id="select" name="select" label="Converted Status" disabled="true" onchange="">
+                                
+                                <option value="standard">{!v.selectedValue}</option>
+                                
+                            </lightning:select>
+                        </lightning:layoutitem>
+                    </lightning:layout>
+                </lightning:recordEditForm>
+                <aura:if isTrue="{!v.error}">
+                    <p class="slds-align_absolute-center requiredText" style="color: #e32;">Required Fields Missing</p>
+                </aura:if>
+                <div class="slds-align_absolute-center" style="margin-top: 10px;">
+                    <lightning:button label="Convert" title="" variant="brand" onclick="{! c.handleClick }"/>
+                </div>
+                <aura:set attribute="else">
+                    <div class="slds-align_absolute-center" style="color: #e32; font-size: initial;">Please enter an Account Name on the Lead record prior to converting</div>
+                </aura:set>
+            </aura:if>
+        </aura:set>
+    </aura:if>
+</aura:component>

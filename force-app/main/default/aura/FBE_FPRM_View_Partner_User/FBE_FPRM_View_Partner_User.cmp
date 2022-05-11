@@ -1,0 +1,28 @@
+<aura:component controller="FBE_PermissionsetAssignmentHandler" implements="flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickActionWithoutHeader" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="recordId" type="Id" /> 
+    <aura:attribute name="partnerUserId" type="Id" /> 
+    <aura:attribute name="isPartnerUser" type="Boolean" default="false"/>
+    <aura:attribute name="isViewMode" type="Boolean" default="true"/>
+    <aura:attribute name="userFields" type="List" default="[Id,Username,FirstName,LastName,FBE_FPRM_OnlineRole__c,ProfileId]" />
+    
+    <aura:if isTrue="{!v.isPartnerUser}"> 
+        <aura:if isTrue="{!v.isViewMode}">
+            <!-- View Mode -->
+            <lightning:card variant="Narrow" title="Partner User" iconName="standard:user">
+                <aura:set attribute="actions">
+                    <lightning:button label="Edit" title="Edit" onclick="{!c.EditUser}"/>
+                </aura:set>
+            </lightning:card>
+            <lightning:recordForm recordId="{!v.partnerUserId}" objectApiName="User"
+                                  layoutType="Full" mode="readonly" columns="2" />
+            <aura:set attribute="else">
+                 <!-- Edit Mode -->
+                <lightning:card variant="Narrow" title="Edit Partner User" iconName="standard:user"/>
+                <lightning:recordForm recordId="{!v.partnerUserId}" objectApiName="User" 
+         						fields="{!v.userFields}" columns="1" mode="edit" onsuccess="{!c.successHandler}" oncancel="{!c.onCancel}"/>
+            </aura:set>
+        </aura:if> 
+    </aura:if> 
+    
+</aura:component>

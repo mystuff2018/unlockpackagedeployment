@@ -1,0 +1,66 @@
+<aura:component controller="FBE_ReturnOpptyList" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:handler name="init" value="{!this}" action="{!c.doInitialization}"/>
+ 
+    <aura:attribute name="opptyList" type="Opportunity[]" access="global"/>
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:attribute name="accId" type="Id" access="global"/>
+    <aura:attribute name="LeadName" type="string" access="global"/>
+    <aura:attribute name="OpptyNumber" type="string" access="global"/>
+    <aura:attribute name="pageReference" type="Object" access="global"/>
+    <aura:attribute name="record" type="Object" access="global"/>
+    <aura:attribute name="simpleRecord" type="Object" access="global"/>
+    <aura:attribute name="recordError" type="String" access="global"/>
+    
+            <force:recordData aura:id="record"
+                  recordId="{!v.recordId}"
+                  fields="Id,Name,FBE_Lead_Type__c,FBE_End_User_Account__c"
+                  targetError="{!v.recordError}"
+                  targetFields ="{!v.simpleRecord}"
+                  recordUpdated="{!c.doInitialization}"
+                              />
+    
+    <article class="slds-card slds-card_boundary headerBottomBorder forceRelatedListCardDesktop">
+        <div class="slds-page-header">
+            <div class="slds-page-header__row">
+                <div class="slds-page-header__col-title">
+                    <div class="slds-media">
+                        <div class="slds-media__figure">
+                            <lightning:icon iconName="standard:opportunity" size="small" />
+                        </div>
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate slds-text-heading_small" title="Open Opportunities">{!v.OpptyNumber}</span>
+                                    </h1>
+                                </div> 
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aura:if isTrue="{!not(empty(v.opptyList))}">
+            <div class="slds-card__body slds-card__body_inner">
+                <p class="slds-p-horizontal_small">
+                    <aura:iteration items="{!v.opptyList}" var="opp">
+                        <a class="textUnderline slds-text-link forceOutputLookup" href="{!'/one/one.app?#/sObject/'+ opp.Id + '/view'}" >
+                            {!opp.Name}
+                        </a> 
+                        <p>Owner: {!opp.Owner.Name}</p>
+                        <p>Sales Stage: {!opp.StageName}</p>
+                        <p>End User Account: {!opp.FBE_End_User__r.Name}</p> 
+                        <br></br>
+                    </aura:iteration>
+                </p>          
+            </div>
+            <footer class="slds-card__footer">
+                <lightning:navigation aura:id="navService"/>
+                <a class="slds-card__footer-action" onclick="{!c.handleClick}">View All
+                    <span class="slds-assistive-text">Open Opportunities</span>
+                </a>
+            </footer>
+        </aura:if>
+    </article>
+
+</aura:component>

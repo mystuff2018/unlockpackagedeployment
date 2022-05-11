@@ -1,0 +1,77 @@
+<!--
+  @File Name          : fprmquicklinkslwc.html
+  @Description        : 
+  @Author             : Sitaram Teki
+  @Group              : 
+  @Last Modified By   : Sitaram Teki
+  @Last Modified On   : 08-09-2021
+  @Modification Log   : 
+  Ver       Date            Author      		    Modification
+  1.0    01/FEB/2021        Sitaram Teki            Initial Version
+-->
+
+<template>
+    <div class="slds-box" style="background-color:white">
+        <template if:true={showFeatures}>
+            <div class="slds-p-top_small">
+                <h1 class="slds-text-heading_medium" style="color: #0076CE; font-weight: bold; font-family: 'Roboto'">
+                    {title}</h1>
+                <!-- Using a for statement -->
+
+                <template if:true={showFeatures}>
+                    <div class="slds-var-p-around_medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>Submit a Registration</title>
+                            <path fill="#0070d2"
+                                d="M8.62 14.5l-1.44 1.5 6.48 6.32 18.34-18.32-1.46-1.48-16.9 16.86zM29.16 29.54h-27.16v-27.080h23.14l2-2h-27.14v31.16h31.24v-21.28l-2 2z">
+                            </path>
+                        </svg>
+                        <lightning-button variant="base" label="Submit a Registration"
+                            title="Click for New Registration" onclick={navigateToDealRegistrationPage}
+                            class="slds-var-p-around_medium">
+                        </lightning-button>
+                    </div>
+                    <div class="slds-var-p-around_medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>Federal Premier Store</title>
+                            <path fill="#0070d2"
+                                d="M32 6.18h-26.24l-1.76-5.54h-4v2.14h2.34l6.62 22.82h17.7v-2.14h-16l-1.060-3.62h19.62l2.78-13.66zM8.96 17.7l-2.78-9.38h23.040l-2 9.38zM25.18 24.1c-0.006-0-0.013-0-0.020-0-1.999 0-3.62 1.621-3.62 3.62 0 0.007 0 0.014 0 0.021v-0.001c-0.002 0.043-0.003 0.093-0.003 0.144 0 1.922 1.558 3.48 3.48 3.48 0.057 0 0.114-0.001 0.171-0.004l-0.008 0c0.043 0.002 0.093 0.003 0.143 0.003 1.922 0 3.48-1.558 3.48-3.48 0-0.050-0.001-0.1-0.003-0.15l0 0.007c0-0.012 0-0.026 0-0.040 0-1.988-1.612-3.6-3.6-3.6-0.007 0-0.014 0-0.021 0h0.001zM25.18 29.22c-0.006 0-0.013 0-0.020 0-0.828 0-1.5-0.672-1.5-1.5s0.672-1.5 1.5-1.5c0.828 0 1.5 0.672 1.5 1.5 0 0.007-0 0.014-0 0.021v-0.001c0 0.006 0 0.013 0 0.020 0 0.806-0.654 1.46-1.46 1.46-0.007 0-0.014-0-0.021-0h0.001zM10.24 24.1c-0.006-0-0.013-0-0.020-0-1.988 0-3.6 1.612-3.6 3.6 0 0.014 0 0.028 0 0.042l-0-0.002c-0.002 0.049-0.004 0.106-0.004 0.164 0 1.911 1.549 3.46 3.46 3.46 0.058 0 0.115-0.001 0.172-0.004l-0.008 0c0.049 0.002 0.106 0.004 0.164 0.004 1.911 0 3.46-1.549 3.46-3.46 0-0.058-0.001-0.115-0.004-0.172l0 0.008c0-0.012 0-0.026 0-0.040 0-1.988-1.612-3.6-3.6-3.6-0.007 0-0.014 0-0.021 0h0.001zM10.24 29.22c-0.828-0-1.5-0.672-1.5-1.5s0.672-1.5 1.5-1.5 1.5 0.672 1.5 1.5c0 0.007-0 0.014-0 0.021v-0.001c0 0.006 0 0.013 0 0.021 0 0.806-0.654 1.46-1.46 1.46-0.014 0-0.028-0-0.042-0.001l0.002 0z">
+                            </path>
+                        </svg>
+                        <lightning-button variant="base" label="Federal Premier Store"
+                            title="Click to navigate to Federal Premier Store" onclick={handlePremierStoreClick}
+                            class="slds-var-p-around_medium" icon-name="utility:new_window" icon-position="right">
+                        </lightning-button>
+                    </div>
+                    <div class="slds-var-p-around_medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>Dell Technologies Partner Program</title>
+                            <path fill="#0070d2"
+                                d="M29.86 29.86h-5.32v2.14h7.46v-7.46h-2.14zM2.14 24.54h-2.14v7.46h7.46v-2.14h-5.32zM2.14 2.14h5.32v-2.14h-7.46v7.46h2.14zM24.54 0v2.14h5.32v5.32h2.14v-7.46zM24.7 17.060h4v-2.12h-4c-0.507-3.999-3.641-7.133-7.597-7.636l-0.043-0.005v-4h-2.12v4c-3.999 0.507-7.133 3.641-7.636 7.597l-0.005 0.043h-4v2.12h4c0.507 3.999 3.641 7.133 7.597 7.636l0.043 0.005v4h2.12v-4c3.999-0.507 7.133-3.641 7.636-7.597l0.005-0.043zM22.56 14.94h-5.5v-5.5c2.826 0.474 5.026 2.674 5.495 5.461l0.005 0.039zM14.94 9.44v5.5h-5.5c0.474-2.826 2.674-5.026 5.461-5.495l0.039-0.005zM9.44 17.060h5.5v5.5c-2.826-0.474-5.026-2.674-5.495-5.461l-0.005-0.039zM17.060 22.56v-5.5h5.5c-0.474 2.826-2.674 5.026-5.461 5.495l-0.039 0.005z">
+                            </path>
+                        </svg>
+                        <lightning-button variant="base" label="Dell Technologies Partner Program"
+                            title="Click to navigate to Dell Technologies Partner Program" onclick={handlePartnerProgramClick}
+                            class="slds-var-p-around_medium" icon-name="utility:new_window" icon-position="right">
+                        </lightning-button>
+                    </div>
+                    <div class="slds-var-p-around_medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="32"
+                            viewBox="0 0 32 32">
+                            <title>Raise a Case</title>
+                            <path fill="#0070d2"
+                                d="M20 14.54h7.38v2.14h-7.38zM20 18.42h7.38v2.14h-7.38zM16.68 22.96h-9.68c0.347-1.078 0.956-1.991 1.754-2.694l0.007-0.006c-0.684-0.364-1.27-0.803-1.779-1.319l-0.001-0.001c-1.268 1.343-2.128 3.083-2.375 5.015l-0.005 0.045-0.12 1.18h14.72l-0.12-1.18c-0.252-1.977-1.112-3.717-2.384-5.064l0.004 0.004c-0.503 0.528-1.091 0.97-1.744 1.303l-0.036 0.017c0.817 0.699 1.43 1.615 1.749 2.66l0.011 0.040zM7.54 14.28c-0 0.012-0 0.026-0 0.040 0 2.386 1.934 4.32 4.32 4.32s4.32-1.934 4.32-4.32c0-2.386-1.934-4.32-4.32-4.32-0.007 0-0.014 0-0.021 0h0.001c0 0-0 0-0 0-2.368 0-4.289 1.914-4.3 4.279v0.001zM14 14.28c0 0.006 0 0.013 0 0.020 0 1.204-0.976 2.18-2.18 2.18s-2.18-0.976-2.18-2.18c0-1.204 0.976-2.18 2.18-2.18 0.007 0 0.014 0 0.021 0h-0.001c1.188 0.011 2.149 0.972 2.16 2.159v0.001zM20.6 5.56v-3.12h-9.28v3.12h-11.32v24h32v-24zM13.46 4.58h5v0.98h-5zM29.86 27.42h-27.74v-19.74h27.74z">
+                            </path>
+                        </svg>
+                        <lightning-button variant="base" label="Raise a Case" title="Click to Raise a Case"
+                            onclick={handleCaseEventsClick} class="slds-var-p-around_medium">
+                        </lightning-button>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>

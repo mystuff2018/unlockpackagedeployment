@@ -1,0 +1,127 @@
+<aura:component controller="projectSearchController" implements="flexipage:availableForAllPageTypes,lightning:availableForFlowScreens,force:hasRecordId" access="global">
+    
+    <!-- CREATE ATTRIBUTE/VARIABLE-->
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="searchResult" type="List" />
+    <aura:attribute name="projectInfo" type="String" />
+    <aura:attribute name="customerName" type="String" />
+    <aura:attribute name="dateCreatedStart" type="Date"/>  
+    <aura:attribute name="dateCreatedEnd" type="Date"/>
+    <aura:attribute name="messageResultVisible" type="boolean" default="false" />
+    <aura:attribute name="messageResultList" type="List" />
+    <aura:attribute name="messageResultSeverity" type="String" />
+    <aura:attribute name="errorVisible" type="boolean" default="false" />
+    <aura:attribute name="errorList" type="List" />
+    <aura:attribute name="isLoading" type="Boolean" default="false" />
+    <aura:attribute name="associationComplete" type="boolean" default="false" />
+    <aura:attribute name="columns" type="List" />
+    <aura:attribute name="inclusionOptions" type="List" default="[
+    {'label': 'Cancelled', 'value': 'cancelled'},
+    {'label': 'Completed', 'value': 'closure'}
+    ]"/>
+    <aura:attribute name="inclusionList" type="List" default=""/>
+    <aura:attribute name="record" type="Object"/>
+    <aura:attribute name="simpleRecord" type="Object"/>
+    <aura:attribute name="recordError" type="String"/> 
+    
+    
+    <!-- Select order information -->
+    <force:recordData aura:id="recordLoader"
+    recordId="{!v.recordId}"
+    targetRecord="{!v.record}"
+    targetFields="{!v.simpleRecord}"
+    targetError="{!v.recordError}"
+    fields="OrderNumber__c, Project__c"
+    />
+    
+    <aura:handler name="init" value="{!this}" action="{! c.init }" />
+    
+    <div class="slds-grid slds-gutters slds-grid_align-center" style="height: 100%;">
+        <!-- SEARCH INPUT AND SEARCH BUTTON -->
+        <div class="slds-col slds-size_3-of-12">
+            <div class="slds-box">
+                <lightning:card title="Project Search for Order Association" iconName="standard:case">
+
+                    <lightning:layout horizontalAlign="spread">
+                        <lightning:layoutItem />
+
+                        <lightning:layoutItem>
+                            <lightning:button 
+                                onclick="{!c.search}" 
+                                label="Search" 
+                                iconName="utility:search" 
+                                variant="brand" 
+                            />
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                    
+                    <!-- ERROR MESSAGE -->
+                    <aura:if isTrue="{!v.errorVisible}">
+                        <aura:iteration items="{!v.errorList}" var="msg">
+                            <ui:message severity="{!msg.severity}">
+                                {!msg.message}
+                            </ui:message>
+                        </aura:iteration>
+                    </aura:if>
+                    
+                    <lightning:input value="{!v.projectInfo}" aura:id="projectInfo" label="Engagement / Project" minlength="3" />
+
+                    <lightning:input value="{!v.customerName}" aura:id="customerName" label="Customer Name" minlength="3" />
+
+                    <lightning:checkboxGroup label="Include projects:"
+                             options="{! v.inclusionOptions }"
+                             value="{! v.inclusionList }" />
+
+                    <div class="slds-text-title slds-m-top_xx-small"><b>Date Created:</b></div>
+                    <lightning:layout title="a">
+                        <lightning:layoutItem flexibility="auto">
+                            <lightning:input type="date" value="{!v.dateCreatedStart}" aura:id="dateCreatedStart" label="From" required="true"/>
+                        </lightning:layoutItem>
+                        <lightning:layoutItem flexibility="auto">
+                            <lightning:input type="date" value="{!v.dateCreatedEnd}" aura:id="dateCreatedEnd" label="To" required="true"/>
+                        </lightning:layoutItem>
+                    </lightning:layout>
+                
+                </lightning:card>
+            </div>
+
+        </div>
+        <!-- RESULT LIST -->
+        <div class="slds-col slds-size_9-of-12">
+            <div class="slds-box" style="padding-top: 6px">
+                <lightning:card>
+                    <div class="slds-text-heading_small">Order: {! v.simpleRecord.OrderNumber__c }</div>
+                    
+                    <!-- MESSAGE -->
+                    <aura:if isTrue="{!v.messageResultVisible}">
+                        <aura:iteration items="{!v.messageResultList}" var="msg">
+                            <ui:message severity="{!msg.severity}">
+                                {!msg.message} <br/>
+                            </ui:message>
+                        </aura:iteration>
+                    </aura:if>
+
+                    <div class="slds-border_top">
+                        <div class="slds-text-heading_small" style="padding-top: 10px; padding-bottom: 5px">Search Results</div>
+                    </div>
+
+                    <div style="height: 27vw">
+                        <!-- LOADING SPINNER-->
+                        <lightning:spinner variant="brand" size="medium" aura:id="Id_spinner" class="slds-hide" />
+                
+                        <!-- SEARCH RESULTS -->
+                        <lightning:treeGrid
+                            aura:id="projectList"
+                            columns="{! v.columns }"
+                            data="{! v.searchResult }"
+                            keyField="Id" 
+                            hideCheckboxColumn="true"
+                            isLoading="{! v.isLoading }"
+                            onrowaction="{! c.handleRowAction }" 
+                            ontoggle="{! c.handleRowToggle }" />
+                    </div>
+                </lightning:card>
+            </div>
+        </div>
+    </div>
+</aura:component>

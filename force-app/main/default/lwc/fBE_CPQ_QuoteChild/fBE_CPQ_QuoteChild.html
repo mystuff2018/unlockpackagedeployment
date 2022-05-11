@@ -1,0 +1,87 @@
+<template>
+	<div class="slds-box slds-theme_default sldsBoxBackGround">
+		<!--title={strTitle} icon-name="standard:quotes" -->
+		<div>
+			<div style="padding-left: 15px;">
+				<lightning-breadcrumbs>
+					<lightning-breadcrumb label="Opportunity"></lightning-breadcrumb>
+					<lightning-breadcrumb label={name} onclick={navigateToParent}>
+					</lightning-breadcrumb>
+				</lightning-breadcrumbs>
+
+				<div class="slds-media" style="margin-top: 10px">
+					<div class="slds-media__body">
+						<div class="slds-page-header__name">
+							<div class="slds-page-header__name-title">
+								<h1>
+									<span class="slds-page-header__title slds-truncate" title="Quotes">Quotes - {count} items</span>
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			 <div class={tableClass}>
+				<table
+					class="slds-table slds-table_cell-buffer slds-border_left slds-border_right slds-no-row-hover slds-table_bordered">
+					<thead>
+						<tr class="slds-line-height_reset">
+							<th class="" scope="col">
+								<div class="slds-truncate" title="">Quote #</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="">Solution ID
+								</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="">Total
+								</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="">Effective Through
+								</div>
+							</th>
+							<th class="" scope="col">
+								<div class="slds-truncate" title="">Attachment</div>
+							</th>
+
+						</tr>
+					</thead>
+					
+					<tbody>						
+						<template if:true={quoteDataList} for:each={quoteDataList} for:item="quote" for:index="index">
+
+							<tr key={quote.quoteRec.Id} class="slds-hint-parent">
+								<td>
+									<a data-record-id={quote.quoteRec.Id} onclick={viewQuote}>
+										{quote.quoteRec.Name}
+									</a>
+								</td>
+								<td>
+									{quote.quoteRec.FBE_CPQ_Solution_ID__c}
+								</td>
+								<td>
+									{quote.quoteRec.FBE_CPQ_Quote_Total__c}
+								</td>
+								<td>
+									{quote.quoteRec.ExpirationDate}
+								</td>
+								<td>
+									<lightning-button-menu icon-name="utility:download" onselect={handleMenuItem}
+										data-recid={quote.quoteRec.Id} disabled={quote.isbuttonDissable}>
+										<template if:true={quote.files} for:each={quote.files} for:item="file"
+											for:index="idx">
+											<lightning-menu-item key={file.docId} value={file.docId} label={file.fType}>
+												<a href={returnId}></a>
+											</lightning-menu-item>
+										</template>
+									</lightning-button-menu>
+								</td>
+							</tr>
+						</template>						
+					</tbody>					
+				</table>
+			</div>
+		</div>
+	</div>
+</template>

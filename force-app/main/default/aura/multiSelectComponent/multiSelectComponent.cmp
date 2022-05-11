@@ -1,0 +1,47 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+                access="global" 
+                controller="FBE_MultiSelectServerCloneController">
+    <aura:attribute name="recordId" type="String"/>
+    <aura:attribute name="AvailableList" type="String[]"/>
+    <aura:attribute name="SelectedList" type="String[]"/>  
+    <aura:attribute name="HighlightedAvail" type="String"/>
+    <aura:attribute name="HighlightedSelect" type="String"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <div class="slds-picklist--draggable slds-grid">
+        <div class="slds-form-element">
+            <span class="slds-form-element__label" aria-label="select-1">Available Products</span>
+            <div class="slds-picklist picklist--multi">
+                <ul class="slds-picklist__options slds-picklist__options--multi DTULClass">                 
+                    <aura:iteration items="{!v.AvailableList}" var="avail">
+                        <li draggable="true" id="po-8-0" class="slds-picklist__item" aria-selected="false" tabindex="0" role="option">
+                            <span data-record="{!avail}" onclick="{! c.highlightAvailable}" ondblclick="{! c.availDblClick}">{!avail}</span>
+                        </li>
+                    </aura:iteration>      
+                </ul>
+            </div>
+        </div>
+        
+        <div class="slds-grid slds-grid--vertical" style="margin-top: 5.3rem;">
+            <lightning:buttonIcon iconName="utility:left" variant="bare" onclick="{! c.leftClick }" alternativeText="Unselect" />
+            <lightning:buttonIcon iconName="utility:right" variant="bare" onclick="{! c.rightClick }" alternativeText="Select"/>
+        </div>
+        
+        <div class="slds-form-element">
+            <span class="slds-form-element__label" aria-label="select-1">Selected Products</span>
+            <div class="slds-picklist picklist--multi">
+                <ul class="slds-picklist__options slds-picklist__options--multi DTULClass">
+                    <aura:iteration items="{!v.SelectedList}" var="selected">
+                        <li aria-selected="false" class="slds-picklist__item slds-is-draggable" draggable="true" role="option" tabindex="0">
+                            <span data-record="{!selected}" onclick="{! c.highlightSelected}" ondblclick="{! c.selectDblClick}">{!selected}</span>
+                        </li>
+                    </aura:iteration>                   
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div>
+    <lightning:button label="Save" onclick="{!c.save}" />
+        </div>
+</aura:component>
